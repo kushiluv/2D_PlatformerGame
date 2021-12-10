@@ -38,7 +38,7 @@ public class HelloApplication extends Application {
     public void scene2(ActionEvent event) throws IOException{
 
 //        Parent root = FXMLLoader.load(getClass().getResource("gamescene.fxml"));
-        System.out.println("asd");
+
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         game game  = new game();
         game.start(stage);

@@ -4,6 +4,7 @@ package com.example.helloapplication;
 
 import javafx.animation.Animation;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -28,7 +29,17 @@ import java.util.Timer;
 
 public class game {
 
+    @FXML
+    private Pane gameover;
 
+    @FXML
+    private Button quitbutton;
+
+    @FXML
+    private Button finalexit;
+
+    @FXML
+    private Pane quitpane;
 
     @FXML
     private Pane pausepane;
@@ -66,8 +77,13 @@ public class game {
         Green_Orc grorc = new Green_Orc(scene);
         pause = (ImageView) scene.lookup("#pause");
         pausepane = (Pane) scene.lookup("#pausepane");
+        gameover = (Pane) scene.lookup("#gameover");
+        quitpane = (Pane) scene.lookup("#quitpane");
+        quitbutton = (Button) scene.lookup("#quitbutton");
+        finalexit = (Button) scene.lookup("#finalexit");
         pausepane.setVisible(false);
-
+        gameover.setVisible(false);
+        quitpane.setVisible(false);
 
         resume = (Button) scene.lookup("#resume");
         island = (ImageView) scene.lookup("#island");
@@ -96,6 +112,7 @@ public class game {
         fall.setAutoReverse(false);
         fall.setNode(hero.getHero());
         fall.play();
+        final int[] flag1 = {0};
 
 //
 //
@@ -103,6 +120,8 @@ public class game {
             @Override
             public void handle(ActionEvent event) {
                 int flag = 0;
+
+
                 Bounds boundshero = hero.getHero().localToScene(hero.getHero().getBoundsInLocal());
                 Bounds boundsisland = island.localToScene(island.getBoundsInLocal());
                 Bounds boundsisland1 = island1.localToScene(island.getBoundsInLocal());
@@ -111,6 +130,29 @@ public class game {
                 islands.add(boundsisland);
                 islands.add(boundsisland1);
                 islands.add(boundsisland2);
+                if(boundshero.getMinY()>=600&& flag1[0] ==0){
+                    flag1[0] =1;
+                    gameover.setVisible(true);
+
+//                    orcjump.pause();
+                    quitbutton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent mouseEvent) {
+                            gameover.setVisible(false);
+                            quitpane.setVisible(true);
+                            finalexit.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                @Override
+                                public void handle(MouseEvent mouseEvent) {
+                                    Platform.exit();
+                                }
+                            });
+
+
+
+                        }
+                    });
+
+                }
                 for(int i =0;i<islands.size();i++) {
                     if (Math.abs(Math.floor(boundshero.getMaxY()) - Math.floor(islands.get(i).getMinY()))<=4 && islands.get(i).getMaxX() >= boundshero.getMinX() && islands.get(i).getMinX() <= boundshero.getMaxX()) {
 
