@@ -165,25 +165,25 @@
          <color>
             <Color red="0.6447368264198303" green="0.48952242732048035" blue="0.48952242732048035" />
          </color></AmbientLight>
-      <Pane layoutX="401.0" layoutY="45.0" prefHeight="364.0" prefWidth="375.0">
+      <Pane layoutX="274.0" layoutY="43.0" prefHeight="440.0" prefWidth="498.0">
          <children>
-            <ImageView fitHeight="95.0" fitWidth="168.0" layoutX="215.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000030" height="440.0" layoutX="-1.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="499.0" />
+            <ImageView fitHeight="95.0" fitWidth="168.0" layoutX="325.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../23-239811_clash-royale-super-magical-chest-png.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000030" height="364.0" layoutX="-1.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="375.0" />
-            <ImageView fitHeight="96.0" fitWidth="361.0" layoutX="6.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="96.0" fitWidth="361.0" layoutX="68.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../174682-logo-game-over-free-hd-image.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="141.0" fitWidth="149.0" layoutX="225.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="141.0" fitWidth="149.0" layoutX="354.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../10-100086_orc-warrior-png.png" />
                </image>
             </ImageView>
-            <Button fx:id="restart2" layoutX="26.0" layoutY="154.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="55.0" prefWidth="162.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
+            <Button fx:id="restart2" layoutX="25.0" layoutY="355.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="55.0" prefWidth="162.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
                <font>
                   <Font size="29.0" />
                </font>
@@ -195,7 +195,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="exit11" layoutX="26.0" layoutY="258.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="61.0" prefWidth="162.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
+            <Button fx:id="exit11" layoutX="302.0" layoutY="352.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="61.0" prefWidth="162.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
                <font>
                   <Font size="29.0" />
                </font>
@@ -207,6 +207,21 @@
                   </DropShadow>
                </effect>
             </Button>
+            <Label layoutX="174.0" layoutY="181.0" prefHeight="55.0" prefWidth="149.0" text="Save Me!" textFill="#f2f2f2">
+               <font>
+                  <Font name="SansSerif Bold" size="34.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="55.0" fitWidth="182.0" layoutX="163.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" style="fx-background-radius: 15px;">
+               <image>
+                  <Image url="@../../../Screenshot%202021-12-10%20at%204.33.29%20PM.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="213.0" layoutY="303.0" prefHeight="39.0" prefWidth="59.0" text="OR" textFill="#f5f5f5">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
