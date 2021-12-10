@@ -2,25 +2,43 @@ package com.example.helloapplication;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+    @FXML
+    private Button temp;
+
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(root, 1200, 600);
+        temp = (Button) scene.lookup("#temp");
+//        temp.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent mouseEvent) {
+//                Stage stage = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
+//                game game  = new game();
+//                game.start(stage);
+//            }
+//        });
         stage.setScene(scene);
         stage.show();
     }
     public void scene2(ActionEvent event) throws IOException{
+
 //        Parent root = FXMLLoader.load(getClass().getResource("gamescene.fxml"));
+        System.out.println("asd");
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         game game  = new game();
         game.start(stage);

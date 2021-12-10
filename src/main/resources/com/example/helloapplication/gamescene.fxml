@@ -59,7 +59,7 @@
       <Pane fx:id="pausepane1" layoutX="397.0" layoutY="35.0" prefHeight="399.0" prefWidth="382.0" visible="false">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="385.0" layoutY="40.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
-            <Button fx:id="exit1" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="YES">
+            <Button fx:id="exit1" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="YES">
                <font>
                   <Font size="35.0" />
                </font>
@@ -71,7 +71,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="restart1" layoutX="287.0" layoutY="259.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="NO">
+            <Button fx:id="restart1" layoutX="287.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="NO">
                <font>
                   <Font size="35.0" />
                </font>
@@ -100,7 +100,7 @@
       <Pane fx:id="pausepane" layoutX="290.0" layoutY="67.0" prefHeight="439.0" prefWidth="527.0" visible="false">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="364.0" layoutY="40.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
-            <Button fx:id="exit" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
+            <Button fx:id="exit" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
                <font>
                   <Font size="35.0" />
                </font>
@@ -112,7 +112,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="resume" layoutX="288.0" layoutY="259.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Resume">
+            <Button fx:id="resume" layoutX="288.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Resume">
                <font>
                   <Font size="35.0" />
                </font>
@@ -124,7 +124,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="restart" layoutX="288.0" layoutY="149.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
+            <Button fx:id="restart" layoutX="288.0" layoutY="149.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
                <font>
                   <Font size="35.0" />
                </font>
@@ -136,7 +136,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="save" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Save">
+            <Button fx:id="save" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Save">
                <font>
                   <Font size="35.0" />
                </font>
@@ -165,7 +165,7 @@
          <color>
             <Color red="0.6447368264198303" green="0.48952242732048035" blue="0.48952242732048035" />
          </color></AmbientLight>
-      <Pane layoutX="274.0" layoutY="43.0" prefHeight="440.0" prefWidth="498.0">
+      <Pane layoutX="274.0" layoutY="43.0" prefHeight="440.0" prefWidth="498.0" visible="false">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000030" height="440.0" layoutX="-1.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="499.0" />
             <ImageView fitHeight="95.0" fitWidth="168.0" layoutX="325.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
@@ -183,7 +183,7 @@
                   <Image url="@../../../10-100086_orc-warrior-png.png" />
                </image>
             </ImageView>
-            <Button fx:id="restart2" layoutX="25.0" layoutY="355.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="55.0" prefWidth="162.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
+            <Button fx:id="restart2" layoutX="25.0" layoutY="355.0" mnemonicParsing="false" opacity="0.82" prefHeight="55.0" prefWidth="162.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
                <font>
                   <Font size="29.0" />
                </font>
@@ -195,7 +195,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="exit11" layoutX="302.0" layoutY="352.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="61.0" prefWidth="162.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
+            <Button fx:id="exit11" layoutX="302.0" layoutY="352.0" mnemonicParsing="false" opacity="0.82" prefHeight="61.0" prefWidth="162.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
                <font>
                   <Font size="29.0" />
                </font>

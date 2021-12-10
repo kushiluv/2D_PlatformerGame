@@ -110,7 +110,7 @@ public class game {
                 islands.add(boundsisland2);
                 for(int i =0;i<islands.size();i++) {
                     if (Math.abs(Math.floor(boundshero.getMaxY()) - Math.floor(islands.get(i).getMinY()))<=4 && islands.get(i).getMaxX() >= boundshero.getMinX() && islands.get(i).getMinX() <= boundshero.getMaxX()) {
-                        System.out.println("jump karle bc");
+
                         fall.pause();
                         jump.play();
                         flag = 1;

@@ -19,13 +19,13 @@
             <font>
                 <Font size="35.0" />
             </font>
-         <effect>
-            <DropShadow spread="0.67">
-               <color>
-                  <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
-               </color>
-            </DropShadow>
-         </effect>
+            <effect>
+                <DropShadow spread="0.67">
+                    <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                    </color>
+                </DropShadow>
+            </effect>
         </Button>
     </children>
 </AnchorPane>
