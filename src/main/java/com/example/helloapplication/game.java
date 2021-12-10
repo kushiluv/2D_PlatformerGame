@@ -63,6 +63,7 @@ public class game {
 //        root.getChildren().add(rectangle);
         Scene scene = new Scene(root, 1200, 600);
         Hero hero = new Hero(scene);
+        Green_Orc grorc = new Green_Orc(scene);
         pause = (ImageView) scene.lookup("#pause");
         pausepane = (Pane) scene.lookup("#pausepane");
         pausepane.setVisible(false);
