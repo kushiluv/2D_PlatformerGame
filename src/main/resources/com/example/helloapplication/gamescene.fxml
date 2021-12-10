@@ -56,10 +56,51 @@
             <Image url="@../../../wep_0003%20%2346880.png" />
          </image>
       </ImageView>
-      <Pane fx:id="pausepane" layoutX="281.0" layoutY="97.0" prefHeight="439.0" prefWidth="527.0">
+      <Pane fx:id="pausepane1" layoutX="397.0" layoutY="35.0" prefHeight="399.0" prefWidth="382.0" visible="false">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="385.0" layoutY="40.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
-            <Button fx:id="exit" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Exit">
+            <Button fx:id="exit1" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="YES">
+               <font>
+                  <Font size="35.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="restart1" layoutX="287.0" layoutY="259.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="NO">
+               <font>
+                  <Font size="35.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Label layoutX="175.0" layoutY="108.0" prefHeight="55.0" prefWidth="202.0" text="QUIT GAME?" textFill="#d3d3d3">
+               <font>
+                  <Font size="34.0" />
+               </font>
+               <effect>
+                  <Glow level="0.98" />
+               </effect>
+            </Label>
+            <AmbientLight color="CHARTREUSE" lightOn="true" />
+         </children>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Pane>
+      <Pane fx:id="pausepane" layoutX="290.0" layoutY="67.0" prefHeight="439.0" prefWidth="527.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="364.0" layoutY="40.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
+            <Button fx:id="exit" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
                <font>
                   <Font size="35.0" />
                </font>
@@ -115,12 +156,58 @@
                   <Glow level="0.98" />
                </effect>
             </Label>
-            <AmbientLight color="CHARTREUSE" lightOn="true" />
          </children>
          <effect>
             <ColorAdjust />
          </effect>
       </Pane>
-      <AmbientLight color="CHARTREUSE" layoutX="223.0" layoutY="61.0" lightOn="true" />
+      <AmbientLight layoutX="223.0" layoutY="61.0" lightOn="true">
+         <color>
+            <Color red="0.6447368264198303" green="0.48952242732048035" blue="0.48952242732048035" />
+         </color></AmbientLight>
+      <Pane layoutX="401.0" layoutY="45.0" prefHeight="364.0" prefWidth="375.0">
+         <children>
+            <ImageView fitHeight="95.0" fitWidth="168.0" layoutX="215.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../23-239811_clash-royale-super-magical-chest-png.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000030" height="364.0" layoutX="-1.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="375.0" />
+            <ImageView fitHeight="96.0" fitWidth="361.0" layoutX="6.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../174682-logo-game-over-free-hd-image.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="141.0" fitWidth="149.0" layoutX="225.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../10-100086_orc-warrior-png.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="restart2" layoutX="26.0" layoutY="154.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="55.0" prefWidth="162.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="exit11" layoutX="26.0" layoutY="258.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="61.0" prefWidth="162.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
