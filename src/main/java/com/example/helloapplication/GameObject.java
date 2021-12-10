@@ -1,5 +1,7 @@
 package com.example.helloapplication;
 
+import javafx.scene.image.ImageView;
+
 abstract class GameObject {
     private location Location;
 

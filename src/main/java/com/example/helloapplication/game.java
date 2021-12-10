@@ -27,8 +27,8 @@ import java.util.ArrayList;
 import java.util.Timer;
 
 public class game {
-    @FXML
-    private ImageView hero;
+
+
 
     @FXML
     private Pane pausepane;
@@ -62,10 +62,12 @@ public class game {
 //        Pane root = new Pane();
 //        root.getChildren().add(rectangle);
         Scene scene = new Scene(root, 1200, 600);
+        Hero hero = new Hero(scene);
         pause = (ImageView) scene.lookup("#pause");
         pausepane = (Pane) scene.lookup("#pausepane");
         pausepane.setVisible(false);
-        hero = (ImageView) scene.lookup("#hero");
+
+
         resume = (Button) scene.lookup("#resume");
         island = (ImageView) scene.lookup("#island");
         island1 = (ImageView) scene.lookup("#island1");
@@ -83,7 +85,7 @@ public class game {
         TranslateTransition jump = new TranslateTransition();
         jump.setDuration(Duration.millis(600));
         jump.setByY(-200);
-        jump.setNode(hero);
+        jump.setNode(hero.getHero());
 
 
         TranslateTransition fall= new TranslateTransition();
@@ -91,7 +93,7 @@ public class game {
         fall.setByY(4);
         fall.setCycleCount(1);
         fall.setAutoReverse(false);
-        fall.setNode(hero);
+        fall.setNode(hero.getHero());
         fall.play();
 
 //
@@ -100,7 +102,7 @@ public class game {
             @Override
             public void handle(ActionEvent event) {
                 int flag = 0;
-                Bounds boundshero = hero.localToScene(hero.getBoundsInLocal());
+                Bounds boundshero = hero.getHero().localToScene(hero.getHero().getBoundsInLocal());
                 Bounds boundsisland = island.localToScene(island.getBoundsInLocal());
                 Bounds boundsisland1 = island1.localToScene(island.getBoundsInLocal());
                 Bounds boundsisland2 = island2.localToScene(island.getBoundsInLocal());
@@ -154,7 +156,7 @@ public class game {
                         TranslateTransition translate = new TranslateTransition();
                         translate.setDuration(Duration.seconds(0.07));
                         translate.setByX(100);
-                        translate.setNode(hero);
+                        translate.setNode(hero.getHero());
                         translate.play();
                         fall.play();
 //                            Bounds boundsInScene = hero.localToScene(hero.getBoundsInLocal());
