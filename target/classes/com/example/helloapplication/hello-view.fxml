@@ -10,12 +10,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.helloapplication.HelloApplication">
     <children>
-        <ImageView fitHeight="777.0" fitWidth="1214.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../../bgimage.jpeg" />
-            </image>
-        </ImageView>
-        <Button layoutX="461.0" layoutY="241.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Play">
+      <ImageView fitHeight="628.0" fitWidth="1228.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../AP_Project_G90/src/main/resources/home-carousel-1-1.jpg" />
+         </image>
+      </ImageView>
+        <Button layoutX="502.0" layoutY="443.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Play">
             <font>
                 <Font size="35.0" />
             </font>
@@ -27,5 +27,29 @@
                 </DropShadow>
             </effect>
         </Button>
+      <Button layoutX="275.0" layoutY="443.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Load">
+         <font>
+            <Font size="35.0" />
+         </font>
+         <effect>
+            <DropShadow spread="0.67">
+               <color>
+                  <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button layoutX="734.0" layoutY="443.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Exit">
+         <font>
+            <Font size="35.0" />
+         </font>
+         <effect>
+            <DropShadow spread="0.67">
+               <color>
+                  <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
     </children>
 </AnchorPane>

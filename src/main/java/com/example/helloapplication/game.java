@@ -1,8 +1,8 @@
 package com.example.helloapplication;
 
 
-
 import javafx.animation.Animation;
+import javafx.animation.PathTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -19,6 +19,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Path;
+import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -28,6 +30,11 @@ import java.util.ArrayList;
 import java.util.Timer;
 
 public class game {
+
+
+
+    @FXML
+    private ImageView chest1;
 
     @FXML
     private Pane gameover;
@@ -75,6 +82,7 @@ public class game {
         Scene scene = new Scene(root, 1200, 600);
         Hero hero = new Hero(scene);
         Green_Orc grorc = new Green_Orc(scene);
+
         pause = (ImageView) scene.lookup("#pause");
         pausepane = (Pane) scene.lookup("#pausepane");
         gameover = (Pane) scene.lookup("#gameover");
@@ -86,6 +94,7 @@ public class game {
         quitpane.setVisible(false);
 
         resume = (Button) scene.lookup("#resume");
+        chest1 = (ImageView) scene.lookup("#chest1");
         island = (ImageView) scene.lookup("#island");
         island1 = (ImageView) scene.lookup("#island1");
         island2 = (ImageView) scene.lookup("#island2");
@@ -96,7 +105,7 @@ public class game {
         orcjump.setByY(-100);
         orcjump.setCycleCount(Animation.INDEFINITE);
         orcjump.setAutoReverse(true);
-        orcjump.setNode(orc);
+        orcjump.setNode(grorc.getHero());
         orcjump.play();
 
         TranslateTransition jump = new TranslateTransition();
@@ -113,6 +122,13 @@ public class game {
         fall.setNode(hero.getHero());
         fall.play();
         final int[] flag1 = {0};
+        ArrayList<ImageView> gameelements = new ArrayList<>();
+        gameelements.add(island);
+        gameelements.add(island1);
+        gameelements.add(island2);
+        gameelements.add(grorc.getHero());
+        gameelements.add(chest1);
+
 
 //
 //
@@ -120,8 +136,6 @@ public class game {
             @Override
             public void handle(ActionEvent event) {
                 int flag = 0;
-
-
                 Bounds boundshero = hero.getHero().localToScene(hero.getHero().getBoundsInLocal());
                 Bounds boundsisland = island.localToScene(island.getBoundsInLocal());
                 Bounds boundsisland1 = island1.localToScene(island.getBoundsInLocal());
@@ -189,6 +203,7 @@ public class game {
             }
         });
 
+        gameelements.add(hero.getHero());
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
@@ -196,12 +211,58 @@ public class game {
                     case SPACE:
 
                         fall.pause();
+                        PathTransition pt = new PathTransition();
+                        Bounds boundshero = hero.getHero().localToScene(hero.getHero().getBoundsInLocal());
+                        Bounds boundsorc = grorc.getHero().localToScene(grorc.getHero().getBoundsInLocal());
                         TranslateTransition translate = new TranslateTransition();
-                        translate.setDuration(Duration.seconds(0.07));
-                        translate.setByX(100);
-                        translate.setNode(hero.getHero());
-                        translate.play();
+                        System.out.println("hero max : "+boundshero.getMaxX());
+                        System.out.println("orcc min : "+boundsorc.getMinX());
+                        if(boundsorc.getMinX()-125<boundshero.getMaxX()+100&&boundsorc.getMinX()-125>boundshero.getMaxX()){
+
+                            System.out.println("colliding");
+                            translate.setDuration(Duration.seconds(0.07));
+                            translate.setByX(boundsorc.getMinX()-boundshero.getMaxX());
+                            translate.setNode(hero.getHero());
+                            translate.play();
+                            Polyline path = new Polyline();
+                            path.getPoints().addAll(new Double[]{0.0,0.0,20.0,-100.0,100.0,500.0});
+
+                            pt.setNode(grorc.getHero());
+                            pt.setPath(path);
+                            pt.setDuration(Duration.seconds(3));
+                            pt.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+
+                        }
+                        else {
+                            translate.setDuration(Duration.seconds(0.07));
+                            translate.setByX(100);
+                            translate.setNode(hero.getHero());
+                            translate.play();
+                        }
                         fall.play();
+                        translate.setOnFinished(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+
+                                for (ImageView i : gameelements) {
+                                    TranslateTransition translate = new TranslateTransition();
+                                    translate.setDuration(Duration.seconds(0.25));
+                                    translate.setByX(-100);
+                                    translate.setNode(i);
+                                    translate.play();
+                                    translate.setOnFinished(new EventHandler<ActionEvent>() {
+                                        @Override
+                                        public void handle(ActionEvent event) {
+                                            if (pt.getNode()!=null){
+                                                orcjump.pause();
+                                                pt.play();
+                                            }
+                                        }
+                                    });
+
+                                }
+                            }
+                        });
 //                            Bounds boundsInScene = hero.localToScene(hero.getBoundsInLocal());
 //                            Bounds boundsI = island.localToScene(island.getBoundsInLocal());
 //                            System.out.println(boundsInScene.getMaxY()+" "+ boundsI.getMinY());
