@@ -211,7 +211,7 @@ public class game {
                     case SPACE:
 
                         fall.pause();
-                        PathTransition pt = new PathTransition();
+                        TranslateTransition pt = new TranslateTransition();
                         Bounds boundshero = hero.getHero().localToScene(hero.getHero().getBoundsInLocal());
                         Bounds boundsorc = grorc.getHero().localToScene(grorc.getHero().getBoundsInLocal());
                         TranslateTransition translate = new TranslateTransition();
@@ -224,13 +224,13 @@ public class game {
                             translate.setByX(boundsorc.getMinX()-boundshero.getMaxX());
                             translate.setNode(hero.getHero());
                             translate.play();
-                            Polyline path = new Polyline();
-                            path.getPoints().addAll(new Double[]{0.0,0.0,20.0,-100.0,100.0,500.0});
+//                            Polyline path = new Polyline();
+//                            path.getPoints().addAll(new Double[]{-200.0,0.0,-100.0,0.0,100.0,500.0});
 
                             pt.setNode(grorc.getHero());
-                            pt.setPath(path);
-                            pt.setDuration(Duration.seconds(3));
-                            pt.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+                            pt.setByX(100);
+                            pt.setDuration(Duration.seconds(0.07));
+
 
                         }
                         else {
@@ -245,17 +245,47 @@ public class game {
                             public void handle(ActionEvent event) {
 
                                 for (ImageView i : gameelements) {
-                                    TranslateTransition translate = new TranslateTransition();
-                                    translate.setDuration(Duration.seconds(0.25));
-                                    translate.setByX(-100);
-                                    translate.setNode(i);
-                                    translate.play();
-                                    translate.setOnFinished(new EventHandler<ActionEvent>() {
+                                    TranslateTransition backshift = new TranslateTransition();
+                                    backshift.setDuration(Duration.seconds(0.25));
+                                    backshift.setByX(-100);
+                                    backshift.setNode(i);
+                                    backshift.play();
+                                    backshift.setOnFinished(new EventHandler<ActionEvent>() {
                                         @Override
                                         public void handle(ActionEvent event) {
-                                            if (pt.getNode()!=null){
+                                            if (pt.getNode()!=null) {
+                                                int tflag = 0;
                                                 orcjump.pause();
                                                 pt.play();
+                                                Bounds boundsorc = grorc.getHero().localToScene(grorc.getHero().getBoundsInLocal());
+                                                Bounds boundsisland = island.localToScene(island.getBoundsInLocal());
+                                                Bounds boundsisland1 = island1.localToScene(island.getBoundsInLocal());
+                                                Bounds boundsisland2 = island2.localToScene(island.getBoundsInLocal());
+                                                ArrayList<Bounds> islands = new ArrayList<>();
+                                                islands.add(boundsisland);
+                                                islands.add(boundsisland1);
+                                                islands.add(boundsisland2);
+                                                //System.out.println("orc y : "+boundsorc.getMaxY()+"\n orc x : "+boundshero.getCenterX());
+                                                //System.out.println("island y min : "+boundsisland1.getMinY()+"x : "+boundsisland1.getMinX()+" max: "+boundsisland1.getMaxX());
+                                                //for (int i = 0; i < islands.size(); i++) {
+////                                                    if (!(Math.abs(Math.floor(boundsorc.getMaxY()) - Math.floor(islands.get(i).getMinY())) <= 4 && islands.get(i).getMaxX() >= boundsorc.getMinX() && islands.get(i).getMinX() <= boundsorc.getMaxX())) {
+////                                                        TranslateTransition translat = new TranslateTransition();
+////                                                        translat.setDuration(Duration.seconds(2));
+////                                                        translat.setByY(600);
+////                                                        translat.setNode(grorc.getHero());
+////                                                        translat.play();
+////                                                        tflag = 1;
+////
+////                                                    }
+//                                                }
+                                                if(island1.getBoundsInParent().intersects(grorc.getHero().getBoundsInParent())){
+                                                    System.out.println("bitch on the island");
+                                                }
+
+                                               if(tflag==0){
+                                                   orcjump.play();
+
+                                               }
                                             }
                                         }
                                     });

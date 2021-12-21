@@ -10,9 +10,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.helloapplication.HelloApplication">
     <children>
-      <ImageView fitHeight="628.0" fitWidth="1228.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="646.0" fitWidth="1232.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../AP_Project_G90/src/main/resources/home-carousel-1-1.jpg" />
+            <Image url="@../../../home-carousel-1-1.jpg" />
          </image>
       </ImageView>
         <Button layoutX="502.0" layoutY="443.0" mnemonicParsing="false" onAction="#scene2" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Play">
