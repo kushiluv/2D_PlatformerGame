@@ -99,28 +99,19 @@ public class game {
         island1 = (ImageView) scene.lookup("#island1");
         island2 = (ImageView) scene.lookup("#island2");
         orc = (ImageView) scene.lookup("#orc");
-        TranslateTransition orcjump = new TranslateTransition();
 
-        orcjump.setDuration(Duration.seconds(0.55));
-        orcjump.setByY(-100);
-        orcjump.setCycleCount(Animation.INDEFINITE);
-        orcjump.setAutoReverse(true);
-        orcjump.setNode(grorc.getHero());
+
+        TranslateTransition orcjump = new TranslateTransition();
+        grorc.set_orc_jump(orcjump);
         orcjump.play();
 
         TranslateTransition jump = new TranslateTransition();
-        jump.setDuration(Duration.millis(600));
-        jump.setByY(-200);
-        jump.setNode(hero.getHero());
-
+        hero.set_hero_jump(jump);
 
         TranslateTransition fall= new TranslateTransition();
-        fall.setDuration(Duration.millis(12));
-        fall.setByY(4);
-        fall.setCycleCount(1);
-        fall.setAutoReverse(false);
-        fall.setNode(hero.getHero());
+        hero.set_hero_fall(fall);
         fall.play();
+
         final int[] flag1 = {0};
         ArrayList<ImageView> gameelements = new ArrayList<>();
         gameelements.add(island);

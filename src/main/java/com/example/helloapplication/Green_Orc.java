@@ -1,8 +1,11 @@
 package com.example.helloapplication;
 
+import javafx.animation.Animation;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 public class Green_Orc extends GameObject {
     //    private Helmet helmet;
@@ -19,13 +22,23 @@ public class Green_Orc extends GameObject {
         return grorc;
     }
 
+    public void set_orc_jump(TranslateTransition orcjump){
+        orcjump.setDuration(Duration.seconds(0.55));
+        orcjump.setByY(-100);
+        orcjump.setCycleCount(Animation.INDEFINITE);
+        orcjump.setAutoReverse(true);
+        orcjump.setNode(grorc);
+    }
+
     @Override
     location getLocation() {
         return null;
     }
 
     @Override
-    void if_collides() {
+    void if_collides(Hero hero) {
 
     }
+
+
 }

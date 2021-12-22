@@ -9,5 +9,5 @@ abstract class GameObject {
 
     abstract location getLocation();
 
-    abstract void if_collides();
+    abstract void if_collides(Hero hero);
 }
