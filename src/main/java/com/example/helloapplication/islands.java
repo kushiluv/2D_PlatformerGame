@@ -1,6 +1,7 @@
 package com.example.helloapplication;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Bounds;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 
@@ -17,6 +18,7 @@ public class islands extends GameObject {
     private ImageView island2;
 
     private ArrayList<ImageView> islands;
+    private ArrayList<Bounds> islands_bounds;
 
     public islands(Scene scene){
         islands = new ArrayList<>();
@@ -33,8 +35,18 @@ public class islands extends GameObject {
     }
 
     @Override
-    location getLocation() {
+    public Bounds getLocation() {
         return null;
+    }
+    public ArrayList<Bounds> getALLislands(){
+        Bounds boundsisland = island.localToScene(island.getBoundsInLocal());
+        Bounds boundsisland1 = island1.localToScene(island.getBoundsInLocal());
+        Bounds boundsisland2 = island2.localToScene(island.getBoundsInLocal());
+        islands_bounds = new ArrayList<>();
+        islands_bounds.add(boundsisland);
+        islands_bounds.add(boundsisland1);
+        islands_bounds.add(boundsisland2);
+        return islands_bounds;
     }
 
     @Override

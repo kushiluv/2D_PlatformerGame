@@ -36,71 +36,26 @@ public class game {
     @FXML
     private ImageView chest1;
 
-    @FXML
-    private Pane gameover;
-
-    @FXML
-    private Button quitbutton;
-
-    @FXML
-    private Button finalexit;
-
-    @FXML
-    private Pane quitpane;
-
-    @FXML
-    private Pane pausepane;
-
-    @FXML
-    private ImageView pause;
-
-    @FXML
-    private Button resume;
-
-    @FXML
-    private ImageView island;
-
-    @FXML
-    private ImageView island1;
-
-    @FXML
-    private ImageView island2;
 
     @FXML
     private ImageView orc;
     public void start(Stage gamestage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("gamescene.fxml"));
-//        Rectangle rectangle = new Rectangle();
-//        rectangle.setFill(Color.BLUE);
-//        rectangle.setHeight(70);
-//        rectangle.setWidth(50);
-//        rectangle.setLayoutX(50);
-//        rectangle.setLayoutY(290);
-//
-//        Pane root = new Pane();
-//        root.getChildren().add(rectangle);
         Scene scene = new Scene(root, 1200, 600);
         Hero hero = new Hero(scene);
         Green_Orc grorc = new Green_Orc(scene);
+        menu menu = new menu(scene);
+        gameoverwindow gameoverwindow = new gameoverwindow(scene);
 
-        pause = (ImageView) scene.lookup("#pause");
-        pausepane = (Pane) scene.lookup("#pausepane");
-        gameover = (Pane) scene.lookup("#gameover");
-        quitpane = (Pane) scene.lookup("#quitpane");
-        quitbutton = (Button) scene.lookup("#quitbutton");
-        finalexit = (Button) scene.lookup("#finalexit");
-        pausepane.setVisible(false);
-        gameover.setVisible(false);
-        quitpane.setVisible(false);
+        menu.paneinvisible();
+        gameoverwindow.gameoverpaneinvisible();
+        gameoverwindow.quitpaneinvisible();
 
-        resume = (Button) scene.lookup("#resume");
         chest1 = (ImageView) scene.lookup("#chest1");
-        island = (ImageView) scene.lookup("#island");
-        island1 = (ImageView) scene.lookup("#island1");
-        island2 = (ImageView) scene.lookup("#island2");
+
         orc = (ImageView) scene.lookup("#orc");
 
-
+        islands cislands = new islands(scene);
         TranslateTransition orcjump = new TranslateTransition();
         grorc.set_orc_jump(orcjump);
         orcjump.play();
@@ -114,9 +69,7 @@ public class game {
 
         final int[] flag1 = {0};
         ArrayList<ImageView> gameelements = new ArrayList<>();
-        gameelements.add(island);
-        gameelements.add(island1);
-        gameelements.add(island2);
+        gameelements.addAll(cislands.getIslands());
         gameelements.add(grorc.getHero());
         gameelements.add(chest1);
 
@@ -128,24 +81,20 @@ public class game {
             public void handle(ActionEvent event) {
                 int flag = 0;
                 Bounds boundshero = hero.getHero().localToScene(hero.getHero().getBoundsInLocal());
-                Bounds boundsisland = island.localToScene(island.getBoundsInLocal());
-                Bounds boundsisland1 = island1.localToScene(island.getBoundsInLocal());
-                Bounds boundsisland2 = island2.localToScene(island.getBoundsInLocal());
+
                 ArrayList<Bounds> islands = new ArrayList<>();
-                islands.add(boundsisland);
-                islands.add(boundsisland1);
-                islands.add(boundsisland2);
+                islands.addAll(cislands.getALLislands());
                 if(boundshero.getMinY()>=600&& flag1[0] ==0){
                     flag1[0] =1;
-                    gameover.setVisible(true);
+                    gameoverwindow.gameoverpanevisible();
 
 //                    orcjump.pause();
-                    quitbutton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    gameoverwindow.getQuitbutton().setOnMouseClicked(new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent mouseEvent) {
-                            gameover.setVisible(false);
-                            quitpane.setVisible(true);
-                            finalexit.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                            gameoverwindow.gameoverpaneinvisible();
+                            gameoverwindow.quitpanevisible();
+                            gameoverwindow.getFinalexit().setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
                                 public void handle(MouseEvent mouseEvent) {
                                     Platform.exit();
@@ -249,13 +198,9 @@ public class game {
                                                 orcjump.pause();
                                                 pt.play();
                                                 Bounds boundsorc = grorc.getHero().localToScene(grorc.getHero().getBoundsInLocal());
-                                                Bounds boundsisland = island.localToScene(island.getBoundsInLocal());
-                                                Bounds boundsisland1 = island1.localToScene(island.getBoundsInLocal());
-                                                Bounds boundsisland2 = island2.localToScene(island.getBoundsInLocal());
+
                                                 ArrayList<Bounds> islands = new ArrayList<>();
-                                                islands.add(boundsisland);
-                                                islands.add(boundsisland1);
-                                                islands.add(boundsisland2);
+                                                islands.addAll(cislands.getALLislands());
                                                 //System.out.println("orc y : "+boundsorc.getMaxY()+"\n orc x : "+boundshero.getCenterX());
                                                 //System.out.println("island y min : "+boundsisland1.getMinY()+"x : "+boundsisland1.getMinX()+" max: "+boundsisland1.getMaxX());
                                                 //for (int i = 0; i < islands.size(); i++) {
@@ -269,7 +214,7 @@ public class game {
 ////
 ////                                                    }
 //                                                }
-                                                if(island1.getBoundsInParent().intersects(grorc.getHero().getBoundsInParent())){
+                                                if(cislands.getALLislands().get(1).intersects(grorc.getHero().getBoundsInParent())){
                                                     System.out.println("bitch on the island");
                                                 }
 
@@ -292,19 +237,19 @@ public class game {
             }
         });
 
-        pause.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        menu.getPause().setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                pausepane.setVisible(true);
+                menu.panevisible();
                 jump.pause();
                 fall.pause();
                 orcjump.pause();
             }
         });
-        resume.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        menu.getResume().setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                pausepane.setVisible(false);
+                menu.paneinvisible();
                 fall.play();
                 orcjump.play();
             }

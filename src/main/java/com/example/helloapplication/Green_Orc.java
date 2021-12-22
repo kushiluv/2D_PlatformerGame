@@ -3,6 +3,7 @@ package com.example.helloapplication;
 import javafx.animation.Animation;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.geometry.Bounds;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
@@ -31,7 +32,7 @@ public class Green_Orc extends GameObject {
     }
 
     @Override
-    location getLocation() {
+    Bounds getLocation() {
         return null;
     }
 
