@@ -4,33 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="organizing shit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/chests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/gameoverwindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/serializable.java" afterDir="false" />
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="organizing shit(1)">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Coin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/wep_0006 #56893.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/wep_0007 #37947.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/wep_0008 #30876.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/wep_0009 #57652.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Green_Orc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Green_Orc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/islands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Green_Orc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Green_Orc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Hero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wep_0003 #46880.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wep_0003 #46880.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +46,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="22b409hTrDutgtHLaITLvr6mquU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -58,6 +64,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kushi\Documents\APAssignm\APPROJECT_GROUP90\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kushi\Documents\APAssignm\APPROJECT_GROUP90\src\main\resources" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -105,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640160485781</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="organizing shit(1)">
+      <created>1640187763221</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640187763221</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +146,7 @@
     <MESSAGE value="works" />
     <MESSAGE value="worksh" />
     <MESSAGE value="organizing shit" />
-    <option name="LAST_COMMIT_MESSAGE" value="organizing shit" />
+    <MESSAGE value="organizing shit(1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="organizing shit(1)" />
   </component>
 </project>
