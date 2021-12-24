@@ -63,64 +63,64 @@ public class game implements Initializable {
         counter  = (Label) scene.lookup("#counter");
         defaultchest = (ImageView) scene.lookup("#defaultchest");
         island1 = (ImageView) scene.lookup("#island1");
-        final ImageView chest1 = new ImageView("wep_0006 #56893.png");
-        final ImageView chest2 = new ImageView("wep_0007 #37947.png");
-        final ImageView chest3 = new ImageView("wep_0008 #30876.png");
-        final ImageView chest4 = new ImageView("wep_0009 #57652.png");
-        chests = (Group) scene.lookup("#chests");
-
-//        chests.setTranslateX(903);
-//        chests.setTranslateY(313);
-        chests.setScaleX(0.35);
-        chests.setScaleY(0.35);
-//        chests.setVisible(false);
-        Timeline chestt = new Timeline();
-        chestt.setCycleCount(1);
-
-        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(200),
-                        new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-                                chests.getChildren().setAll(chest1);
-                            }
-                        }));
-        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(600),
-                new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        chests.getChildren().setAll(chest2);
-                    }
-                }));
-        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(1000),
-                new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        chests.getChildren().setAll(chest3);
-                    }
-                }));
-        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(1400),
-                new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        chests.getChildren().setAll(chest4);
-                    }
-                }));
-//        defaultchest.setTranslateX(900);
-//        defaultchest.setTranslateY(313);
-        defaultchest.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                defaultchest.setVisible(false);
-                chestt.play();
-                chestt.setOnFinished(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        chests.setVisible(false);
-
-                    }
-                });
-            }
-        });
+//        final ImageView chest1 = new ImageView("wep_0006 #56893.png");
+//        final ImageView chest2 = new ImageView("wep_0007 #37947.png");
+//        final ImageView chest3 = new ImageView("wep_0008 #30876.png");
+//        final ImageView chest4 = new ImageView("wep_0009 #57652.png");
+//        chests = (Group) scene.lookup("#chests");
+//
+////        chests.setTranslateX(903);
+////        chests.setTranslateY(313);
+//        chests.setScaleX(0.35);
+//        chests.setScaleY(0.35);
+////        chests.setVisible(false);
+//        Timeline chestt = new Timeline();
+//        chestt.setCycleCount(1);
+//
+//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(200),
+//                        new EventHandler<ActionEvent>() {
+//                            @Override
+//                            public void handle(ActionEvent event) {
+//                                chests.getChildren().setAll(chest1);
+//                            }
+//                        }));
+//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(600),
+//                new EventHandler<ActionEvent>() {
+//                    @Override
+//                    public void handle(ActionEvent event) {
+//                        chests.getChildren().setAll(chest2);
+//                    }
+//                }));
+//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(1000),
+//                new EventHandler<ActionEvent>() {
+//                    @Override
+//                    public void handle(ActionEvent event) {
+//                        chests.getChildren().setAll(chest3);
+//                    }
+//                }));
+//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(1400),
+//                new EventHandler<ActionEvent>() {
+//                    @Override
+//                    public void handle(ActionEvent event) {
+//                        chests.getChildren().setAll(chest4);
+//                    }
+//                }));
+////        defaultchest.setTranslateX(900);
+////        defaultchest.setTranslateY(313);
+//        defaultchest.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent mouseEvent) {
+//                defaultchest.setVisible(false);
+//                chestt.play();
+//                chestt.setOnFinished(new EventHandler<ActionEvent>() {
+//                    @Override
+//                    public void handle(ActionEvent event) {
+//                        chests.setVisible(false);
+//
+//                    }
+//                });
+//            }
+//        });
 
 
         islands cislands = new islands(scene);
@@ -138,10 +138,16 @@ public class game implements Initializable {
         final int[] dashc = {0};
 
         final int[] flag1 = {0};
+        weaponchest wchest = new weaponchest(scene);
         ArrayList<ImageView> gameelements = new ArrayList<>();
         gameelements.addAll(cislands.getIslands());
         gameelements.add(grorc.getHero());
         gameelements.add(defaultchest);
+//        gameelements.add(chest1);
+//        gameelements.add(chest2);
+//        gameelements.add(chest3);
+//        gameelements.add(chest4);
+
 
 
 //

@@ -55,7 +55,7 @@
             <Image url="@../../../2%20%2338727.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="defaultchest" fitHeight="55.0" fitWidth="78.0" layoutX="903.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="defaultchest" fitHeight="55.0" fitWidth="78.0" layoutX="1071.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../wep_0006%20%2356893.png" />
          </image>
@@ -107,7 +107,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Group fx:id="chests" layoutX="850.0" layoutY="250.0" />
+      <Group fx:id="chests" layoutX="1000.0" layoutY="250.0" />
       <ImageView fitHeight="355.0" fitWidth="460.0" layoutX="2495.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_11.png" />
