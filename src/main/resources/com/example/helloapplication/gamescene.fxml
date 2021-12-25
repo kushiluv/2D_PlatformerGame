@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.AmbientLight?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
@@ -20,7 +21,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.helloapplication.game">
    <children>
-      <ImageView fitHeight="660.0" fitWidth="1311.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="660.0" fitWidth="2045.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../newBG.jpg" />
          </image>
@@ -40,7 +41,7 @@
             <Image url="@../../../T_Islands_01.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="island1" fitHeight="209.0" fitWidth="236.0" layoutX="470.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="island1" fitHeight="209.0" fitWidth="236.0" layoutX="428.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_03.png" />
          </image>
@@ -50,7 +51,7 @@
             <Image url="@../../../T_Islands_05.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="orc" fitHeight="55.0" fitWidth="64.0" layoutX="629.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="orc" fitHeight="55.0" fitWidth="64.0" layoutX="517.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../2%20%2338727.png" />
          </image>
@@ -113,17 +114,20 @@
             <Image url="@../../../T_Islands_11.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="island4" fitHeight="158.0" fitWidth="162.0" layoutX="1667.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="island4" fitHeight="128.0" fitWidth="253.0" layoutX="1756.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_11.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="island3" fitHeight="184.0" fitWidth="149.0" layoutX="1305.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="island3" fitHeight="98.0" fitWidth="253.0" layoutX="1345.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../T_Islands_11.png" />
+            <Image url="@../../../T_Islands_02.png" />
          </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
       </ImageView>
-      <ImageView fx:id="island5" fitHeight="184.0" fitWidth="149.0" layoutX="2017.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="island5" fitHeight="193.0" fitWidth="162.0" layoutX="2115.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_11.png" />
          </image>
@@ -299,6 +303,16 @@
       <ImageView fx:id="knife1" fitHeight="63.0" fitWidth="18.0" layoutX="231.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" visible="false">
          <image>
             <Image url="@../../../knife.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="orc1" fitHeight="55.0" fitWidth="64.0" layoutX="2167.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../2%20%2338727.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="orc11" fitHeight="55.0" fitWidth="64.0" layoutX="1423.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../2%20%2338727.png" />
          </image>
       </ImageView>
    </children>

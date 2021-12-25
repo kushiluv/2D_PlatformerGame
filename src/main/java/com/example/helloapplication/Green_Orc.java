@@ -20,10 +20,12 @@ public class Green_Orc extends GameObject {
     @FXML
     private ImageView death;
 
-    public Green_Orc(Scene scene){
+
+
+    public Green_Orc(Scene scene,String string){
         super();
 
-        this.grorc = (ImageView) scene.lookup("#orc");
+        this.grorc = (ImageView) scene.lookup(string);
         this.death = (ImageView) scene.lookup("#death");
     }
 

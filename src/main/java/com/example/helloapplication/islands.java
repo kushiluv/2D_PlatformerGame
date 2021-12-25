@@ -16,6 +16,7 @@ public class islands extends GameObject {
 
     @FXML
     private ImageView island2;
+
     @FXML
     private ImageView island3;
 
@@ -34,6 +35,7 @@ public class islands extends GameObject {
         island1 = (ImageView) scene.lookup("#island1");
         island2 = (ImageView) scene.lookup("#island2");
         island3 = (ImageView) scene.lookup("#island3");
+        island3.setFitWidth(170);
         island4 = (ImageView) scene.lookup("#island4");
         island5 = (ImageView) scene.lookup("#island5");
         islands.add(island);
@@ -57,6 +59,7 @@ public class islands extends GameObject {
         Bounds boundsisland1 = island1.localToScene(island.getBoundsInLocal());
         Bounds boundsisland2 = island2.localToScene(island.getBoundsInLocal());
         Bounds boundsisland3 = island3.localToScene(island.getBoundsInLocal());
+
         Bounds boundsisland4 = island4.localToScene(island.getBoundsInLocal());
         Bounds boundsisland5 = island5.localToScene(island.getBoundsInLocal());
         islands_bounds = new ArrayList<>();

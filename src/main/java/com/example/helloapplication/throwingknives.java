@@ -17,7 +17,7 @@ public class throwingknives {
         knife.setVisible(false);
     }
     public void run(TranslateTransition run, Bounds hero){
-        System.out.println("in knife");
+//        System.out.println("in knife");
         knife.setVisible(true);
         run.setDuration(Duration.seconds(0.25));
         run.setFromY(hero.getCenterY()-250);
