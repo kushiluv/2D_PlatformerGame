@@ -7,31 +7,20 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Path;
-import javafx.scene.shape.Polyline;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
-import java.util.Timer;
 
 public class game  {
 
@@ -47,8 +36,14 @@ public class game  {
 
 
 
-    public void start(Stage gamestage) throws IOException {
 
+
+    void cleanup() {
+        // stop animations reset model ect.
+    }
+
+    void startGame(Stage gamestage) throws IOException {
+        // initialisation from start method goes here
         Parent root = FXMLLoader.load(getClass().getResource("gamescene.fxml"));
 
         Scene scene = new Scene(root, 1200, 600);
@@ -139,8 +134,19 @@ public class game  {
                                 }
                             });
 
+//                            gameoverwindow.getQuitno().setOnAction(e -> {     //NO button kaam nhi kar rha. some null pointer exception
+//                               gameoverwindow.quitpaneinvisible();
+//                               gameoverwindow.gameoverpanevisible();
+//                            });
 
 
+                        }
+                    });
+                    gameoverwindow.getRestart1().setOnAction(e -> {
+                        try {
+                            restart(gamestage);
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
                         }
                     });
 
@@ -258,16 +264,16 @@ public class game  {
                             }
 
 
-                            } if(orcloopflag==0) {
-                                translate.setDuration(Duration.seconds(0.07));
-                                translate.setByX(100);
-                                dashc[0]++;
-                                counter.setText(Integer.toString(dashc[0]));
+                        } if(orcloopflag==0) {
+                        translate.setDuration(Duration.seconds(0.07));
+                        translate.setByX(100);
+                        dashc[0]++;
+                        counter.setText(Integer.toString(dashc[0]));
 
-                                translate.setNode(hero.getHero());
-                                translate.play();
+                        translate.setNode(hero.getHero());
+                        translate.play();
 
-                            }
+                    }
 
                         fall.play();
                         int finalFlaggedorc = flaggedorc;
@@ -309,23 +315,23 @@ public class game  {
                                                     System.out.println("bitch on the island");
                                                 }
 
-                                               if(tflag==0){
+                                                if(tflag==0){
 
-                                                   orcfall.setDuration(Duration.seconds(0.5));
-                                                   orcfall.setByY(400);
-                                                   orcfall.setCycleCount(1);
-                                                   orcfall.setAutoReverse(false);
-                                                   orcfall.setNode(green_orcs.get(finalFlaggedorc).getHero());
+                                                    orcfall.setDuration(Duration.seconds(0.5));
+                                                    orcfall.setByY(400);
+                                                    orcfall.setCycleCount(1);
+                                                    orcfall.setAutoReverse(false);
+                                                    orcfall.setNode(green_orcs.get(finalFlaggedorc).getHero());
 
-                                                   orcfall.play();
-                                                   orcfall.setOnFinished(new EventHandler<ActionEvent>() {
-                                                       @Override
-                                                       public void handle(ActionEvent event) {
-                                                           green_orcs.get(finalFlaggedorc).getHero().setVisible(false);
-                                                       }
-                                                   });
+                                                    orcfall.play();
+                                                    orcfall.setOnFinished(new EventHandler<ActionEvent>() {
+                                                        @Override
+                                                        public void handle(ActionEvent event) {
+                                                            green_orcs.get(finalFlaggedorc).getHero().setVisible(false);
+                                                        }
+                                                    });
 
-                                               }
+                                                }
                                             }
                                         }
                                     });
@@ -362,6 +368,17 @@ public class game  {
         gamestage.setScene(scene);
         gamestage.show();
 
+
+    }
+
+    void restart(Stage gamestage) throws IOException {
+        cleanup();
+        startGame(gamestage);
+    }
+
+
+    public void start(Stage primaryStage) throws IOException {
+        startGame(primaryStage);
     }
 
 

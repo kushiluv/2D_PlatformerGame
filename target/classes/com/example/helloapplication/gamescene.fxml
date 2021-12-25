@@ -157,7 +157,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="restart1" layoutX="270.0" layoutY="284.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="NO">
+            <Button fx:id="quitno" layoutX="270.0" layoutY="284.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="NO">
                <font>
                   <Font size="35.0" />
                </font>
@@ -259,7 +259,7 @@
                   <Image url="@../../../174682-logo-game-over-free-hd-image.png" />
                </image>
             </ImageView>
-            <Button fx:id="restart2" layoutX="25.0" layoutY="355.0" mnemonicParsing="false" opacity="0.82" prefHeight="55.0" prefWidth="162.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
+            <Button fx:id="restart1" layoutX="25.0" layoutY="355.0" mnemonicParsing="false" opacity="0.82" prefHeight="55.0" prefWidth="162.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
                <font>
                   <Font size="29.0" />
                </font>
