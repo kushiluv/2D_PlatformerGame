@@ -11,22 +11,31 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
+import java.util.ArrayList;
+
 public class weaponchest {
     @FXML
     private Group chests;
     @FXML
     private ImageView defaultchest;
-    final ImageView chest1;
-    final ImageView chest2;
-    final ImageView chest3;
-    final ImageView chest4;
+    final private ImageView chest1;
+    final private ImageView chest2;
+    final private ImageView chest3;
+    final private ImageView chest4;
+    private ArrayList<ImageView> chests_all;
     public weaponchest(Scene scene){
+        chests_all = new ArrayList<>();
         chest1 = new ImageView("wep_0006 #56893.png");
         chest2 = new ImageView("wep_0007 #37947.png");
         chest3 = new ImageView("wep_0008 #30876.png");
         chest4 = new ImageView("wep_0009 #57652.png");
         chests = (Group) scene.lookup("#chests");
         defaultchest = (ImageView) scene.lookup("#defaultchest");
+        chests_all.add(chest1);
+        chests_all.add(chest2);
+        chests_all.add(chest3);
+        chests_all.add(chest4);
+
 
 //        chests.setTranslateX(903);
 //        chests.setTranslateY(313);
@@ -78,6 +87,9 @@ public class weaponchest {
                 });
             }
         });
+    }
+    public ArrayList<ImageView> getChests_all(){
+        return chests_all;
     }
 
 

@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Timer;
 
-public class game implements Initializable {
+public class game  {
 
     @FXML
     private Label counter;
@@ -63,65 +63,14 @@ public class game implements Initializable {
         counter  = (Label) scene.lookup("#counter");
         defaultchest = (ImageView) scene.lookup("#defaultchest");
         island1 = (ImageView) scene.lookup("#island1");
-//        final ImageView chest1 = new ImageView("wep_0006 #56893.png");
-//        final ImageView chest2 = new ImageView("wep_0007 #37947.png");
-//        final ImageView chest3 = new ImageView("wep_0008 #30876.png");
-//        final ImageView chest4 = new ImageView("wep_0009 #57652.png");
-//        chests = (Group) scene.lookup("#chests");
-//
-////        chests.setTranslateX(903);
-////        chests.setTranslateY(313);
-//        chests.setScaleX(0.35);
-//        chests.setScaleY(0.35);
-////        chests.setVisible(false);
-//        Timeline chestt = new Timeline();
-//        chestt.setCycleCount(1);
-//
-//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(200),
-//                        new EventHandler<ActionEvent>() {
-//                            @Override
-//                            public void handle(ActionEvent event) {
-//                                chests.getChildren().setAll(chest1);
-//                            }
-//                        }));
-//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(600),
-//                new EventHandler<ActionEvent>() {
-//                    @Override
-//                    public void handle(ActionEvent event) {
-//                        chests.getChildren().setAll(chest2);
-//                    }
-//                }));
-//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(1000),
-//                new EventHandler<ActionEvent>() {
-//                    @Override
-//                    public void handle(ActionEvent event) {
-//                        chests.getChildren().setAll(chest3);
-//                    }
-//                }));
-//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(1400),
-//                new EventHandler<ActionEvent>() {
-//                    @Override
-//                    public void handle(ActionEvent event) {
-//                        chests.getChildren().setAll(chest4);
-//                    }
-//                }));
-////        defaultchest.setTranslateX(900);
-////        defaultchest.setTranslateY(313);
-//        defaultchest.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent mouseEvent) {
-//                defaultchest.setVisible(false);
-//                chestt.play();
-//                chestt.setOnFinished(new EventHandler<ActionEvent>() {
-//                    @Override
-//                    public void handle(ActionEvent event) {
-//                        chests.setVisible(false);
-//
-//                    }
-//                });
-//            }
-//        });
-
+        grorc.getHero().setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                TranslateTransition death = new TranslateTransition();
+                grorc.death(death);
+                death.play();
+            }
+        });
 
         islands cislands = new islands(scene);
         TranslateTransition orcjump = new TranslateTransition();
@@ -135,6 +84,8 @@ public class game implements Initializable {
         hero.set_hero_fall(fall);
         fall.play();
 
+        TranslateTransition death = new TranslateTransition();
+
         final int[] dashc = {0};
 
         final int[] flag1 = {0};
@@ -143,10 +94,7 @@ public class game implements Initializable {
         gameelements.addAll(cislands.getIslands());
         gameelements.add(grorc.getHero());
         gameelements.add(defaultchest);
-//        gameelements.add(chest1);
-//        gameelements.add(chest2);
-//        gameelements.add(chest3);
-//        gameelements.add(chest4);
+        gameelements.addAll(wchest.getChests_all());
 
 
 
@@ -219,7 +167,8 @@ public class game implements Initializable {
                 fall.play();
             }
         });
-
+        TranslateTransition knifeanimation = new TranslateTransition();
+        TranslateTransition knifeanimation1 = new TranslateTransition();
         gameelements.add(hero.getHero());
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -228,14 +177,37 @@ public class game implements Initializable {
                     case SPACE:
 
                         fall.pause();
+
+                        TranslateTransition orcfall = new TranslateTransition();
                         TranslateTransition pt = new TranslateTransition();
                         Bounds boundshero = hero.getHero().localToScene(hero.getHero().getBoundsInLocal());
                         Bounds boundsorc = grorc.getHero().localToScene(grorc.getHero().getBoundsInLocal());
+
+                        if(knifeanimation.getStatus()==Animation.Status.STOPPED) {
+                            throwingknives knife = new throwingknives(scene, "#knife");
+                            knife.run(knifeanimation, boundshero);
+                            knifeanimation.play();
+                        }
+                        else{
+                            throwingknives knife1 = new throwingknives(scene,"#knife1");
+                            knife1.run(knifeanimation1,boundshero);
+                            knifeanimation1.play();
+
+                        }
                         TranslateTransition translate = new TranslateTransition();
 
 //                        System.out.println("hero max : "+boundshero.getMaxX());
 //                        System.out.println("orcc min : "+boundsorc.getMinX());
-                        if(boundsorc.getMinX()-125<boundshero.getMaxX()+100&&boundsorc.getMinX()-125>boundshero.getMaxX()){
+                        SequentialTransition seqTransition = new SequentialTransition (new PauseTransition(Duration.millis(250)),death);
+                        if(boundsorc.getMinX()-125<boundshero.getMaxX()+350&&boundsorc.getMinX()-125>boundshero.getMaxX())
+                        {
+                            System.out.println("weapon hits");
+                            grorc.death(death);
+                            orcjump.pause();
+
+                            seqTransition.play();
+                        }
+                        if(boundsorc.getMinX()-125<boundshero.getMaxX()+100&&boundsorc.getMinX()-125>boundshero.getMaxX()&&seqTransition.getStatus()== Animation.Status.STOPPED){
 
                             System.out.println("colliding");
                             translate.setDuration(Duration.seconds(0.07));
@@ -258,6 +230,7 @@ public class game implements Initializable {
 
 
                         }
+
                         else {
                             translate.setDuration(Duration.seconds(0.07));
                             translate.setByX(100);
@@ -308,12 +281,13 @@ public class game implements Initializable {
                                                 }
 
                                                if(tflag==0){
-                                                   TranslateTransition orcfall = new TranslateTransition();
-                                                   orcfall.setDuration(Duration.seconds(1));
-                                                   orcfall.setByY(800);
+
+                                                   orcfall.setDuration(Duration.seconds(0.5));
+                                                   orcfall.setByY(400);
                                                    orcfall.setCycleCount(1);
                                                    orcfall.setAutoReverse(false);
                                                    orcfall.setNode(grorc.getHero());
+
                                                    orcfall.play();
                                                    orcfall.setOnFinished(new EventHandler<ActionEvent>() {
                                                        @Override
@@ -362,46 +336,5 @@ public class game implements Initializable {
     }
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-//        final ImageView chest1 = new ImageView("wep_0006 #56893.png");
-//        final ImageView chest2 = new ImageView("wep_0007 #37947.png");
-//        final ImageView chest3 = new ImageView("wep_0008 #30876.png");
-//        final ImageView chest4 = new ImageView("wep_0009 #57652.png");
-//        chests.setTranslateX(200);
-//        chests.setTranslateY(220);
-//
-//        Timeline chestt = new Timeline();
-//        chestt.setCycleCount(Timeline.INDEFINITE);
-//
-//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(200),
-//                new EventHandler<ActionEvent>() {
-//                    @Override
-//                    public void handle(ActionEvent event) {
-//                        chests.getChildren().setAll(chest1);
-//                    }
-//                }));
-//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(400),
-//                new EventHandler<ActionEvent>() {
-//                    @Override
-//                    public void handle(ActionEvent event) {
-//                        chests.getChildren().setAll(chest2);
-//                    }
-//                }));
-//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(600),
-//                new EventHandler<ActionEvent>() {
-//                    @Override
-//                    public void handle(ActionEvent event) {
-//                        chests.getChildren().setAll(chest3);
-//                    }
-//                }));
-//        chestt.getKeyFrames().add(new KeyFrame(Duration.millis(800),
-//                new EventHandler<ActionEvent>() {
-//                    @Override
-//                    public void handle(ActionEvent event) {
-//                        chests.getChildren().setAll(chest4);
-//                    }
-//                }));
-//        chestt.play();
-    }
+
 }

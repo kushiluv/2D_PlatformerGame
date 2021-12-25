@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="orc collision 1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/weaponchest.java" afterDir="false" />
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="weaponchestd 321">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/throwingknives.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MonsterFatality.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ThrowingAxeNew.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/knife.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/throwingaxe.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/chests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/chests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Green_Orc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Green_Orc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/weaponchest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/weaponchest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Green_Orc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Green_Orc.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3.class" afterDir="false" />
@@ -123,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640368132743</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="weaponchestd 1">
+      <created>1640370334376</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640370334376</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +157,7 @@
     <MESSAGE value="organizing shit" />
     <MESSAGE value="organizing shit(1)" />
     <MESSAGE value="orc collision 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="orc collision 1" />
+    <MESSAGE value="weaponchestd 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="weaponchestd 1" />
   </component>
 </project>

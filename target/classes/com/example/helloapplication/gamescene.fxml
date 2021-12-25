@@ -50,7 +50,7 @@
             <Image url="@../../../T_Islands_05.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="orc" fitHeight="55.0" fitWidth="64.0" layoutX="504.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="orc" fitHeight="55.0" fitWidth="64.0" layoutX="629.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../2%20%2338727.png" />
          </image>
@@ -113,7 +113,7 @@
             <Image url="@../../../T_Islands_11.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="island4" fitHeight="184.0" fitWidth="149.0" layoutX="1667.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="island4" fitHeight="158.0" fitWidth="162.0" layoutX="1667.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_11.png" />
          </image>
@@ -126,6 +126,16 @@
       <ImageView fx:id="island5" fitHeight="184.0" fitWidth="149.0" layoutX="2017.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_11.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="death" fitHeight="65.0" fitWidth="55.0" layoutX="506.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../MonsterFatality.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="knife" fitHeight="63.0" fitWidth="18.0" layoutX="199.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" visible="false">
+         <image>
+            <Image url="@../../../knife.png" />
          </image>
       </ImageView>
       <Pane fx:id="quitpane" layoutX="363.0" layoutY="88.0" prefHeight="399.0" prefWidth="382.0" visible="false">
@@ -286,5 +296,10 @@
             </Label>
          </children>
       </Pane>
+      <ImageView fx:id="knife1" fitHeight="63.0" fitWidth="18.0" layoutX="231.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" visible="false">
+         <image>
+            <Image url="@../../../knife.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
