@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="implementingweapons2025">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloApplication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloApplication.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/gameoverwindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/gameoverwindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/islands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/weaponchest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/weaponchest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Hero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-    </list>
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="implementingweapons2025" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +39,6 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/javafx-sdk-17.0.1/lib/javafx.web.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -147,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640435416030</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="implementingweapons2025">
+      <created>1640521509571</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1640521509572</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +156,7 @@
     <MESSAGE value="orc collision 1" />
     <MESSAGE value="weaponchestd 1" />
     <MESSAGE value="implementingweapons" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementingweapons" />
+    <MESSAGE value="implementingweapons2025" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementingweapons2025" />
   </component>
 </project>

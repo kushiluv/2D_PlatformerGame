@@ -165,7 +165,7 @@ public class game  {
                                         }
                                     }
                                 };
-//                                temp.start();
+                                temp.start();
 
 
                         }
