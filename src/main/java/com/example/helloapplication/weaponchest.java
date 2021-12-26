@@ -5,6 +5,7 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Bounds;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
@@ -23,6 +24,7 @@ public class weaponchest {
     final private ImageView chest3;
     final private ImageView chest4;
     private ArrayList<ImageView> chests_all;
+    private Bounds boundschest;
     public weaponchest(Scene scene){
         chests_all = new ArrayList<>();
         chest1 = new ImageView("wep_0006 #56893.png");
@@ -35,7 +37,7 @@ public class weaponchest {
         chests_all.add(chest2);
         chests_all.add(chest3);
         chests_all.add(chest4);
-
+        boundschest =defaultchest.localToScene(defaultchest.getBoundsInLocal());
 
 //        chests.setTranslateX(903);
 //        chests.setTranslateY(313);
@@ -90,6 +92,10 @@ public class weaponchest {
     }
     public ArrayList<ImageView> getChests_all(){
         return chests_all;
+    }
+    public Bounds getchest(){
+
+        return boundschest;
     }
 
 

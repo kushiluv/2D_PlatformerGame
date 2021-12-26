@@ -55,13 +55,13 @@ public class islands extends GameObject {
         return null;
     }
     public ArrayList<Bounds> getALLislands(){
-        Bounds boundsisland = island.localToScene(island.getBoundsInLocal());
-        Bounds boundsisland1 = island1.localToScene(island.getBoundsInLocal());
-        Bounds boundsisland2 = island2.localToScene(island.getBoundsInLocal());
-        Bounds boundsisland3 = island3.localToScene(island.getBoundsInLocal());
+        Bounds boundsisland = island.localToScene(island.getBoundsInParent());
+        Bounds boundsisland1 = island1.localToScene(island.getBoundsInParent());
+        Bounds boundsisland2 = island2.localToScene(island.getBoundsInParent());
+        Bounds boundsisland3 = island3.localToScene(island.getBoundsInParent());
 
-        Bounds boundsisland4 = island4.localToScene(island.getBoundsInLocal());
-        Bounds boundsisland5 = island5.localToScene(island.getBoundsInLocal());
+        Bounds boundsisland4 = island4.localToScene(island.getBoundsInParent());
+        Bounds boundsisland5 = island5.localToScene(island.getBoundsInParent());
         islands_bounds = new ArrayList<>();
         islands_bounds.add(boundsisland);
         islands_bounds.add(boundsisland1);

@@ -26,8 +26,8 @@ public class Hero extends GameObject{
         jump.setNode(hero);
     }
     public void set_hero_fall(TranslateTransition fall){
-        fall.setDuration(Duration.millis(12));
-        fall.setByY(4);
+        fall.setDuration(Duration.millis(1800));
+        fall.setByY(600);
         fall.setCycleCount(1);
         fall.setAutoReverse(false);
         fall.setNode(hero);
@@ -40,7 +40,7 @@ public class Hero extends GameObject{
 
     @Override
     public Bounds getLocation() {
-        Bounds boundshero = hero.localToScene(hero.getBoundsInLocal());
+        Bounds boundshero = hero.localToScene(hero.getBoundsInParent());
         return boundshero;
     }
 
