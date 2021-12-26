@@ -46,7 +46,7 @@ public class game  {
         // initialisation from start method goes here
         Parent root = FXMLLoader.load(getClass().getResource("gamescene.fxml"));
 
-        Scene scene = new Scene(root, 1200, 600);
+        Scene scene = new Scene(root, 1200, 650);
         Hero hero = new Hero(scene);
 
         Green_Orc grorc = new Green_Orc(scene,"#orc");
@@ -59,6 +59,7 @@ public class game  {
         green_orcs.add(grorc2);
         menu menu = new menu(scene);
         gameoverwindow gameoverwindow = new gameoverwindow(scene);
+
 
         menu.paneinvisible();
         gameoverwindow.gameoverpaneinvisible();
@@ -109,9 +110,9 @@ public class game  {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
+                int knives = 0;
 
-
-                for(int i =0; i<cislands.getALLislands().size();i++) {
+                for (int i = 0; i < cislands.getALLislands().size(); i++) {
                     if (cislands.getIslands().get(i).getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
                         fall.stop();
                         jump.play();
@@ -124,6 +125,12 @@ public class game  {
 
                     }
                 }
+                if(hero.getHero().getBoundsInParent().intersects(wchest.chestimg().getBoundsInParent())){
+                    wchest.setOpen();
+                    wchest.run();
+
+                }
+
 
 
                 scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -136,22 +143,21 @@ public class game  {
                                     backshift.setDuration(Duration.seconds(0.1));
                                     backshift.setByX(-100);
                                     dashc[0]++;
-                                    counter.setText(Integer.toString(dashc[0]/14));
+                                    counter.setText(Integer.toString(dashc[0] / 14));
                                     backshift.setNode(i);
                                     backshift.play();
                                 }
                                 throwingknives knife = new throwingknives(scene, "#knife");
-                                throwingknives knife1 = new throwingknives(scene,"#knife1");
+                                throwingknives knife1 = new throwingknives(scene, "#knife1");
 
-                                if(knifeanimation.getStatus()==Animation.Status.STOPPED) {
+                                if (knifeanimation.getStatus() == Animation.Status.STOPPED&& wchest.getopen()) {
 
                                     knife.run(knifeanimation, hero.getHero().getBoundsInParent());
                                     knifeanimation.play();
-                                }
-                                else{
-
-                                    knife1.run(knifeanimation1,hero.getHero().getBoundsInParent());
-                                    knifeanimation1.play();
+                                } else {
+                                    if(wchest.getopen()){
+                                    knife1.run(knifeanimation1, hero.getHero().getBoundsInParent());
+                                    knifeanimation1.play();}
 
                                 }
                                 AnimationTimer temp = new AnimationTimer() {
@@ -159,8 +165,10 @@ public class game  {
                                     public void handle(long l) {
                                         for (int i = 0; i < green_orcs.size(); i++) {
                                             if (knife.getKnife().getBoundsInParent().intersects(green_orcs.get(i).getHero().getBoundsInParent()) || knife1.getKnife().getBoundsInParent().intersects(green_orcs.get(i).getHero().getBoundsInParent())) {
-                                                green_orcs.get(i).death(death);
-                                                death.play();
+                                                if(wchest.getopen()) {
+                                                    green_orcs.get(i).death(death);
+                                                    death.play();
+                                                }
                                             }
                                         }
                                     }
@@ -173,7 +181,7 @@ public class game  {
                 });
 
 
-                for(int i = 0;i<green_orcs.size();i++) {
+                for (int i = 0; i < green_orcs.size(); i++) {
                     if (green_orcs.get(i).getHero().getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
                         System.out.println("boom");
                         TranslateTransition orcsidecollision = new TranslateTransition();
@@ -183,59 +191,92 @@ public class game  {
                         orcjumps.get(i).pause();
                         orcsidecollision.play();
                         int finalI = i;
+                        TranslateTransition orcfall = new TranslateTransition();
+
                         orcsidecollision.setOnFinished(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                AnimationTimer nestedtimer = new AnimationTimer() {
+
+                                orcfall.setDuration(Duration.seconds(0.5));
+                                orcfall.setByY(400);
+                                orcfall.setCycleCount(1);
+                                orcfall.setAutoReverse(false);
+                                orcfall.setNode(green_orcs.get(finalI).getHero());
+                                orcfall.play();
+                                orcfall.setOnFinished(new EventHandler<ActionEvent>() {
+                                    @Override
+                                    public void handle(ActionEvent event) {
+                                        green_orcs.get(finalI).getHero().setVisible(false);
+                                    }
+                                });
+                                AnimationTimer orc = new AnimationTimer() {
                                     @Override
                                     public void handle(long l) {
-                                        TranslateTransition orcfall = new TranslateTransition();
-                                        orcfall.setDuration(Duration.seconds(0.5));
-                                        orcfall.setByY(400);
-                                        orcfall.setCycleCount(1);
-                                        orcfall.setAutoReverse(false);
-                                        orcfall.setNode(green_orcs.get(finalI).getHero());
-                                        orcfall.play();
-
-                                        int orcislandflag=0;
-                                        for(int j = 0; j<cislands.getALLislands().size();j++) {
+                                        for (int j = 0; j < cislands.getALLislands().size(); j++) {
                                             if (cislands.getIslands().get(j).getBoundsInParent().intersects(green_orcs.get(finalI).getHero().getBoundsInParent())) {
                                                 orcfall.pause();
-                                                orcjumps.get(finalI).play();
-                                                System.out.println("orc intersects vo");
-                                                orcislandflag = 1;
-                                                break;
+                                                System.out.println("innn");
+                                                TranslateTransition orcjum = new TranslateTransition();
+                                                green_orcs.get(finalI).set_orc_jump(orcjum);
+                                                orcjum.play();
                                             }
-                                        }
-//                                        if(orcislandflag==0){
-//
-//                                        orcfall.play();
-//                                        orcfall.setOnFinished(new EventHandler<ActionEvent>() {
-//                                            @Override
-//                                            public void handle(ActionEvent event) {
-//                                                System.out.println("in here");
-//                                                green_orcs.get(finalI).getHero().setVisible(false);
-//                                            }
-//                                        });
-//
-//                                    }
                                     }
-                                };
-                                nestedtimer.start();
-
-//
                                 }
+                            };
+                                orc.start();
+                        }
 
-//                                orcjumps.get(finalI).play();
 
+//                        orcsidecollision.setOnFinished(new EventHandler<ActionEvent>() {
+//                            @Override
+//                            public void handle(ActionEvent event) {
+//                                AnimationTimer nestedtimer = new AnimationTimer() {
+//                                    @Override
+//                                    public void handle(long l) {
+//
+//
+//                                        int orcislandflag=0;
+//                                        for(int j = 0; j<cislands.getALLislands().size();j++) {
+//                                            if (cislands.getIslands().get(j).getBoundsInParent().intersects(green_orcs.get(finalI).getHero().getBoundsInParent())) {
+//                                                orcfall.stop();
+//                                                TranslateTransition orcjum = new TranslateTransition();
+//                                                green_orcs.get(finalI).set_orc_jump(orcjum);
+//                                                orcjum.play();
+//                                                System.out.println("orc intersects vo");
+//                                                orcislandflag = 1;
+//                                                break;
+//                                            }
+//                                        }
+////                                        if(orcislandflag==0){
+////
+////                                        orcfall.play();
+////                                        orcfall.setOnFinished(new EventHandler<ActionEvent>() {
+////                                            @Override
+////                                            public void handle(ActionEvent event) {
+////                                                System.out.println("in here");
+////                                                green_orcs.get(finalI).getHero().setVisible(false);
+////                                            }
+////                                        });
+////
+////                                    }
+//                                    }
+//                                };
+//                                nestedtimer.start();
+//
+////
+//                                }
+//
+////                                orcjumps.get(finalI).play();
+//
+//
+//                        });
 
                         });
 
+
                     }
 
-
                 }
-
             }
         };
         timer.start();

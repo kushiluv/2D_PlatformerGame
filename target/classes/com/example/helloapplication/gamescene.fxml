@@ -51,7 +51,7 @@
             <Image url="@../../../T_Islands_05.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="orc" fitHeight="55.0" fitWidth="64.0" layoutX="441.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="orc" fitHeight="55.0" fitWidth="64.0" layoutX="467.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../2%20%2338727.png" />
          </image>
@@ -145,6 +145,11 @@
       <ImageView fitHeight="248.0" fitWidth="269.0" layoutX="2388.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_06.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="knifeicon" fitHeight="75.0" fitWidth="52.0" layoutX="32.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../knife.png" />
          </image>
       </ImageView>
       <Pane fx:id="quitpane" layoutX="363.0" layoutY="88.0" prefHeight="399.0" prefWidth="382.0" visible="false">

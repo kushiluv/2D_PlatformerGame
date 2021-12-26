@@ -18,13 +18,15 @@ public class weaponchest {
     @FXML
     private Group chests;
     @FXML
-    private ImageView defaultchest;
+    private ImageView defaultchest,knifeicon;
     final private ImageView chest1;
     final private ImageView chest2;
     final private ImageView chest3;
     final private ImageView chest4;
     private ArrayList<ImageView> chests_all;
     private Bounds boundschest;
+    private boolean open;
+    private Timeline chestt;
     public weaponchest(Scene scene){
         chests_all = new ArrayList<>();
         chest1 = new ImageView("wep_0006 #56893.png");
@@ -32,7 +34,9 @@ public class weaponchest {
         chest3 = new ImageView("wep_0008 #30876.png");
         chest4 = new ImageView("wep_0009 #57652.png");
         chests = (Group) scene.lookup("#chests");
+        open = false ;
         defaultchest = (ImageView) scene.lookup("#defaultchest");
+        knifeicon = (ImageView) scene.lookup("#knifeicon");
         chests_all.add(chest1);
         chests_all.add(chest2);
         chests_all.add(chest3);
@@ -44,7 +48,7 @@ public class weaponchest {
         chests.setScaleX(0.35);
         chests.setScaleY(0.35);
 //        chests.setVisible(false);
-        Timeline chestt = new Timeline();
+        chestt = new Timeline();
         chestt.setCycleCount(1);
 
         chestt.getKeyFrames().add(new KeyFrame(Duration.millis(200),
@@ -75,20 +79,19 @@ public class weaponchest {
                         chests.getChildren().setAll(chest4);
                     }
                 }));
-        defaultchest.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                defaultchest.setVisible(false);
-                chestt.play();
-                chestt.setOnFinished(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        chests.setVisible(false);
 
-                    }
-                });
+    }
+    public void run(){
+        defaultchest.setVisible(false);
+        chestt.play();
+        chestt.setOnFinished(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                chests.setVisible(false);
+
             }
         });
+        knifeicon.setVisible(true);
     }
     public ArrayList<ImageView> getChests_all(){
         return chests_all;
@@ -96,6 +99,15 @@ public class weaponchest {
     public Bounds getchest(){
 
         return boundschest;
+    }
+    public ImageView chestimg(){
+        return defaultchest;
+    }
+    public void setOpen(){
+        open = true;
+    }
+    public boolean getopen(){
+        return open;
     }
 
 
