@@ -120,17 +120,25 @@ public class game  {
                             @Override
                             public void handle(ActionEvent event) {
                                 fall.play();
+                            }
+
+
+                        });
+
+                    }
+                }
+
                                 if(hero.getHero().getBoundsInParent().getMinY()>=600&& flag1[0] ==0){
-\                                    flag1[0] =1;
-                                    gameover.setVisible(true);
+                                   flag1[0] =1;
+                                    gameoverwindow.gameoverpanevisible();
 
 //                    orcjump.pause();
-                                    quitbutton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                    gameoverwindow.getQuitbutton().setOnMouseClicked(new EventHandler<MouseEvent>() {
                                         @Override
                                         public void handle(MouseEvent mouseEvent) {
-                                            gameover.setVisible(false);
-                                            quitpane.setVisible(true);
-                                            finalexit.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                            gameoverwindow.gameoverpaneinvisible();
+                                            gameoverwindow.quitpanevisible();
+                                            gameoverwindow.getFinalexit().setOnMouseClicked(new EventHandler<MouseEvent>() {
                                                 @Override
                                                 public void handle(MouseEvent mouseEvent) {
                                                     Platform.exit();
@@ -142,14 +150,9 @@ public class game  {
                                         }
                                     });
 
-                                }
-
-                            }
 
 
-                        });
 
-                    }
                 }
                 if(hero.getHero().getBoundsInParent().intersects(wchest.chestimg().getBoundsInParent())){
                     wchest.setOpen();
