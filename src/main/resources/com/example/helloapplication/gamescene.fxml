@@ -21,7 +21,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="5000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.helloapplication.game">
+<AnchorPane prefHeight="1000.0" prefWidth="10000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.helloapplication.game">
    <children>
       <ImageView fitHeight="660.0" fitWidth="2045.0" layoutX="1188.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -136,7 +136,7 @@
             <Image url="@../../../T_Islands_11.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="island4" fitHeight="216.0" fitWidth="269.0" layoutX="1738.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="island4" fitHeight="216.0" fitWidth="269.0" layoutX="1714.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_11.png" />
          </image>
@@ -343,7 +343,7 @@
             <Image url="@../../../knife.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="orc1" fitHeight="55.0" fitWidth="64.0" layoutX="2098.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="orc1" fitHeight="55.0" fitWidth="64.0" layoutX="1758.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../RedOrc1.png" />
          </image>
@@ -374,11 +374,6 @@
          </image>
       </ImageView>
       <ImageView fitHeight="248.0" fitWidth="269.0" layoutX="3851.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../T_Islands_06.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="248.0" fitWidth="269.0" layoutX="4117.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_06.png" />
          </image>
@@ -494,23 +489,16 @@
          </padding>
       </HBox>
       <HBox layoutX="1654.0" layoutY="237.0" prefHeight="39.0" prefWidth="107.0" spacing="30.0">
-         <children>
-            <ImageView fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Coin.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Coin.png" />
-               </image>
-            </ImageView>
-         </children>
          <padding>
             <Insets right="4.0" />
          </padding>
       </HBox>
-      <HBox layoutX="1655.0" layoutY="187.0" prefHeight="39.0" prefWidth="107.0" spacing="30.0">
+      <ImageView fitHeight="63.0" fitWidth="107.0" layoutX="4293.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Bush1_4.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="1836.0" layoutY="123.0" prefHeight="39.0" prefWidth="107.0" spacing="30.0">
          <children>
             <ImageView fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -532,6 +520,11 @@
             <Image url="@../../../2%20%2338727.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="107.0" layoutX="4273.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Bush1_4.png" />
+         </image>
+      </ImageView>
       <ImageView fx:id="orc121" fitHeight="55.0" fitWidth="64.0" layoutX="2471.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../2%20%2338727.png" />
@@ -545,6 +538,21 @@
       <ImageView fx:id="orc1212" fitHeight="55.0" fitWidth="64.0" layoutX="2712.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../2%20%2338727.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="248.0" fitWidth="269.0" layoutX="4117.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../T_Islands_06.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="107.0" layoutX="4253.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Bush1_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="107.0" layoutX="4222.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Bush1_4.png" />
          </image>
       </ImageView>
       <ImageView fx:id="orc12121" fitHeight="55.0" fitWidth="64.0" layoutX="3897.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
@@ -562,7 +570,7 @@
             <Image url="@../../../2%20%2338727.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="1866.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="2084.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../TNT.png" />
          </image>
@@ -570,6 +578,56 @@
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="2522.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Tree3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="40.0" layoutX="1618.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Coin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="107.0" layoutX="4318.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Bush1_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="40.0" layoutX="1678.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Coin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="4029.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../TNT.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="107.0" layoutX="4369.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Bush1_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="107.0" layoutX="4343.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Bush1_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="107.0" layoutX="4297.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Bush1_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="660.0" fitWidth="2045.0" layoutX="4777.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../newBG.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="660.0" fitWidth="2045.0" layoutX="5969.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../newBG.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="660.0" fitWidth="2045.0" layoutX="6803.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../newBG.jpg" />
          </image>
       </ImageView>
    </children>

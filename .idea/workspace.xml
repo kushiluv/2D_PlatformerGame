@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/BalancingRocks5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Islands1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Orc4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/RedOrc1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/RedOrcBoss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tree3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Bush1_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Bush1_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Bush1_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Bush1_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tree1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tree2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tree4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="22b409hTrDutgtHLaITLvr6mquU" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,6 +57,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -84,6 +89,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1640092726820</updated>
+      <workItem from="1640786695636" duration="328000" />
     </task>
     <task id="LOCAL-00001" summary="works">
       <created>1640092834396</created>
@@ -176,8 +182,18 @@
       <option name="project" value="LOCAL" />
       <updated>1640782874431</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="&#10;&#10;asdqws">
+      <created>1640785241486</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1640785241486</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
