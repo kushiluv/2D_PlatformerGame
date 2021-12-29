@@ -1,6 +1,6 @@
 package com.example.helloapplication;
 
-import javafx.animation.TranslateTransition;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -11,36 +11,49 @@ import javafx.util.Duration;
 
 public class throwingAxe {
     @FXML
-    private ImageView knife;
+    private ImageView axe;
 
     private boolean equipped;
     public throwingAxe(Scene scene,String knifee){
-        knife = (ImageView) scene.lookup(knifee);
-        knife.setVisible(false);
+        axe = (ImageView) scene.lookup(knifee);
+        axe.setVisible(false);
         equipped = false;
     }
-    public void run(TranslateTransition run, Bounds hero){
+    public void run(RotateTransition rotate, ParallelTransition bac, ParallelTransition forw , TranslateTransition back, TranslateTransition run, SequentialTransition forward, Bounds hero){
 //        System.out.println("in knife");
-        knife.setVisible(true);
-        knife.setDisable(true);
-        run.setDuration(Duration.seconds(0.25));
+
+        axe.setVisible(true);
+        axe.setDisable(true);
+        rotate.setByAngle(360f);
+        rotate.setCycleCount(5);
+        rotate.setDuration(Duration.seconds(0.1));
+        rotate.setNode(axe);
+        run.setDuration(Duration.seconds(0.5));
         run.setFromY(hero.getCenterY()-250);
         run.setFromX(hero.getMinX()-100);
         run.setAutoReverse(false);
         run.setByX(250);
         run.setCycleCount(1);
-        run.setNode(knife);
+        run.setNode(axe);
 
-        run.setOnFinished(new EventHandler<ActionEvent>() {
+
+        back.setDuration(Duration.seconds(0.5));
+        back.setToX(hero.getMinX()-100);
+        back.setToY(hero.getCenterY()-200);
+
+        back.setNode(axe);
+        forward.setOnFinished(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                knife.setDisable(false);
-                knife.setVisible(false);
+                axe.setDisable(false);
+                axe.setVisible(false);
             }
         });
+
+
     }
     public ImageView getKnife(){
-        return knife;
+        return axe;
     }
     public void setEquippedTrue(){
         equipped = true;

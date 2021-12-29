@@ -91,6 +91,12 @@ public class game  {
 
         TranslateTransition knifeanimation = new TranslateTransition();
         TranslateTransition knifeanimation1 = new TranslateTransition();
+        TranslateTransition axe_forward = new TranslateTransition();
+        TranslateTransition axe_back = new TranslateTransition();
+        RotateTransition rotate = new RotateTransition();
+        ParallelTransition axe_for = new ParallelTransition(rotate,axe_forward);
+        ParallelTransition axe_bac = new ParallelTransition(rotate,axe_back);
+        SequentialTransition axeanimation = new SequentialTransition(axe_for,axe_bac);
 
         TranslateTransition death = new TranslateTransition();
 
@@ -106,6 +112,7 @@ public class game  {
         gameelements.add(defaultchest);
         throwingknives knife = new throwingknives(scene, "#knife");
         throwingknives knife1 = new throwingknives(scene, "#knife1");
+        throwingAxe axe = new throwingAxe(scene,"#axe");
         gameelements.addAll(wchest.getChests_all());
         AnimationTimer timer = new AnimationTimer() {
             @Override
@@ -189,6 +196,12 @@ public class game  {
                                         knifeanimation1.play();}
 
                                 }
+                            if (axeanimation.getStatus() == Animation.Status.STOPPED&& wchest.getopen()&&axe.isEquipped()) {
+                                System.out.println("status : "+axeanimation.getStatus());
+                                axe.run(rotate,axe_bac,axe_for,axe_back,axe_forward,axeanimation, hero.getHero().getBoundsInParent());
+                                axeanimation.play();
+                            }
+
                                 AnimationTimer temp = new AnimationTimer() {
                                     @Override
                                     public void handle(long l) {
@@ -200,6 +213,14 @@ public class game  {
                                                     death.play();
                                                 }
                                             }
+                                            if ((axe.getKnife().getBoundsInParent().intersects(green_orcs.get(i).getHero().getBoundsInParent()) )&&((axe.getKnife().getBoundsInParent().getCenterY()<=green_orcs.get(i).getHero().getBoundsInParent().getMaxY()&&axe.getKnife().getBoundsInParent().getCenterY()>=green_orcs.get(i).getHero().getBoundsInParent().getMinY()))) {
+                                                if(wchest.getopen()&&axe.isEquipped()) {
+
+                                                    green_orcs.get(i).death(death);
+                                                    death.play();
+                                                }
+                                            }
+
                                         }
                                     }
                                 };
@@ -211,6 +232,12 @@ public class game  {
                         if(keyEvent.getCode()==KeyCode.DIGIT1){
                             knife.setEquippedTrue();
                             knife1.setEquippedTrue();
+                            axe.setEquippedfalse();
+                        }
+                        if(keyEvent.getCode()==KeyCode.DIGIT2){
+                            knife.setEquippedfalse();
+                            knife1.setEquippedfalse();
+                            axe.setEquippedTrue();
                         }
 
                     }
