@@ -39,7 +39,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <Button layoutX="734.0" layoutY="443.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Exit">
+      <Button fx:id="exit" layoutX="734.0" layoutY="443.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Exit">
          <font>
             <Font size="35.0" />
          </font>
