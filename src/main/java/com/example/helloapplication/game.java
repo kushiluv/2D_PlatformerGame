@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -33,9 +34,6 @@ public class game  {
 
     @FXML
     private ImageView island1;
-
-
-
 
 
     void cleanup() {
@@ -106,6 +104,8 @@ public class game  {
         gameelements.add(grorc1.getHero());
         gameelements.add(grorc2.getHero());
         gameelements.add(defaultchest);
+        throwingknives knife = new throwingknives(scene, "#knife");
+        throwingknives knife1 = new throwingknives(scene, "#knife1");
         gameelements.addAll(wchest.getChests_all());
         AnimationTimer timer = new AnimationTimer() {
             @Override
@@ -133,11 +133,12 @@ public class game  {
 
 
 
+
                 scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
                     @Override
                     public void handle(KeyEvent keyEvent) {
-                        switch (keyEvent.getCode()) {
-                            case SPACE:
+                        if(keyEvent.getCode()== KeyCode.SPACE) {
+
                                 for (ImageView i : gameelements) {
                                     TranslateTransition backshift = new TranslateTransition();
                                     backshift.setDuration(Duration.seconds(0.1));
@@ -147,25 +148,25 @@ public class game  {
                                     backshift.setNode(i);
                                     backshift.play();
                                 }
-                                throwingknives knife = new throwingknives(scene, "#knife");
-                                throwingknives knife1 = new throwingknives(scene, "#knife1");
 
-                                if (knifeanimation.getStatus() == Animation.Status.STOPPED&& wchest.getopen()) {
+
+                                if (knifeanimation.getStatus() == Animation.Status.STOPPED&& wchest.getopen()&&knife.isEquipped()) {
 
                                     knife.run(knifeanimation, hero.getHero().getBoundsInParent());
                                     knifeanimation.play();
                                 } else {
-                                    if(wchest.getopen()){
-                                    knife1.run(knifeanimation1, hero.getHero().getBoundsInParent());
-                                    knifeanimation1.play();}
+                                    if(wchest.getopen()&&knife.isEquipped()){
+                                        knife1.run(knifeanimation1, hero.getHero().getBoundsInParent());
+                                        knifeanimation1.play();}
 
                                 }
                                 AnimationTimer temp = new AnimationTimer() {
                                     @Override
                                     public void handle(long l) {
                                         for (int i = 0; i < green_orcs.size(); i++) {
-                                            if (knife.getKnife().getBoundsInParent().intersects(green_orcs.get(i).getHero().getBoundsInParent()) || knife1.getKnife().getBoundsInParent().intersects(green_orcs.get(i).getHero().getBoundsInParent())) {
-                                                if(wchest.getopen()) {
+                                            if ((knife.getKnife().getBoundsInParent().intersects(green_orcs.get(i).getHero().getBoundsInParent()) || knife1.getKnife().getBoundsInParent().intersects(green_orcs.get(i).getHero().getBoundsInParent()))&&((knife1.getKnife().getBoundsInParent().getCenterY()<=green_orcs.get(i).getHero().getBoundsInParent().getMaxY()&&knife1.getKnife().getBoundsInParent().getCenterY()>=green_orcs.get(i).getHero().getBoundsInParent().getMinY())||(knife.getKnife().getBoundsInParent().getCenterY()<=green_orcs.get(i).getHero().getBoundsInParent().getMaxY()&&knife.getKnife().getBoundsInParent().getCenterY()>=green_orcs.get(i).getHero().getBoundsInParent().getMinY()))) {
+                                                if(wchest.getopen()&&knife.isEquipped()) {
+
                                                     green_orcs.get(i).death(death);
                                                     death.play();
                                                 }
@@ -176,14 +177,21 @@ public class game  {
                                 temp.start();
 
 
+
                         }
+                        if(keyEvent.getCode()==KeyCode.DIGIT1){
+                            knife.setEquippedTrue();
+                            knife1.setEquippedTrue();
+                        }
+
                     }
                 });
 
 
+
                 for (int i = 0; i < green_orcs.size(); i++) {
                     if (green_orcs.get(i).getHero().getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
-                        System.out.println("boom");
+
                         TranslateTransition orcsidecollision = new TranslateTransition();
                         orcsidecollision.setNode(green_orcs.get(i).getHero());
                         orcsidecollision.setByX(50);
@@ -215,61 +223,18 @@ public class game  {
                                         for (int j = 0; j < cislands.getALLislands().size(); j++) {
                                             if (cislands.getIslands().get(j).getBoundsInParent().intersects(green_orcs.get(finalI).getHero().getBoundsInParent())) {
                                                 orcfall.pause();
-                                                System.out.println("innn");
                                                 TranslateTransition orcjum = new TranslateTransition();
                                                 green_orcs.get(finalI).set_orc_jump(orcjum);
                                                 orcjum.play();
                                             }
+                                        }
                                     }
-                                }
-                            };
+                                };
                                 orc.start();
-                        }
+                            }
 
 
-//                        orcsidecollision.setOnFinished(new EventHandler<ActionEvent>() {
-//                            @Override
-//                            public void handle(ActionEvent event) {
-//                                AnimationTimer nestedtimer = new AnimationTimer() {
-//                                    @Override
-//                                    public void handle(long l) {
-//
-//
-//                                        int orcislandflag=0;
-//                                        for(int j = 0; j<cislands.getALLislands().size();j++) {
-//                                            if (cislands.getIslands().get(j).getBoundsInParent().intersects(green_orcs.get(finalI).getHero().getBoundsInParent())) {
-//                                                orcfall.stop();
-//                                                TranslateTransition orcjum = new TranslateTransition();
-//                                                green_orcs.get(finalI).set_orc_jump(orcjum);
-//                                                orcjum.play();
-//                                                System.out.println("orc intersects vo");
-//                                                orcislandflag = 1;
-//                                                break;
-//                                            }
-//                                        }
-////                                        if(orcislandflag==0){
-////
-////                                        orcfall.play();
-////                                        orcfall.setOnFinished(new EventHandler<ActionEvent>() {
-////                                            @Override
-////                                            public void handle(ActionEvent event) {
-////                                                System.out.println("in here");
-////                                                green_orcs.get(finalI).getHero().setVisible(false);
-////                                            }
-////                                        });
-////
-////                                    }
-//                                    }
-//                                };
-//                                nestedtimer.start();
-//
-////
-//                                }
-//
-////                                orcjumps.get(finalI).play();
-//
-//
-//                        });
+
 
                         });
 
@@ -280,272 +245,6 @@ public class game  {
             }
         };
         timer.start();
-
-
-
-//
-////
-////
-//        fall.setOnFinished(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                int flag = 0;
-//
-//
-//                ArrayList<Bounds> islands = new ArrayList<>();
-//                islands.addAll(cislands.getALLislands());
-////                if(hero.getLocation().getMinY()>=600&& flag1[0] ==0){
-////                    flag1[0] =1;
-////                    gameoverwindow.gameoverpanevisible();
-////
-//////                    orcjump.pause();
-////                    gameoverwindow.getQuitbutton().setOnMouseClicked(new EventHandler<MouseEvent>() {
-////                        @Override
-////                        public void handle(MouseEvent mouseEvent) {
-////                            gameoverwindow.gameoverpaneinvisible();
-////                            gameoverwindow.quitpanevisible();
-////                            gameoverwindow.getFinalexit().setOnMouseClicked(new EventHandler<MouseEvent>() {
-////                                @Override
-////                                public void handle(MouseEvent mouseEvent) {
-////                                    Platform.exit();
-////                                }
-////                            });
-////
-//////                            gameoverwindow.getQuitno().setOnAction(e -> {     //NO button kaam nhi kar rha. some null pointer exception
-//////                               gameoverwindow.quitpaneinvisible();
-//////                               gameoverwindow.gameoverpanevisible();
-//////                            });
-////
-////
-////                        }
-////                    });
-////                    gameoverwindow.getRestart1().setOnAction(e -> {
-////                        try {
-////                            restart(gamestage);
-////                        } catch (IOException ex) {
-////                            ex.printStackTrace();
-////                        }
-////                    });
-////
-////                }
-//                for(int i =0;i<islands.size();i++) {
-//                    System.out.println("island: "+islands.get(0).getMinX()+" "+islands.get(0).getMaxX()+" "+islands.get(0).getMaxY());
-//                    System.out.println("hero min x"+hero.getLocation().getMinX()+"hero max x"+hero.getLocation().getMaxX()+"hero min y : "+hero.getLocation().getMaxY());
-//
-//                    if(hero.getLocation().getMaxX()>islands.get(i).getMinX()&&hero.getLocation().getMinX()<islands.get(i).getMaxX()&&Math.abs((hero.getLocation().getMaxY()) - (islands.get(i).getMinY()))<=52&&Math.abs((hero.getLocation().getMaxY()) - (islands.get(i).getMinY()))>=49){
-//                        System.out.println("on island mah boi");
-//                        fall.pause();
-//                        jump.play();
-//                        flag = 1;
-//                        break;
-//
-//
-//
-//
-//                    }
-//                }
-//
-//                if(flag==0){
-//                    fall.play();
-//                }
-////                if(hero.intersects(island.getBoundsInLocal())){
-////                    System.out.println("jump karle bc");
-////                    jump.play();
-////                }
-//
-////                System.out.println(Math.floor(boundshero.getMaxY()));
-////                System.out.println("island "+Math.floor(boundsisland.getMinY()));
-//
-//
-//
-//
-//            }
-//        });
-//        jump.setOnFinished(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                fall.play();
-//            }
-//        });
-
-//        gameelements.add(hero.getHero());
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent keyEvent) {
-                switch (keyEvent.getCode()) {
-                    case SPACE:
-
-
-
-                        TranslateTransition orcfall = new TranslateTransition();
-                        TranslateTransition pt = new TranslateTransition();
-                        Bounds boundshero = hero.getHero().localToScene(hero.getHero().getBoundsInLocal());
-                        Bounds boundsorc = grorc.getHero().localToScene(grorc.getHero().getBoundsInLocal());
-                        Bounds boundsorc1 = grorc1.getHero().localToScene(grorc1.getHero().getBoundsInLocal());
-                        Bounds boundsorc2 = grorc2.getHero().localToScene(grorc2.getHero().getBoundsInLocal());
-                        ArrayList<Bounds> boundsorcs = new ArrayList<>();
-                        boundsorcs.add(boundsorc);
-                        boundsorcs.add(boundsorc1);
-                        boundsorcs.add(boundsorc2);
-//                        if(knifeanimation.getStatus()==Animation.Status.STOPPED) {
-//
-//                            knife.run(knifeanimation, boundshero);
-//                            knifeanimation.play();
-//                        }
-//                        else{
-//
-//                            knife1.run(knifeanimation1,boundshero);
-//                            knifeanimation1.play();
-//
-//                        }
-                        TranslateTransition translate = new TranslateTransition();
-
-//                        System.out.println("hero max : "+boundshero.getMaxX());
-//                        System.out.println("orcc min : "+boundsorc.getMinX());
-                        SequentialTransition seqTransition = new SequentialTransition (new PauseTransition(Duration.millis(250)),death);
-                        int weaponint = 0;
-                        int orcloopflag=0;
-                        int flaggedorc=-1;
-
-//                        for(int i =0; i<boundsorcs.size();i++) {
-//                            if (boundsorcs.get(i).getMinX() - 125 < boundshero.getMaxX() + 350 && boundsorcs.get(i).getMinX() - 125 > boundshero.getMaxX() && weaponint == 1) {
-//                                System.out.println("weapon hits");
-//                                green_orcs.get(i).death(death);
-//                                orcjumps.get(i).pause();
-//
-//                                seqTransition.play();
-//                                break;
-//                            }
-//
-//
-//
-////                            if (boundsorcs.get(i).getMinX() - 125 < boundshero.getMaxX() + 100 && boundsorcs.get(i).getMinX() - 125 > boundshero.getMaxX() && seqTransition.getStatus() == Animation.Status.STOPPED) {
-////                                orcloopflag=1;
-////                                flaggedorc=i;
-////                                System.out.println("colliding");
-////                                translate.setDuration(Duration.seconds(0.07));
-////                                translate.setByX(boundsorcs.get(i).getMinX() - boundshero.getMaxX());
-////                                translate.setNode(hero.getHero());
-////                                translate.play();
-//////                            Polyline path = new Polyline();
-//////                            path.getPoints().addAll(new Double[]{-200.0,0.0,-100.0,0.0,100.0,500.0});
-////                                ArrayList<Bounds> islands = new ArrayList<>();
-////                                islands.addAll(cislands.getALLislands());
-////                                pt.setNode(green_orcs.get(i).getHero());
-////                                pt.setByX(150);
-////                                pt.setDuration(Duration.seconds(0.07));
-////
-////                                System.out.println("island1 " + islands.get(1).getMaxX() + " " + islands.get(1).getMinX() + " " + islands.get(1).getMinY());
-////                                System.out.println("island2: " + islands.get(2).getMaxX() + " " + islands.get(2).getMinX() + " " + islands.get(2).getMinY());
-////                                System.out.println("orc y : " + boundsorc.getMaxY() + "\n orc x : " + boundsorc.getMaxX());
-////                                System.out.println("hero min x" + hero.getLocation().getMaxX());
-////                                break;
-////                            }
-//
-//
-//                        }
-                        if(orcloopflag==0) {
-                        translate.setDuration(Duration.seconds(0.07));
-                        translate.setByX(0);
-
-
-                        translate.setNode(hero.getHero());
-                        translate.play();
-
-                    }
-//
-//                        fall.play();
-//                        int finalFlaggedorc = flaggedorc;
-//                        translate.setOnFinished(new EventHandler<ActionEvent>() {
-//                            @Override
-//                            public void handle(ActionEvent event) {
-//
-//                                for (ImageView i : gameelements) {
-//                                    TranslateTransition backshift = new TranslateTransition();
-//                                    backshift.setDuration(Duration.seconds(0.1));
-//                                    backshift.setByX(-100);
-//                                    dashc[0]++;
-//                                    counter.setText(Integer.toString(dashc[0]/14));
-//                                    backshift.setNode(i);
-//                                    backshift.play();
-//                                    backshift.setOnFinished(new EventHandler<ActionEvent>() {
-//                                        @Override
-//                                        public void handle(ActionEvent event) {
-////                                            if (pt.getNode()!=null) {
-////                                                int tflag = 0;
-////                                                orcjumps.get(finalFlaggedorc).pause();
-////                                                pt.play();
-////                                                Bounds boundsorc = green_orcs.get(finalFlaggedorc).getHero().localToScene(green_orcs.get(finalFlaggedorc).getHero().getBoundsInLocal());
-////
-////                                                ArrayList<Bounds> islands = new ArrayList<>();
-////                                                islands.addAll(cislands.getALLislands());
-////                                                //System.out.println("orc y : "+boundsorc.getMaxY()+"\n orc x : "+boundshero.getCenterX());
-////                                                //System.out.println("island y min : "+boundsisland1.getMinY()+"x : "+boundsisland1.getMinX()+" max: "+boundsisland1.getMaxX());
-////                                                for(int i =0;i<islands.size();i++) {
-////                                                    if (islands.get(i).getMaxX() -161 >= boundsorc.getMinX() && islands.get(i).getMinX()-161 <= boundsorc.getMaxX()) {
-////                                                        tflag = 1;
-////                                                        orcjumps.get(finalFlaggedorc).play();
-////                                                        break;
-////
-////
-////
-////                                                    }
-////                                                }
-////
-////                                                if(cislands.getALLislands().get(1).intersects(green_orcs.get(finalFlaggedorc).getHero().getBoundsInParent())){
-////                                                    System.out.println("bitch on the island");
-////                                                }
-////
-////                                                if(tflag==0){
-////
-////                                                    orcfall.setDuration(Duration.seconds(0.5));
-////                                                    orcfall.setByY(400);
-////                                                    orcfall.setCycleCount(1);
-////                                                    orcfall.setAutoReverse(false);
-////                                                    orcfall.setNode(green_orcs.get(finalFlaggedorc).getHero());
-////
-////                                                    orcfall.play();
-////                                                    orcfall.setOnFinished(new EventHandler<ActionEvent>() {
-////                                                        @Override
-////                                                        public void handle(ActionEvent event) {
-////                                                            green_orcs.get(finalFlaggedorc).getHero().setVisible(false);
-////                                                        }
-////                                                    });
-////
-////                                                }
-////                                            }
-//                                        }
-//                                    });
-//
-//                                }
-//                            }
-                        };
-//                            Bounds boundsInScene = hero.localToScene(hero.getBoundsInLocal());
-//                            Bounds boundsI = island.localToScene(island.getBoundsInLocal());
-//                            System.out.println(boundsInScene.getMaxY()+" "+ boundsI.getMinY());
-//                            System.out.println(hero.getX()+" "+hero.getLayoutX());
-                }
-
-        });
-
-//        menu.getPause().setOnMouseClicked(new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent mouseEvent) {
-//                menu.panevisible();
-//                jump.pause();
-//                fall.pause();
-////                orcjump.pause();
-//            }
-//        });
-//        menu.getResume().setOnMouseClicked(new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent mouseEvent) {
-//                menu.paneinvisible();
-//                fall.play();
-////                orcjump.play();
-//            }
-//        });
-
         gamestage.setScene(scene);
         gamestage.show();
 
@@ -561,7 +260,4 @@ public class game  {
     public void start(Stage primaryStage) throws IOException {
         startGame(primaryStage);
     }
-
-
-
 }

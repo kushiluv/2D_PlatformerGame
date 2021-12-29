@@ -114,12 +114,12 @@
             <Image url="@../../../T_Islands_11.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="island4" fitHeight="128.0" fitWidth="253.0" layoutX="1756.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="island4" fitHeight="216.0" fitWidth="269.0" layoutX="1738.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_11.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="island3" fitHeight="98.0" fitWidth="253.0" layoutX="1345.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="island3" fitHeight="120.0" fitWidth="269.0" layoutX="1345.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_02.png" />
          </image>
@@ -127,7 +127,7 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <ImageView fx:id="island5" fitHeight="193.0" fitWidth="162.0" layoutX="2115.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="island5" fitHeight="198.0" fitWidth="221.0" layoutX="2056.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_11.png" />
          </image>
@@ -316,7 +316,7 @@
             <Image url="@../../../knife.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="orc1" fitHeight="55.0" fitWidth="64.0" layoutX="2167.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="orc1" fitHeight="55.0" fitWidth="64.0" layoutX="2098.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../2%20%2338727.png" />
          </image>
