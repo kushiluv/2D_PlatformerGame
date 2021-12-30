@@ -1,6 +1,11 @@
 package com.example.helloapplication;
 
+import javafx.animation.ParallelTransition;
+import javafx.animation.RotateTransition;
+import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
 import javafx.scene.Scene;
@@ -46,6 +51,24 @@ public class Hero extends GameObject{
 
     @Override
     void if_collides(Hero hero) {
+
+    }
+    void death(TranslateTransition dead, ScaleTransition big , RotateTransition rotate , ParallelTransition all){
+
+        dead.setDuration(Duration.millis(2000));
+        dead.setByY(-800);
+        dead.setCycleCount(1);
+        dead.setAutoReverse(false);
+        dead.setNode(hero);
+        rotate.setByAngle(360f);
+        rotate.setCycleCount(15);
+        rotate.setDuration(Duration.seconds(0.133));
+        rotate.setNode(hero);
+        big.setByX(.2);
+        big.setByY(.2);
+        big.setNode(hero);
+        big.setDuration(Duration.seconds(2));
+
 
     }
 }

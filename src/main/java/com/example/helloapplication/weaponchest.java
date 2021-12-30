@@ -27,15 +27,15 @@ public class weaponchest {
     private Bounds boundschest;
     private boolean open;
     private Timeline chestt;
-    public weaponchest(Scene scene){
+    public weaponchest(Scene scene,String group,String defaultc){
         chests_all = new ArrayList<>();
         chest1 = new ImageView("wep_0006 #56893.png");
         chest2 = new ImageView("wep_0007 #37947.png");
         chest3 = new ImageView("wep_0008 #30876.png");
         chest4 = new ImageView("wep_0009 #57652.png");
-        chests = (Group) scene.lookup("#chests");
+        chests = (Group) scene.lookup(group);
         open = false ;
-        defaultchest = (ImageView) scene.lookup("#defaultchest");
+        defaultchest = (ImageView) scene.lookup(defaultc);
         knifeicon = (ImageView) scene.lookup("#knifeicon");
         chests_all.add(chest1);
         chests_all.add(chest2);

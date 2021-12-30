@@ -11,9 +11,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-public class Green_Orc extends Orcs {
-
-    public Green_Orc(Scene scene, String string) {
+public class Red_Orc extends Orcs {
+    public Red_Orc(Scene scene, String string) {
         super(scene, string);
     }
 

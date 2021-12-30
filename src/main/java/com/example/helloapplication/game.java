@@ -35,10 +35,12 @@ public class game  {
     @FXML
     private ImageView island1;
 
-
+    private gameoverwindow gameoverwindow;
     void cleanup() {
         // stop animations reset model ect.
     }
+
+
 
     void startGame(Stage gamestage) throws IOException {
         // initialisation from start method goes here
@@ -47,16 +49,20 @@ public class game  {
         Scene scene = new Scene(root, 1200, 650);
         Hero hero = new Hero(scene);
 
-        Green_Orc grorc = new Green_Orc(scene,"#orc");
-        Green_Orc grorc1 = new Green_Orc(scene,"#orc11");
-        Green_Orc grorc2 = new Green_Orc(scene,"#orc1");
+        Orcs grorc = new Green_Orc(scene,"#orc");
+        Orcs grorc1 = new Green_Orc(scene,"#orc11");
+        Orcs grorc2 = new Green_Orc(scene,"#orc3");
+        Orcs rorc1 = new Red_Orc(scene,"#rorc1");
+        Orcs rorc2 = new Red_Orc(scene,"#rorc2");
 
-        ArrayList<Green_Orc> green_orcs = new ArrayList<>();
-        green_orcs.add(grorc);
-        green_orcs.add(grorc1);
-        green_orcs.add(grorc2);
+        ArrayList<Orcs> orcs = new ArrayList<>();
+        orcs.add(grorc);
+        orcs.add(grorc1);
+        orcs.add(grorc2);
+        orcs.add(rorc1);
+        orcs.add(rorc2);
         menu menu = new menu(scene);
-        gameoverwindow gameoverwindow = new gameoverwindow(scene);
+        gameoverwindow = new gameoverwindow(scene);
 
 
         menu.paneinvisible();
@@ -76,10 +82,10 @@ public class game  {
 
         islands cislands = new islands(scene);
         ArrayList<TranslateTransition> orcjumps = new ArrayList<>();
-        for(int i =0; i<green_orcs.size();i++) {
+        for(int i =0; i<orcs.size();i++) {
             TranslateTransition orcjump = new TranslateTransition();
             orcjumps.add(orcjump);
-            green_orcs.get(i).set_orc_jump(orcjumps.get(i));
+            orcs.get(i).set_orc_jump(orcjumps.get(i));
             orcjumps.get(i).play();
         }
 
@@ -103,22 +109,26 @@ public class game  {
         final int[] dashc = {0};
 
         final int[] flag1 = {0};
-        weaponchest wchest = new weaponchest(scene);
+        weaponchest wchest = new weaponchest(scene,"#chests","#defaultchest");
+        tnt wtnt = new tnt(scene,"#tnts","#defaulttnt");
         ArrayList<ImageView> gameelements = new ArrayList<>();
         gameelements.addAll(cislands.getIslands());
         gameelements.add(grorc.getHero());
         gameelements.add(grorc1.getHero());
         gameelements.add(grorc2.getHero());
+        gameelements.add(rorc2.getHero());
+        gameelements.add(rorc1.getHero());
         gameelements.add(defaultchest);
+        gameelements.add(wtnt.chestimg());
         throwingknives knife = new throwingknives(scene, "#knife");
         throwingknives knife1 = new throwingknives(scene, "#knife1");
         throwingAxe axe = new throwingAxe(scene,"#axe");
         gameelements.addAll(wchest.getChests_all());
+        gameelements.addAll(wtnt.getChests_all());
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
                 int knives = 0;
-
                 for (int i = 0; i < cislands.getALLislands().size(); i++) {
                     if (cislands.getIslands().get(i).getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
                         fall.stop();
@@ -137,25 +147,7 @@ public class game  {
 
                                 if(hero.getHero().getBoundsInParent().getMinY()>=600&& flag1[0] ==0){
                                    flag1[0] =1;
-                                    gameoverwindow.gameoverpanevisible();
-
-//                    orcjump.pause();
-                                    gameoverwindow.getQuitbutton().setOnMouseClicked(new EventHandler<MouseEvent>() {
-                                        @Override
-                                        public void handle(MouseEvent mouseEvent) {
-                                            gameoverwindow.gameoverpaneinvisible();
-                                            gameoverwindow.quitpanevisible();
-                                            gameoverwindow.getFinalexit().setOnMouseClicked(new EventHandler<MouseEvent>() {
-                                                @Override
-                                                public void handle(MouseEvent mouseEvent) {
-                                                    Platform.exit();
-                                                }
-                                            });
-
-
-
-                                        }
-                                    });
+                                    gameover();
 
 
 
@@ -166,6 +158,16 @@ public class game  {
                     wchest.run();
 
                 }
+                if(hero.getHero().getBoundsInParent().intersects(wtnt.chestimg().getBoundsInParent())){
+                    wtnt.setOpen();
+                    int tntdead = wtnt.run(hero);
+                    System.out.println("tntdead"+tntdead);
+                    if(tntdead == 1) {
+                        this.stop();
+                        died(hero);
+                    }
+                }
+
 
 
 
@@ -205,18 +207,18 @@ public class game  {
                                 AnimationTimer temp = new AnimationTimer() {
                                     @Override
                                     public void handle(long l) {
-                                        for (int i = 0; i < green_orcs.size(); i++) {
-                                            if ((knife.getKnife().getBoundsInParent().intersects(green_orcs.get(i).getHero().getBoundsInParent()) || knife1.getKnife().getBoundsInParent().intersects(green_orcs.get(i).getHero().getBoundsInParent()))&&((knife1.getKnife().getBoundsInParent().getCenterY()<=green_orcs.get(i).getHero().getBoundsInParent().getMaxY()&&knife1.getKnife().getBoundsInParent().getCenterY()>=green_orcs.get(i).getHero().getBoundsInParent().getMinY())||(knife.getKnife().getBoundsInParent().getCenterY()<=green_orcs.get(i).getHero().getBoundsInParent().getMaxY()&&knife.getKnife().getBoundsInParent().getCenterY()>=green_orcs.get(i).getHero().getBoundsInParent().getMinY()))) {
+                                        for (int i = 0; i < orcs.size(); i++) {
+                                            if ((knife.getKnife().getBoundsInParent().intersects(orcs.get(i).getHero().getBoundsInParent()) || knife1.getKnife().getBoundsInParent().intersects(orcs.get(i).getHero().getBoundsInParent()))&&((knife1.getKnife().getBoundsInParent().getCenterY()<=orcs.get(i).getHero().getBoundsInParent().getMaxY()&&knife1.getKnife().getBoundsInParent().getCenterY()>=orcs.get(i).getHero().getBoundsInParent().getMinY())||(knife.getKnife().getBoundsInParent().getCenterY()<=orcs.get(i).getHero().getBoundsInParent().getMaxY()&&knife.getKnife().getBoundsInParent().getCenterY()>=orcs.get(i).getHero().getBoundsInParent().getMinY()))) {
                                                 if(wchest.getopen()&&knife.isEquipped()) {
 
-                                                    green_orcs.get(i).death(death);
+                                                    orcs.get(i).death(death);
                                                     death.play();
                                                 }
                                             }
-                                            if ((axe.getKnife().getBoundsInParent().intersects(green_orcs.get(i).getHero().getBoundsInParent()) )&&((axe.getKnife().getBoundsInParent().getCenterY()<=green_orcs.get(i).getHero().getBoundsInParent().getMaxY()&&axe.getKnife().getBoundsInParent().getCenterY()>=green_orcs.get(i).getHero().getBoundsInParent().getMinY()))) {
+                                            if ((axe.getKnife().getBoundsInParent().intersects(orcs.get(i).getHero().getBoundsInParent()) )&&((axe.getKnife().getBoundsInParent().getCenterY()<=orcs.get(i).getHero().getBoundsInParent().getMaxY()&&axe.getKnife().getBoundsInParent().getCenterY()>=orcs.get(i).getHero().getBoundsInParent().getMinY()))) {
                                                 if(wchest.getopen()&&axe.isEquipped()) {
 
-                                                    green_orcs.get(i).death(death);
+                                                    orcs.get(i).death(death);
                                                     death.play();
                                                 }
                                             }
@@ -245,58 +247,75 @@ public class game  {
 
 
 
-                for (int i = 0; i < green_orcs.size(); i++) {
-                    if (green_orcs.get(i).getHero().getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
+                for (int i = 0; i < orcs.size(); i++) {
+                    if (orcs.get(i).getHero().getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
+                        double gbot = orcs.get(i).getHero().getBoundsInParent().getMinY();
+                        double gtop = orcs.get(i).getHero().getBoundsInParent().getMaxY();
+                        double hbot = hero.getHero().getBoundsInParent().getMinY();
+                        double htop = hero.getHero().getBoundsInParent().getMaxY();
+                        if (!((htop-gbot>90) &&  ((htop<=gtop && hbot>=gbot) || (htop>=gtop&& hbot>=gbot)))) {
+                            System.out.println(htop);
+                            System.out.println(hbot);
+                            System.out.println(gtop);
+                            System.out.println(gbot);
+                            TranslateTransition orcsidecollision = new TranslateTransition();
+                            orcsidecollision.setNode(orcs.get(i).getHero());
+                            orcsidecollision.setByX(50);
+                            orcsidecollision.setDuration(Duration.seconds(0.07));
+                            orcjumps.get(i).pause();
+                            orcsidecollision.play();
+                            int finalI = i;
+                            TranslateTransition orcfall = new TranslateTransition();
 
-                        TranslateTransition orcsidecollision = new TranslateTransition();
-                        orcsidecollision.setNode(green_orcs.get(i).getHero());
-                        orcsidecollision.setByX(50);
-                        orcsidecollision.setDuration(Duration.seconds(0.07));
-                        orcjumps.get(i).pause();
-                        orcsidecollision.play();
-                        int finalI = i;
-                        TranslateTransition orcfall = new TranslateTransition();
+                            orcsidecollision.setOnFinished(new EventHandler<ActionEvent>() {
+                                @Override
+                                public void handle(ActionEvent event) {
 
-                        orcsidecollision.setOnFinished(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-
-                                orcfall.setDuration(Duration.seconds(0.5));
-                                orcfall.setByY(400);
-                                orcfall.setCycleCount(1);
-                                orcfall.setAutoReverse(false);
-                                orcfall.setNode(green_orcs.get(finalI).getHero());
-                                orcfall.play();
-                                orcfall.setOnFinished(new EventHandler<ActionEvent>() {
-                                    @Override
-                                    public void handle(ActionEvent event) {
-                                        green_orcs.get(finalI).getHero().setVisible(false);
-                                    }
-                                });
-                                AnimationTimer orc = new AnimationTimer() {
-                                    @Override
-                                    public void handle(long l) {
-                                        for (int j = 0; j < cislands.getALLislands().size(); j++) {
-                                            if (cislands.getIslands().get(j).getBoundsInParent().intersects(green_orcs.get(finalI).getHero().getBoundsInParent())) {
-                                                orcfall.pause();
-                                                TranslateTransition orcjum = new TranslateTransition();
-                                                green_orcs.get(finalI).set_orc_jump(orcjum);
-                                                orcjum.play();
+                                    orcfall.setDuration(Duration.seconds(0.5));
+                                    orcfall.setByY(400);
+                                    orcfall.setCycleCount(1);
+                                    orcfall.setAutoReverse(false);
+                                    orcfall.setNode(orcs.get(finalI).getHero());
+                                    orcfall.play();
+                                    orcfall.setOnFinished(new EventHandler<ActionEvent>() {
+                                        @Override
+                                        public void handle(ActionEvent event) {
+                                            orcs.get(finalI).getHero().setVisible(false);
+                                        }
+                                    });
+                                    AnimationTimer orc = new AnimationTimer() {
+                                        @Override
+                                        public void handle(long l) {
+                                            for (int j = 0; j < cislands.getALLislands().size(); j++) {
+                                                if (cislands.getIslands().get(j).getBoundsInParent().intersects(orcs.get(finalI).getHero().getBoundsInParent())) {
+                                                    orcfall.pause();
+                                                    TranslateTransition orcjum = new TranslateTransition();
+                                                    orcs.get(finalI).set_orc_jump(orcjum);
+                                                    orcjum.play();
+                                                }
                                             }
                                         }
-                                    }
-                                };
-                                orc.start();
-                            }
+                                    };
+                                    orc.start();
+                                }
 
 
+                            });
 
 
-                        });
+                        }
+                        else{
+                            System.out.println("youd idead");
+                            System.out.println(htop);
+                            System.out.println(hbot);
+                            System.out.println(gtop);
+                            System.out.println(gbot);
+                            this.stop();
+                            died(hero);
 
+                        }
 
                     }
-
                 }
             }
         };
@@ -310,6 +329,41 @@ public class game  {
     void restart(Stage gamestage) throws IOException {
         cleanup();
         startGame(gamestage);
+    }
+    void died(Hero hero){
+        TranslateTransition dead = new TranslateTransition();
+        RotateTransition rotate = new RotateTransition();
+        ScaleTransition scale = new ScaleTransition();
+        ParallelTransition parallel = new ParallelTransition(dead,rotate,scale);
+        hero.death(dead,scale,rotate,parallel);
+        parallel.play();
+        parallel.setOnFinished(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                gameover();
+            }
+        });
+    }
+    void gameover(){
+        gameoverwindow.gameoverpanevisible();
+
+//                    orcjump.pause();
+        gameoverwindow.getQuitbutton().setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                gameoverwindow.gameoverpaneinvisible();
+                gameoverwindow.quitpanevisible();
+                gameoverwindow.getFinalexit().setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
+                        Platform.exit();
+                    }
+                });
+
+
+
+            }
+        });
     }
 
 
