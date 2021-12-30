@@ -13,9 +13,19 @@ public class throwingAxe {
     @FXML
     private ImageView axe;
 
+    @FXML
+    private ImageView axeupgrade;
+
+    @FXML
+    private ImageView axeicon;
+
+    private int upgrade_level;
     private boolean equipped;
     public throwingAxe(Scene scene,String knifee){
+        upgrade_level = 0;
         axe = (ImageView) scene.lookup(knifee);
+        axeupgrade = (ImageView) scene.lookup("#axeupgrade");
+        axeicon = (ImageView) scene.lookup("#axeicon");
         axe.setVisible(false);
         equipped = false;
     }
@@ -61,8 +71,21 @@ public class throwingAxe {
     public void setEquippedfalse(){
         equipped = false;
     }
+    public void upgrade(){
+        axe.setImage(axeupgrade.getImage());
 
+    }
     public boolean isEquipped() {
         return equipped;
+    }
+
+    public int getUpgrade_level() {
+        return upgrade_level;
+    }
+    public void setUpgrade_level(int i){
+        upgrade_level=i;
+    }
+    public void setAxeicon(){
+        axeicon.setVisible(true);
     }
 }

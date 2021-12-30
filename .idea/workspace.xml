@@ -4,42 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="2ndweapon">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Orcs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Red_Orc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/tnt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TNT_explosion9.png" afterDir="false" />
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="tntexplodesig">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/coinchest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest_gold.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/axeupgrade.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/knifeupgrade.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Green_Orc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Green_Orc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/chests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/chests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/islands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/throwingAxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/throwingAxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/throwingknives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/throwingknives.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/weaponchest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/weaponchest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Green_Orc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Green_Orc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Hero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,8 +78,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="C:\Users\kushi\Documents\APAssignm\APPROJECT_GROUP90\src\main\resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kushi\Documents\APAssignm\APPROJECT_GROUP90\src\main\resources" />
@@ -236,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640793827690</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="tntexplodesig">
+      <created>1640864206969</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1640864206969</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +275,7 @@
     <MESSAGE value="&#10;&#10;asdqws" />
     <MESSAGE value="gameoverwindow" />
     <MESSAGE value="2ndweapon" />
-    <option name="LAST_COMMIT_MESSAGE" value="2ndweapon" />
+    <MESSAGE value="tntexplodesig" />
+    <option name="LAST_COMMIT_MESSAGE" value="tntexplodesig" />
   </component>
 </project>

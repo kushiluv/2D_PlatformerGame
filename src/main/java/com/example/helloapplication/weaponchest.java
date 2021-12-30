@@ -14,11 +14,11 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 
-public class weaponchest {
+public class weaponchest implements chests{
     @FXML
     private Group chests;
     @FXML
-    private ImageView defaultchest,knifeicon;
+    private ImageView defaultchest,knifeicon,axeicon;
     final private ImageView chest1;
     final private ImageView chest2;
     final private ImageView chest3;
@@ -37,6 +37,7 @@ public class weaponchest {
         open = false ;
         defaultchest = (ImageView) scene.lookup(defaultc);
         knifeicon = (ImageView) scene.lookup("#knifeicon");
+        axeicon = (ImageView) scene.lookup("#axeicon");
         chests_all.add(chest1);
         chests_all.add(chest2);
         chests_all.add(chest3);
@@ -91,7 +92,7 @@ public class weaponchest {
 
             }
         });
-        knifeicon.setVisible(true);
+
     }
     public ArrayList<ImageView> getChests_all(){
         return chests_all;

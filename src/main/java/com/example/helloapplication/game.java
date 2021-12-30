@@ -22,6 +22,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class game  {
 
@@ -31,6 +32,8 @@ public class game  {
     private Group chests;
     @FXML
     private ImageView defaultchest;
+
+
 
     @FXML
     private ImageView island1;
@@ -54,7 +57,6 @@ public class game  {
         Orcs grorc2 = new Green_Orc(scene,"#orc3");
         Orcs rorc1 = new Red_Orc(scene,"#rorc1");
         Orcs rorc2 = new Red_Orc(scene,"#rorc2");
-
         ArrayList<Orcs> orcs = new ArrayList<>();
         orcs.add(grorc);
         orcs.add(grorc1);
@@ -102,14 +104,19 @@ public class game  {
         RotateTransition rotate = new RotateTransition();
         ParallelTransition axe_for = new ParallelTransition(rotate,axe_forward);
         ParallelTransition axe_bac = new ParallelTransition(rotate,axe_back);
-        SequentialTransition axeanimation = new SequentialTransition(axe_for,axe_bac);
+        SequentialTransition axeanimation = new SequentialTransition(axe_for,new PauseTransition(Duration.seconds(0.15)),axe_bac);
 
         TranslateTransition death = new TranslateTransition();
 
         final int[] dashc = {0};
 
         final int[] flag1 = {0};
-        weaponchest wchest = new weaponchest(scene,"#chests","#defaultchest");
+        chests wchest = new weaponchest(scene,"#chests","#defaultchest");
+        chests cchest = new coinchest(scene,"#coinchests","#defaultcoinchest");
+
+        ArrayList<chests> chests = new ArrayList<>();
+        chests.add(wchest);
+        chests.add(cchest);
         tnt wtnt = new tnt(scene,"#tnts","#defaulttnt");
         ArrayList<ImageView> gameelements = new ArrayList<>();
         gameelements.addAll(cislands.getIslands());
@@ -118,14 +125,17 @@ public class game  {
         gameelements.add(grorc2.getHero());
         gameelements.add(rorc2.getHero());
         gameelements.add(rorc1.getHero());
-        gameelements.add(defaultchest);
+        gameelements.add(wchest.chestimg());
         gameelements.add(wtnt.chestimg());
-        throwingknives knife = new throwingknives(scene, "#knife");
-        throwingknives knife1 = new throwingknives(scene, "#knife1");
+        gameelements.add(cchest.chestimg());
+        throwingknives knife = new throwingknives(scene, "#knife","#knifeupgrade1");
+        throwingknives knife1 = new throwingknives(scene, "#knife1","#knifeupgrade");
         throwingAxe axe = new throwingAxe(scene,"#axe");
         gameelements.addAll(wchest.getChests_all());
         gameelements.addAll(wtnt.getChests_all());
+        gameelements.addAll(cchest.getChests_all());
         AnimationTimer timer = new AnimationTimer() {
+
             @Override
             public void handle(long l) {
                 int knives = 0;
@@ -153,10 +163,38 @@ public class game  {
 
 
                 }
-                if(hero.getHero().getBoundsInParent().intersects(wchest.chestimg().getBoundsInParent())){
-                    wchest.setOpen();
-                    wchest.run();
+                for(int i =0; i<chests.size();i++) {
+                    if (hero.getHero().getBoundsInParent().intersects(chests.get(i).chestimg().getBoundsInParent())) {
+                        System.out.println("chesting");
+                        if(chests.get(i).getClass()==wchest.getClass()){
+                            Random weapo = new Random();
+                            int weapon = weapo.nextInt(2);
+                            if(weapon==0){
+                                knife.setUpgrade_level(knife.getUpgrade_level()+1);
+                                knife1.setUpgrade_level(knife1.getUpgrade_level()+1);
+                                if(knife.getUpgrade_level()==2){
+                                    knife.upgrade();
+                                    knife1.upgrade();
+                                }
+                                else if(knife.getUpgrade_level()==1){
+                                    knife.setKnifeicon();
+                                }
+                            }
+                            else{
+                                axe.setUpgrade_level(axe.getUpgrade_level()+1);
+                                if(axe.getUpgrade_level()==2){
+                                    axe.upgrade();
+                                }
+                                else if(axe.getUpgrade_level()==1){
+                                    axe.setAxeicon();
+                                }
+                            }
 
+                        }
+                        chests.get(i).setOpen();
+                        chests.get(i).run();
+                        break;
+                    }
                 }
                 if(hero.getHero().getBoundsInParent().intersects(wtnt.chestimg().getBoundsInParent())){
                     wtnt.setOpen();
@@ -182,23 +220,23 @@ public class game  {
                                     backshift.setDuration(Duration.seconds(0.1));
                                     backshift.setByX(-100);
                                     dashc[0]++;
-                                    counter.setText(Integer.toString(dashc[0] / 14));
+                                    counter.setText(Integer.toString(dashc[0]/53 ));
                                     backshift.setNode(i);
                                     backshift.play();
                                 }
 
 
-                                if (knifeanimation.getStatus() == Animation.Status.STOPPED&& wchest.getopen()&&knife.isEquipped()) {
+                                if (knifeanimation.getStatus() == Animation.Status.STOPPED&& wchest.getopen()&&knife.isEquipped()&&knife.getUpgrade_level()>=1) {
 
                                     knife.run(knifeanimation, hero.getHero().getBoundsInParent());
                                     knifeanimation.play();
                                 } else {
-                                    if(wchest.getopen()&&knife.isEquipped()){
+                                    if(knife.isEquipped()&&knife.getUpgrade_level()>=1){
                                         knife1.run(knifeanimation1, hero.getHero().getBoundsInParent());
                                         knifeanimation1.play();}
 
                                 }
-                            if (axeanimation.getStatus() == Animation.Status.STOPPED&& wchest.getopen()&&axe.isEquipped()) {
+                            if (axeanimation.getStatus() == Animation.Status.STOPPED&& axe.getUpgrade_level()>=1&&axe.isEquipped()) {
                                 System.out.println("status : "+axeanimation.getStatus());
                                 axe.run(rotate,axe_bac,axe_for,axe_back,axe_forward,axeanimation, hero.getHero().getBoundsInParent());
                                 axeanimation.play();

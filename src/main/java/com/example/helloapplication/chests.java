@@ -10,6 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
+import java.util.ArrayList;
+
 public interface chests {
+    public void run();
+    public ArrayList<ImageView> getChests_all();
+    public ImageView chestimg();
+    public void setOpen();
+    public boolean getopen();
 
 }
