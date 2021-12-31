@@ -68,8 +68,6 @@ public class game  {
         orcs.add(rorc2);
         menu menu = new menu(scene);
         gameoverwindow = new gameoverwindow(scene);
-
-
         menu.paneinvisible();
         gameoverwindow.gameoverpaneinvisible();
         gameoverwindow.quitpaneinvisible();
@@ -113,7 +111,6 @@ public class game  {
         TranslateTransition death = new TranslateTransition();
 
         final int[] dashc = {0};
-        final int[] coinsc = {0};
         final int[] flag1 = {0};
         chests wchest = new weaponchest(scene,"#chests","#defaultchest");
         chests cchest = new coinchest(scene,"#coinchests","#defaultcoinchest");
@@ -202,24 +199,46 @@ public class game  {
                             Random weapo = new Random();
                             int weapon = weapo.nextInt(2);
                             if(weapon==0){
-                                knife.setUpgrade_level(knife.getUpgrade_level()+1);
-                                knife1.setUpgrade_level(knife1.getUpgrade_level()+1);
-                                if(knife.getUpgrade_level()==2){
-                                    knife.upgrade();
-                                    knife1.upgrade();
-
+                                if(knife.getUpgrade_level()==2&&axe.getUpgrade_level()<2){
+                                    axe.setUpgrade_level(axe.getUpgrade_level()+1);
+                                    if(axe.getUpgrade_level()==2){
+                                        axe.upgrade();
+                                    }
+                                    else if(axe.getUpgrade_level()==1){
+                                        axe.setAxeicon();
+                                    }
                                 }
-                                else if(knife.getUpgrade_level()==1){
-                                    knife.setKnifeicon();
+                                else {
+                                    knife.setUpgrade_level(knife.getUpgrade_level() + 1);
+                                    knife1.setUpgrade_level(knife1.getUpgrade_level() + 1);
+                                    if (knife.getUpgrade_level() == 2) {
+                                        knife.upgrade();
+                                        knife1.upgrade();
+
+                                    } else if (knife.getUpgrade_level() == 1) {
+                                        knife.setKnifeicon();
+                                    }
                                 }
                             }
                             else{
-                                axe.setUpgrade_level(axe.getUpgrade_level()+1);
-                                if(axe.getUpgrade_level()==2){
-                                    axe.upgrade();
+                                if(axe.getUpgrade_level()==2&&knife.getUpgrade_level()<2){
+                                    knife.setUpgrade_level(knife.getUpgrade_level() + 1);
+                                    knife1.setUpgrade_level(knife1.getUpgrade_level() + 1);
+                                    if (knife.getUpgrade_level() == 2) {
+                                        knife.upgrade();
+                                        knife1.upgrade();
+
+                                    } else if (knife.getUpgrade_level() == 1) {
+                                        knife.setKnifeicon();
+                                    }
                                 }
-                                else if(axe.getUpgrade_level()==1){
-                                    axe.setAxeicon();
+                                else {
+                                    axe.setUpgrade_level(axe.getUpgrade_level() + 1);
+                                    if (axe.getUpgrade_level() == 2) {
+                                        axe.upgrade();
+                                    } else if (axe.getUpgrade_level() == 1) {
+                                        axe.setAxeicon();
+                                    }
                                 }
                             }
 
