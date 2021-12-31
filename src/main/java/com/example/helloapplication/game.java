@@ -114,11 +114,13 @@ public class game  {
         chests wchest = new weaponchest(scene,"#chests","#defaultchest");
         chests cchest = new coinchest(scene,"#coinchests","#defaultcoinchest");
         chests cchest1 = new coinchest(scene,"#coinchests1","#defaultcoinchest1");
+        chests wchest1 = new weaponchest(scene,"#chests1","#defaultchest1");
 
 
         ArrayList<chests> chests = new ArrayList<>();
         chests.add(wchest);
         chests.add(cchest);
+        chests.add(cchest1);
         tnt wtnt = new tnt(scene,"#tnts","#defaulttnt");
         ArrayList<ImageView> gameelements = new ArrayList<>();
         gameelements.addAll(cislands.getIslands());
@@ -128,6 +130,7 @@ public class game  {
         gameelements.add(rorc2.getHero());
         gameelements.add(rorc1.getHero());
         gameelements.add(wchest.chestimg());
+        gameelements.add(cchest1.chestimg());
         gameelements.add(wtnt.chestimg());
         gameelements.add(cchest.chestimg());
         throwingknives knife = new throwingknives(scene, "#knife","#knifeupgrade1");
@@ -136,6 +139,7 @@ public class game  {
         gameelements.addAll(wchest.getChests_all());
         gameelements.addAll(wtnt.getChests_all());
         gameelements.addAll(cchest.getChests_all());
+        gameelements.addAll(cchest1.getChests_all());
         AnimationTimer timer = new AnimationTimer() {
 
             @Override
