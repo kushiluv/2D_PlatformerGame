@@ -19,11 +19,19 @@ public class HelloApplication extends Application {
     @FXML
     private Button temp;
 
+
+
+    @FXML
+    private Button load1;
+
+
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(root, 1200, 600);
         temp = (Button) scene.lookup("#temp");
+
+        load1 = (Button) scene.lookup("#load");
 //        temp.setOnMouseClicked(new EventHandler<MouseEvent>() {
 //            @Override
 //            public void handle(MouseEvent mouseEvent) {
@@ -32,7 +40,19 @@ public class HelloApplication extends Application {
 //                game.start(stage);
 //            }
 //        });
+        load load = new load(scene);
+
+        load1.setOnMouseClicked(e -> {
+            load.loadvisible();
+
+        });
+        load.getBack().setOnMouseClicked(e -> {
+            load.loadinvisible();
+        });
+
         stage.setScene(scene);
+
+
         stage.show();
     }
     public void scene2(ActionEvent event) throws IOException{
