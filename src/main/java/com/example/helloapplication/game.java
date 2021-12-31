@@ -113,6 +113,8 @@ public class game  {
         final int[] flag1 = {0};
         chests wchest = new weaponchest(scene,"#chests","#defaultchest");
         chests cchest = new coinchest(scene,"#coinchests","#defaultcoinchest");
+        chests cchest1 = new coinchest(scene,"#coinchests1","#defaultcoinchest1");
+
 
         ArrayList<chests> chests = new ArrayList<>();
         chests.add(wchest);

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="weaponupgraded">
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="islandsadded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Green_Orc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Green_Orc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Red_Orc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Red_Orc.java" afterDir="false" />
@@ -22,6 +23,10 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640891968039</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="islandsadded">
+      <created>1640941400084</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1640941400084</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +289,7 @@
     <MESSAGE value="2ndweapon" />
     <MESSAGE value="tntexplodesig" />
     <MESSAGE value="weaponupgraded" />
-    <option name="LAST_COMMIT_MESSAGE" value="weaponupgraded" />
+    <MESSAGE value="islandsadded" />
+    <option name="LAST_COMMIT_MESSAGE" value="islandsadded" />
   </component>
 </project>
