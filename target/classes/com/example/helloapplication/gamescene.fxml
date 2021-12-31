@@ -31,7 +31,7 @@
             <Image url="@../../../newBG.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="knifeupgrade" fitHeight="660.0" fitWidth="2045.0" layoutX="-7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="660.0" fitWidth="2045.0" layoutX="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../newBG.jpg" />
          </image>
@@ -487,7 +487,7 @@
             <Image url="@../../../T_Islands_03.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="defaultchest21" fitHeight="55.0" fitWidth="78.0" layoutX="4966.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="defaultchest1" fitHeight="55.0" fitWidth="78.0" layoutX="4966.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../wep_0006%20%2356893.png" />
          </image>
@@ -593,6 +593,8 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <Group fx:id="coinchests1" layoutX="6367.0" layoutY="245.0" />
+      <Group fx:id="coinchests1" layoutX="6280.0" layoutY="100.0" />
+      <Group fx:id="chestss1" layoutX="4966.0" layoutY="452.0" />
+      <Group fx:id="chestss2" layoutX="3447.0" layoutY="335.0" />
    </children>
 </AnchorPane>
