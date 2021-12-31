@@ -78,7 +78,10 @@ public class islands extends GameObject implements serializable{
     private ImageView island25;
     @FXML
     private ImageView island26;
-
+    @FXML
+    private ImageView island27;
+    @FXML
+    private ImageView island28;
 
     private ArrayList<ImageView> islands;
     private ArrayList<Bounds> islands_bounds;
@@ -112,7 +115,8 @@ public class islands extends GameObject implements serializable{
         island24 = (ImageView) scene.lookup("#island24");
         island25 = (ImageView) scene.lookup("#island25");
         island26 = (ImageView) scene.lookup("#island26");
-
+        island27 = (ImageView) scene.lookup("#island27");
+        island28 = (ImageView) scene.lookup("#island28");
         islands.add(island);
         islands.add(island1);
         islands.add(island2);
@@ -138,6 +142,8 @@ public class islands extends GameObject implements serializable{
         islands.add(island24);
         islands.add(island25);
         islands.add(island26);
+        islands.add(island27);
+        islands.add(island28);
     }
 
     public ArrayList<ImageView> getIslands() {
@@ -174,6 +180,8 @@ public class islands extends GameObject implements serializable{
         Bounds boundsisland24 = island24.localToScene(island.getBoundsInParent());
         Bounds boundsisland25 = island25.localToScene(island.getBoundsInParent());
         Bounds boundsisland26 = island26.localToScene(island.getBoundsInParent());
+        Bounds boundsisland27 = island27.localToScene(island.getBoundsInParent());
+        Bounds boundsisland28 = island28.localToScene(island.getBoundsInParent());
         islands_bounds = new ArrayList<>();
         islands_bounds.add(boundsisland);
         islands_bounds.add(boundsisland1);
@@ -200,6 +208,8 @@ public class islands extends GameObject implements serializable{
         islands_bounds.add(boundsisland24);
         islands_bounds.add(boundsisland25);
         islands_bounds.add(boundsisland26);
+        islands_bounds.add(boundsisland27);
+        islands_bounds.add(boundsisland28);
 
         return islands_bounds;
     }

@@ -28,6 +28,9 @@ public class game  {
 
     @FXML
     private Label counter;
+
+    @FXML
+    private Label coinscounter;
     @FXML
     private Group chests;
     @FXML
@@ -71,6 +74,7 @@ public class game  {
         gameoverwindow.gameoverpaneinvisible();
         gameoverwindow.quitpaneinvisible();
         counter  = (Label) scene.lookup("#counter");
+        coinscounter  = (Label) scene.lookup("#coinscounter");
         defaultchest = (ImageView) scene.lookup("#defaultchest");
         island1 = (ImageView) scene.lookup("#island1");
         grorc.getHero().setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -109,7 +113,7 @@ public class game  {
         TranslateTransition death = new TranslateTransition();
 
         final int[] dashc = {0};
-
+        final int[] coinsc = {0};
         final int[] flag1 = {0};
         chests wchest = new weaponchest(scene,"#chests","#defaultchest");
         chests cchest = new coinchest(scene,"#coinchests","#defaultcoinchest");
@@ -150,11 +154,25 @@ public class game  {
         gameelements.addAll(wchest1.getChests_all());
         gameelements.addAll(wchest2.getChests_all());
         gameelements.addAll(wchest3.getChests_all());
+        final int[] coinss = {0};
         AnimationTimer timer = new AnimationTimer() {
 
             @Override
             public void handle(long l) {
                 int knives = 0;
+                for (int i = 0; i < orcs.size(); i++) {
+                    if (orcs.get(i).isDead() == 1&&!orcs.get(i).isDea()) {
+
+                        coinss[0] = coinss[0] + 10;
+                        coinscounter.setText(Integer.toString(coinss[0]));
+                        orcs.get(i).setDead(2);
+                        orcs.get(i).setDea(true);
+                        break;
+
+                    }
+
+                }
+
                 for (int i = 0; i < cislands.getALLislands().size(); i++) {
                     if (cislands.getIslands().get(i).getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
                         fall.stop();
@@ -206,6 +224,10 @@ public class game  {
                             }
 
                         }
+                        if(chests.get(i).getClass()==cchest.getClass()&&!chests.get(i).getopen()){
+                            coinss[0] = coinss[0] + 50;
+                            coinscounter.setText(Integer.toString(coinss[0]));
+                        }
                         chests.get(i).setOpen();
                         chests.get(i).run();
                         break;
@@ -241,12 +263,13 @@ public class game  {
                     public void handle(KeyEvent keyEvent) {
                         if(keyEvent.getCode()== KeyCode.SPACE) {
 
+
                                 for (ImageView i : gameelements) {
                                     TranslateTransition backshift = new TranslateTransition();
                                     backshift.setDuration(Duration.seconds(0.1));
                                     backshift.setByX(-100);
                                     dashc[0]++;
-                                    counter.setText(Integer.toString(dashc[0]/53 ));
+                                    counter.setText(Integer.toString(dashc[0]/87));
                                     backshift.setNode(i);
                                     backshift.play();
                                 }
@@ -274,14 +297,14 @@ public class game  {
                                         for (int i = 0; i < orcs.size(); i++) {
                                             if ((knife.getKnife().getBoundsInParent().intersects(orcs.get(i).getHero().getBoundsInParent()) || knife1.getKnife().getBoundsInParent().intersects(orcs.get(i).getHero().getBoundsInParent()))&&((knife1.getKnife().getBoundsInParent().getCenterY()<=orcs.get(i).getHero().getBoundsInParent().getMaxY()&&knife1.getKnife().getBoundsInParent().getCenterY()>=orcs.get(i).getHero().getBoundsInParent().getMinY())||(knife.getKnife().getBoundsInParent().getCenterY()<=orcs.get(i).getHero().getBoundsInParent().getMaxY()&&knife.getKnife().getBoundsInParent().getCenterY()>=orcs.get(i).getHero().getBoundsInParent().getMinY()))) {
                                                 if(wchest.getopen()&&knife.isEquipped()) {
-
+                                                    orcs.get(i).setDead(1);
                                                     orcs.get(i).death(death);
                                                     death.play();
                                                 }
                                             }
                                             if ((axe.getKnife().getBoundsInParent().intersects(orcs.get(i).getHero().getBoundsInParent()) )&&((axe.getKnife().getBoundsInParent().getCenterY()<=orcs.get(i).getHero().getBoundsInParent().getMaxY()&&axe.getKnife().getBoundsInParent().getCenterY()>=orcs.get(i).getHero().getBoundsInParent().getMinY()))) {
                                                 if(wchest.getopen()&&axe.isEquipped()) {
-
+                                                    orcs.get(i).setDead(1);
                                                     orcs.get(i).death(death);
                                                     death.play();
                                                 }
@@ -312,6 +335,7 @@ public class game  {
 
 
                 for (int i = 0; i < orcs.size(); i++) {
+
                     if (orcs.get(i).getHero().getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
                         double gbot = orcs.get(i).getHero().getBoundsInParent().getMinY();
                         double gtop = orcs.get(i).getHero().getBoundsInParent().getMaxY();
@@ -344,7 +368,9 @@ public class game  {
                                     orcfall.setOnFinished(new EventHandler<ActionEvent>() {
                                         @Override
                                         public void handle(ActionEvent event) {
+                                            System.out.println("1111111111");
                                             orcs.get(finalI).getHero().setVisible(false);
+                                            orcs.get(finalI).setDead(1);
                                         }
                                     });
                                     AnimationTimer orc = new AnimationTimer() {

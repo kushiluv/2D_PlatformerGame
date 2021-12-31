@@ -81,7 +81,7 @@
             <Image url="@../../../Coin.png" />
          </image>
       </ImageView>
-      <Label layoutX="76.0" layoutY="25.0" text="0">
+      <Label fx:id="coinscounter" layoutX="56.0" layoutY="25.0" prefHeight="47.0" prefWidth="47.0" text="0">
          <font>
             <Font size="32.0" />
          </font>
@@ -497,6 +497,11 @@
             <Image url="@../../../Pirate_chest__openning_001.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="island28" fitHeight="1625.0" fitWidth="190.0" layoutX="11944.0" layoutY="-166.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@../../../Merged_document.png" />
+         </image>
+      </ImageView>
       <ImageView fx:id="island20" fitHeight="242.0" fitWidth="253.0" layoutX="5809.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_11.png" />
@@ -523,6 +528,11 @@
       <ImageView fx:id="island11" fitHeight="248.0" fitWidth="269.0" layoutX="3984.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_06.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="island27" fitHeight="1625.0" fitWidth="190.0" layoutX="10446.0" layoutY="-166.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@../../../Merged_document.png" />
          </image>
       </ImageView>
       <Group fx:id="coinchests" layoutX="2350.0" layoutY="209.0" scaleX="0.05" scaleY="0.05" />
@@ -577,7 +587,7 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <ImageView fx:id="island25" fitHeight="120.0" fitWidth="269.0" layoutX="8428.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="island25" fitHeight="120.0" fitWidth="269.0" layoutX="8777.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_02.png" />
          </image>
@@ -585,7 +595,12 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <ImageView fx:id="island26" fitHeight="120.0" fitWidth="269.0" layoutX="8906.0" layoutY="486.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="242.0" fitWidth="248.0" layoutX="11352.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../4%20mini-boss.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="island26" fitHeight="120.0" fitWidth="269.0" layoutX="9454.0" layoutY="486.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_02.png" />
          </image>

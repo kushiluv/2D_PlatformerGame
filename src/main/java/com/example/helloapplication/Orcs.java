@@ -16,9 +16,15 @@ public abstract class Orcs extends GameObject {
     @FXML
     private ImageView death;
 
+    private int dead;
+
+    private boolean dea;
+
     public Orcs(Scene scene, String string){
         this.grorc = (ImageView) scene.lookup(string);
         this.death = (ImageView) scene.lookup("#death");
+        dead = 0;
+        dea = false;
     }
     public ImageView getHero() {
         return grorc;
@@ -46,4 +52,19 @@ public abstract class Orcs extends GameObject {
 
     }
 
+    public int isDead() {
+        return dead;
+    }
+
+    public void setDead(int dead) {
+        this.dead = dead;
+    }
+
+    public boolean isDea() {
+        return dea;
+    }
+
+    public void setDea(boolean dea) {
+        this.dea = dea;
+    }
 }
