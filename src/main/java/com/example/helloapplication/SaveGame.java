@@ -8,10 +8,14 @@ public class SaveGame {
     private static ArrayList<String>
 
     class Serialize_obj{
-        Hero hero;
-        int coin
+        private Hero hero;
+        private int coinc[];
+        private int dashc[];
+        public Serialize_obj(){
 
+        }
     }
+
     ArrayList<Object> save_objs = new ArrayList<>();
     ObjectOutputStream ob = new ObjectOutputStream(new FileOutputStream())
 }
