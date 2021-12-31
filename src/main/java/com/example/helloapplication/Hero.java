@@ -13,8 +13,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-public class Hero extends GameObject{
-//    private Helmet helmet;
+public class Hero extends GameObject implements serializable{
+    private static final long serialVersionUID = 45L;
+
+    //    private Helmet helmet;
     private boolean IsAlive;
     private int gravity;
     @FXML

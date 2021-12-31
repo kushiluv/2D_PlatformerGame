@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 
-public class islands extends GameObject {
+public class islands extends GameObject implements serializable{
     @FXML
     private ImageView island;
 

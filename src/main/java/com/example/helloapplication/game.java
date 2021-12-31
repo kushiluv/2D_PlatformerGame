@@ -206,6 +206,17 @@ public class game  {
 
 
 
+                menu.getSave().setOnMouseClicked(e -> {
+
+                });
+
+                gameoverwindow.getRestart1().setOnMouseClicked(e -> {
+                    try {
+                        restart(gamestage);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                });
 
 
                 scene.setOnKeyPressed(new EventHandler<KeyEvent>() {

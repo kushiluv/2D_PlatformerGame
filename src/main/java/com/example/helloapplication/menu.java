@@ -18,10 +18,15 @@ public class menu {
 
 
 
+    private Button save;
+
     public menu(Scene scene){
         pause = (ImageView) scene.lookup("#pause");
         pausepane = (Pane) scene.lookup("#pausepane");
         resume = (Button) scene.lookup("#resume");
+
+        save = (Button) scene.lookup("#save");
+
     }
     public ImageView getPause(){
         return pause;
@@ -29,6 +34,11 @@ public class menu {
     public Button getResume(){
         return resume;
     }
+
+    public Button getSave() {
+        return save;
+    }
+
 
     public Pane getPausepane() {
         return pausepane;

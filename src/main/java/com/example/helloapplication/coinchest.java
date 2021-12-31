@@ -12,7 +12,8 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 
-public class coinchest implements chests {
+public class coinchest implements chests, serializable {
+    private static final long serialVersionUID = 42L;
     @FXML
     private Group chests;
     @FXML
