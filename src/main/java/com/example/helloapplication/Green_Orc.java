@@ -11,7 +11,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-public class Green_Orc extends Orcs {
+public class Green_Orc extends Orcs implements serializable {
+    private static final long serialVersionUID = 43L;
 
     public Green_Orc(Scene scene, String string) {
         super(scene, string);
