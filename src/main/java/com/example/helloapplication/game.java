@@ -46,6 +46,19 @@ public class game  {
         // stop animations reset model ect.
     }
 
+    private Orcs grorc;
+    private Orcs grorc1;
+    private Orcs grorc2;
+    private Orcs rorc1;
+    private Orcs rorc2;
+    private islands cislands;
+    private chests wchest;
+    private chests cchest;
+    private chests wchest1;
+    private chests wchest2;
+    private chests wchest3;
+    private chests cchest1;
+    private tnt wtnt;
 
 
     void startGame(Stage gamestage) throws IOException {
@@ -55,11 +68,11 @@ public class game  {
         Scene scene = new Scene(root, 1200, 650);
         Hero hero = new Hero(scene);
 
-        Orcs grorc = new Green_Orc(scene,"#orc");
-        Orcs grorc1 = new Green_Orc(scene,"#orc11");
-        Orcs grorc2 = new Green_Orc(scene,"#orc3");
-        Orcs rorc1 = new Red_Orc(scene,"#rorc1");
-        Orcs rorc2 = new Red_Orc(scene,"#rorc2");
+        grorc = new Green_Orc(scene,"#orc");
+        grorc1 = new Green_Orc(scene,"#orc11");
+        grorc2 = new Green_Orc(scene,"#orc3");
+        rorc1 = new Red_Orc(scene,"#rorc1");
+        rorc2 = new Red_Orc(scene,"#rorc2");
         ArrayList<Orcs> orcs = new ArrayList<>();
         orcs.add(grorc);
         orcs.add(grorc1);
@@ -84,7 +97,7 @@ public class game  {
             }
         });
 
-        islands cislands = new islands(scene);
+        cislands = new islands(scene);
         ArrayList<TranslateTransition> orcjumps = new ArrayList<>();
         for(int i =0; i<orcs.size();i++) {
             TranslateTransition orcjump = new TranslateTransition();
@@ -112,12 +125,12 @@ public class game  {
 
         final int[] dashc = {0};
         final int[] flag1 = {0};
-        chests wchest = new weaponchest(scene,"#chests","#defaultchest");
-        chests cchest = new coinchest(scene,"#coinchests","#defaultcoinchest");
-        chests cchest1 = new coinchest(scene,"#coinchests1","#defaultcoinchest1");
-        chests wchest1 = new weaponchest(scene,"#chestss1","#defaultchest1");
-        chests wchest2 = new weaponchest(scene,"#chestss2","#defaultchest2");
-        chests wchest3 = new weaponchest(scene,"#chestss3","#defaultchest3");
+        wchest = new weaponchest(scene,"#chests","#defaultchest");
+        cchest = new coinchest(scene,"#coinchests","#defaultcoinchest");
+        cchest1 = new coinchest(scene,"#coinchests1","#defaultcoinchest1");
+        wchest1 = new weaponchest(scene,"#chestss1","#defaultchest1");
+        wchest2 = new weaponchest(scene,"#chestss2","#defaultchest2");
+        wchest3 = new weaponchest(scene,"#chestss3","#defaultchest3");
 
         ArrayList<chests> chests = new ArrayList<>();
         chests.add(wchest);
@@ -126,21 +139,10 @@ public class game  {
         chests.add(wchest1);
         chests.add(wchest2);
         chests.add(wchest3);
-        tnt wtnt = new tnt(scene,"#tnts","#defaulttnt");
-        ArrayList<ImageView> gameelements = new ArrayList<>();
-        gameelements.addAll(cislands.getIslands());
-        gameelements.add(grorc.getHero());
-        gameelements.add(grorc1.getHero());
-        gameelements.add(grorc2.getHero());
-        gameelements.add(rorc2.getHero());
-        gameelements.add(rorc1.getHero());
-        gameelements.add(wchest.chestimg());
-        gameelements.add(cchest1.chestimg());
-        gameelements.add(wtnt.chestimg());
-        gameelements.add(wchest2.chestimg());
-        gameelements.add(wchest3.chestimg());
-        gameelements.add(cchest.chestimg());
-        gameelements.add(wchest1.chestimg());
+        wtnt = new tnt(scene,"#tnts","#defaulttnt");
+
+        ArrayList<ImageView> gameelements = GameElements();
+
         throwingknives knife = new throwingknives(scene, "#knife","#knifeupgrade1");
         throwingknives knife1 = new throwingknives(scene, "#knife1","#knifeupgrade");
         throwingAxe axe = new throwingAxe(scene,"#axe");
@@ -473,7 +475,27 @@ public class game  {
 
             }
         });
+
+
     }
+    public ArrayList<ImageView> GameElements(){
+        ArrayList<ImageView> gameelements = new ArrayList<>();
+        gameelements.addAll(cislands.getIslands());
+        gameelements.add(grorc.getHero());
+        gameelements.add(grorc1.getHero());
+        gameelements.add(grorc2.getHero());
+        gameelements.add(rorc2.getHero());
+        gameelements.add(rorc1.getHero());
+        gameelements.add(wchest.chestimg());
+        gameelements.add(cchest1.chestimg());
+        gameelements.add(wtnt.chestimg());
+        gameelements.add(wchest2.chestimg());
+        gameelements.add(wchest3.chestimg());
+        gameelements.add(cchest.chestimg());
+        gameelements.add(wchest1.chestimg());
+        return gameelements;
+    }
+
 
 
     public void start(Stage primaryStage) throws IOException {

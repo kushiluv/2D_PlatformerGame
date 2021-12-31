@@ -16,9 +16,9 @@ public class menu {
     @FXML
     private Button resume;
 
-
-
+    @FXML
     private Button save;
+
 
     public menu(Scene scene){
         pause = (ImageView) scene.lookup("#pause");
