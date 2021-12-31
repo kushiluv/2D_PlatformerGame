@@ -114,13 +114,17 @@ public class game  {
         chests wchest = new weaponchest(scene,"#chests","#defaultchest");
         chests cchest = new coinchest(scene,"#coinchests","#defaultcoinchest");
         chests cchest1 = new coinchest(scene,"#coinchests1","#defaultcoinchest1");
-        chests wchest1 = new weaponchest(scene,"#chests1","#defaultchest1");
-
+        chests wchest1 = new weaponchest(scene,"#chestss1","#defaultchest1");
+        chests wchest2 = new weaponchest(scene,"#chestss2","#defaultchest2");
+        chests wchest3 = new weaponchest(scene,"#chestss3","#defaultchest3");
 
         ArrayList<chests> chests = new ArrayList<>();
         chests.add(wchest);
         chests.add(cchest);
         chests.add(cchest1);
+        chests.add(wchest1);
+        chests.add(wchest2);
+        chests.add(wchest3);
         tnt wtnt = new tnt(scene,"#tnts","#defaulttnt");
         ArrayList<ImageView> gameelements = new ArrayList<>();
         gameelements.addAll(cislands.getIslands());
@@ -132,7 +136,10 @@ public class game  {
         gameelements.add(wchest.chestimg());
         gameelements.add(cchest1.chestimg());
         gameelements.add(wtnt.chestimg());
+        gameelements.add(wchest2.chestimg());
+        gameelements.add(wchest3.chestimg());
         gameelements.add(cchest.chestimg());
+        gameelements.add(wchest1.chestimg());
         throwingknives knife = new throwingknives(scene, "#knife","#knifeupgrade1");
         throwingknives knife1 = new throwingknives(scene, "#knife1","#knifeupgrade");
         throwingAxe axe = new throwingAxe(scene,"#axe");
@@ -140,6 +147,9 @@ public class game  {
         gameelements.addAll(wtnt.getChests_all());
         gameelements.addAll(cchest.getChests_all());
         gameelements.addAll(cchest1.getChests_all());
+        gameelements.addAll(wchest1.getChests_all());
+        gameelements.addAll(wchest2.getChests_all());
+        gameelements.addAll(wchest3.getChests_all());
         AnimationTimer timer = new AnimationTimer() {
 
             @Override
@@ -170,7 +180,7 @@ public class game  {
                 for(int i =0; i<chests.size();i++) {
                     if (hero.getHero().getBoundsInParent().intersects(chests.get(i).chestimg().getBoundsInParent())) {
                         System.out.println("chesting");
-                        if(chests.get(i).getClass()==wchest.getClass()&&!wchest.getopen()){
+                        if(chests.get(i).getClass()==wchest.getClass()&&!chests.get(i).getopen()){
                             Random weapo = new Random();
                             int weapon = weapo.nextInt(2);
                             if(weapon==0){
@@ -178,6 +188,7 @@ public class game  {
                                 knife1.setUpgrade_level(knife1.getUpgrade_level()+1);
                                 if(knife.getUpgrade_level()==2){
                                     knife.upgrade();
+                                    knife1.upgrade();
 
                                 }
                                 else if(knife.getUpgrade_level()==1){
