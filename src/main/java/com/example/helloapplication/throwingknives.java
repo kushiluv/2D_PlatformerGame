@@ -10,7 +10,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-public class throwingknives {
+public class throwingknives implements serializable {
+    private static final long serialVersionUID = 47L;
+
     @FXML
     private ImageView knife;
 
@@ -22,7 +24,7 @@ public class throwingknives {
     private int upgrade_level;
     private int range;
     private boolean equipped;
-    public throwingknives(Scene scene,String knifee,String knifeupgradee){
+    public throwingknives(Scene scene,String knifee,String knifeupgradee) {
         range = 250;
         upgrade_level= 0;
         knife = (ImageView) scene.lookup(knifee);

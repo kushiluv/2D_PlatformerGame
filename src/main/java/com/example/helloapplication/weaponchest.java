@@ -14,7 +14,9 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 
-public class weaponchest implements chests{
+public class weaponchest implements chests, serializable{
+    private static final long serialVersionUID = 50L;
+
     @FXML
     private Group chests;
     @FXML

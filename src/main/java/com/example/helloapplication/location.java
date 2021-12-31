@@ -1,6 +1,8 @@
 package com.example.helloapplication;
 
-public class location {
+public class location implements serializable{
+    private static final long serialVersionUID = 41L;
+
     private double x;
     private double y;
 

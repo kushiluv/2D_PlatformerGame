@@ -12,7 +12,9 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 
-public class tnt {
+public class tnt implements serializable {
+    private static final long serialVersionUID = 33L;
+
     @FXML
     private Group chests;
     @FXML

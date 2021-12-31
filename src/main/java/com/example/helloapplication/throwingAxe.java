@@ -9,7 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-public class throwingAxe {
+public class throwingAxe implements serializable {
+    private static final long serialVersionUID = 39L;
+
     @FXML
     private ImageView axe;
 

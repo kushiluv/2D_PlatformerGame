@@ -24,7 +24,8 @@ public class gameoverwindow {
     @FXML
     private Pane quitpane;
 
-
+    @FXML
+    private Button load;
 
     public gameoverwindow(Scene scene){
         gameover = (Pane) scene.lookup("#gameover");
@@ -33,6 +34,7 @@ public class gameoverwindow {
         restart1 = (Button) scene.lookup("#restart1");
         quitno = (Button) scene.lookup("#quitno");
         finalexit = (Button) scene.lookup("#finalexit");
+        load = (Button) scene.lookup("#load");
     }
 
     public Pane getGameover() {
@@ -45,6 +47,10 @@ public class gameoverwindow {
 
     public Button getRestart1() {
         return restart1;
+    }
+
+    public Button getLoad() {
+        return load;
     }
 
     public Button getQuitno() {
