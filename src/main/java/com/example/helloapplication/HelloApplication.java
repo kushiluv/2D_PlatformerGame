@@ -9,10 +9,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
@@ -24,6 +27,8 @@ public class HelloApplication extends Application {
     @FXML
     private Button load1;
 
+    @FXML
+    private ListView listView;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -42,10 +47,21 @@ public class HelloApplication extends Application {
 //        });
         load load = new load(scene);
 
-        load1.setOnMouseClicked(e -> {
-            load.loadvisible();
-
-        });
+//        load1.setOnMouseClicked(e -> {
+//            load.loadvisible();
+//            load.getLoad2().setOnMouseClicked(r ->{
+//                FileChooser fo = new FileChooser();
+//                fo.setInitialDirectory(new File("src/main/resources/load"));
+//                File selectedfile = fo.showOpenDialog(null);
+//                if (selectedfile!=null){
+//                    listView.getItems().add(selectedfile.get);
+//                }else{
+//                    System.out.println("Error opening the file");
+//                }
+//
+//
+//            });
+//        });
         load.getBack().setOnMouseClicked(e -> {
             load.loadinvisible();
         });
