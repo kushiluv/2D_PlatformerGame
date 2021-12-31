@@ -148,8 +148,6 @@ public class game  {
                             public void handle(ActionEvent event) {
                                 fall.play();
                             }
-
-
                         });
 
                     }
@@ -166,7 +164,7 @@ public class game  {
                 for(int i =0; i<chests.size();i++) {
                     if (hero.getHero().getBoundsInParent().intersects(chests.get(i).chestimg().getBoundsInParent())) {
                         System.out.println("chesting");
-                        if(chests.get(i).getClass()==wchest.getClass()){
+                        if(chests.get(i).getClass()==wchest.getClass()&&!wchest.getopen()){
                             Random weapo = new Random();
                             int weapon = weapo.nextInt(2);
                             if(weapon==0){
@@ -174,7 +172,7 @@ public class game  {
                                 knife1.setUpgrade_level(knife1.getUpgrade_level()+1);
                                 if(knife.getUpgrade_level()==2){
                                     knife.upgrade();
-                                    knife1.upgrade();
+
                                 }
                                 else if(knife.getUpgrade_level()==1){
                                     knife.setKnifeicon();
@@ -291,7 +289,7 @@ public class game  {
                         double gtop = orcs.get(i).getHero().getBoundsInParent().getMaxY();
                         double hbot = hero.getHero().getBoundsInParent().getMinY();
                         double htop = hero.getHero().getBoundsInParent().getMaxY();
-                        if (!((htop-gbot>90) &&  ((htop<=gtop && hbot>=gbot) || (htop>=gtop&& hbot>=gbot)))) {
+                        if (!((htop-gbot>100) &&  ((htop<=gtop && hbot>=gbot) || (htop>=gtop&& hbot>=gbot)))) {
                             System.out.println(htop);
                             System.out.println(hbot);
                             System.out.println(gtop);

@@ -46,8 +46,38 @@ public class islands extends GameObject {
 
     @FXML
     private ImageView island12;
+
+
     @FXML
-    private ImageView island13;
+    private ImageView island15;
+
+    @FXML
+    private ImageView island16;
+
+
+
+    @FXML
+    private ImageView island19;
+
+    @FXML
+    private ImageView island20;
+
+    @FXML
+    private ImageView island21;
+
+    @FXML
+    private ImageView island22;
+
+    @FXML
+    private ImageView island23;
+
+    @FXML
+    private ImageView island24;
+
+    @FXML
+    private ImageView island25;
+    @FXML
+    private ImageView island26;
 
 
     private ArrayList<ImageView> islands;
@@ -69,7 +99,19 @@ public class islands extends GameObject {
         island10 = (ImageView) scene.lookup("#island10");
         island11 = (ImageView) scene.lookup("#island11");
         island12 = (ImageView) scene.lookup("#island12");
-        island13 = (ImageView) scene.lookup("#island13");
+
+        island15 = (ImageView) scene.lookup("#island15");
+        island16 = (ImageView) scene.lookup("#island16");
+
+
+        island19 = (ImageView) scene.lookup("#island19");
+        island20 = (ImageView) scene.lookup("#island20");
+        island21 = (ImageView) scene.lookup("#island21");
+        island22 = (ImageView) scene.lookup("#island22");
+        island23 = (ImageView) scene.lookup("#island23");
+        island24 = (ImageView) scene.lookup("#island24");
+        island25 = (ImageView) scene.lookup("#island25");
+        island26 = (ImageView) scene.lookup("#island26");
 
         islands.add(island);
         islands.add(island1);
@@ -84,7 +126,18 @@ public class islands extends GameObject {
         islands.add(island10);
         islands.add(island11);
         islands.add(island12);
-        islands.add(island13);
+
+        islands.add(island15);
+        islands.add(island16);
+
+        islands.add(island19);
+        islands.add(island20);
+        islands.add(island21);
+        islands.add(island22);
+        islands.add(island23);
+        islands.add(island24);
+        islands.add(island25);
+        islands.add(island26);
     }
 
     public ArrayList<ImageView> getIslands() {
@@ -109,7 +162,18 @@ public class islands extends GameObject {
         Bounds boundsisland10 = island10.localToScene(island.getBoundsInParent());
         Bounds boundsisland11 = island11.localToScene(island.getBoundsInParent());
         Bounds boundsisland12 = island12.localToScene(island.getBoundsInParent());
-        Bounds boundsisland13 = island13.localToScene(island.getBoundsInParent());
+
+        Bounds boundsisland15 = island15.localToScene(island.getBoundsInParent());
+        Bounds boundsisland16 = island16.localToScene(island.getBoundsInParent());
+
+        Bounds boundsisland19 = island19.localToScene(island.getBoundsInParent());
+        Bounds boundsisland20 = island20.localToScene(island.getBoundsInParent());
+        Bounds boundsisland21 = island21.localToScene(island.getBoundsInParent());
+        Bounds boundsisland22 = island22.localToScene(island.getBoundsInParent());
+        Bounds boundsisland23 = island23.localToScene(island.getBoundsInParent());
+        Bounds boundsisland24 = island24.localToScene(island.getBoundsInParent());
+        Bounds boundsisland25 = island25.localToScene(island.getBoundsInParent());
+        Bounds boundsisland26 = island26.localToScene(island.getBoundsInParent());
         islands_bounds = new ArrayList<>();
         islands_bounds.add(boundsisland);
         islands_bounds.add(boundsisland1);
@@ -124,7 +188,18 @@ public class islands extends GameObject {
         islands_bounds.add(boundsisland10);
         islands_bounds.add(boundsisland11);
         islands_bounds.add(boundsisland12);
-        islands_bounds.add(boundsisland13);
+
+        islands_bounds.add(boundsisland15);
+        islands_bounds.add(boundsisland16);
+
+        islands_bounds.add(boundsisland19);
+        islands_bounds.add(boundsisland20);
+        islands_bounds.add(boundsisland21);
+        islands_bounds.add(boundsisland22);
+        islands_bounds.add(boundsisland23);
+        islands_bounds.add(boundsisland24);
+        islands_bounds.add(boundsisland25);
+        islands_bounds.add(boundsisland26);
 
         return islands_bounds;
     }

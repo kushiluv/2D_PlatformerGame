@@ -4,30 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="tntexplodesig">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/coinchest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_004.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_005.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_008.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_009.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest__openning_010.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Pirate_chest_gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/axeupgrade.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/knifeupgrade.png" afterDir="false" />
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="weaponupgraded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/chests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/chests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/throwingAxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/throwingAxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/throwingknives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/throwingknives.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/weaponchest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/weaponchest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/islands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640864206969</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="weaponupgraded">
+      <created>1640891968039</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1640891968039</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +268,7 @@
     <MESSAGE value="gameoverwindow" />
     <MESSAGE value="2ndweapon" />
     <MESSAGE value="tntexplodesig" />
-    <option name="LAST_COMMIT_MESSAGE" value="tntexplodesig" />
+    <MESSAGE value="weaponupgraded" />
+    <option name="LAST_COMMIT_MESSAGE" value="weaponupgraded" />
   </component>
 </project>
