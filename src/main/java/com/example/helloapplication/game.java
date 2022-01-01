@@ -179,22 +179,25 @@ public class game  {
                     menu.panevisible();
                 });
                 menu.getResume().setOnMouseClicked(e ->{
-//                    menu.paneinvisible();
+                    menu.paneinvisible();
+
+//                    saved_entry.setText("Game Saved!");
+                });
+                menu.getSave().setOnMouseClicked(e ->{
                     menu.paneinvisible();
                     System.out.println("Ja rha hai bc");
                     Serialized_obj o = new Serialized_obj(hero, coinss, dashc);
                     SaveGame save = new SaveGame(o);
                     menu.panevisible();
 //                    saved_entry.setText("Game Saved!");
-                });
-                menu.getSave().setOnMouseClicked(e ->{
-//                    menu.paneinvisible();
-//                    System.out.println("Ja rha hai bc");
-//                    Serialized_obj o = new Serialized_obj(hero, coinss, dashc);
-//                    SaveGame save = new SaveGame(o);
-//                    menu.panevisible();
-//                    saved_entry.setText("Game Saved!");
 
+                });
+                menu.getRestartt().setOnMouseClicked(e -> {
+                    try {
+                        restart(gamestage);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 });
                 menu.getExit().setOnMouseClicked(e ->{
                     menu.paneinvisible();
@@ -308,9 +311,7 @@ public class game  {
 
 
 
-                menu.getSave().setOnMouseClicked(e -> {
 
-                });
 
                 gameoverwindow.getRestart1().setOnMouseClicked(e -> {
                     try {

@@ -18,6 +18,8 @@ public class menu {
 
     @FXML
     private Button save;
+    @FXML
+    private Button restartt;
 
     @FXML
     private Button exit;
@@ -26,6 +28,7 @@ public class menu {
         pause = (ImageView) scene.lookup("#pause");
         pausepane = (Pane) scene.lookup("#pausepane");
         resume = (Button) scene.lookup("#resume");
+        restartt = (Button) scene.lookup("#restart");
 
         save = (Button) scene.lookup("#save");
         exit = (Button) scene.lookup("#exit");
@@ -36,6 +39,10 @@ public class menu {
     }
     public Button getResume(){
         return resume;
+    }
+
+    public Button getRestartt() {
+        return restartt;
     }
 
     public Button getExit() {

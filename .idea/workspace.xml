@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load11.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load12.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load9.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/load.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/load.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641023506255</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="coinsdonej">
+      <created>1641024383139</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1641024383139</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
