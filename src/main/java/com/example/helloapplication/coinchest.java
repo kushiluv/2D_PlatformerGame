@@ -10,9 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class coinchest implements chests, serializable {
+public class coinchest implements chests, Serializable {
     private static final long serialVersionUID = 42L;
     @FXML
     private Group chests;

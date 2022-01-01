@@ -1,6 +1,8 @@
 package com.example.helloapplication;
 
-public class Serialized_obj implements serializable {
+import java.io.Serializable;
+
+public class Serialized_obj implements Serializable {
     private static final long serialVersionUID = 20L;
 
     private Hero hero;

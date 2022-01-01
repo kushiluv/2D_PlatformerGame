@@ -3,7 +3,7 @@ package com.example.helloapplication;
 import java.io.*;
 import java.util.ArrayList;
 
-public class SaveGame implements serializable {
+public class SaveGame implements Serializable {
 
     private final File [] file;
     private Serialized_obj object;
@@ -24,6 +24,7 @@ public class SaveGame implements serializable {
             System.out.println(name);
             ob = new ObjectOutputStream(new FileOutputStream("src/main/resources/LoadGames/"+name));
             ob.writeObject(o);
+            ob.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

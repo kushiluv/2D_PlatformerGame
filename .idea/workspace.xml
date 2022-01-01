@@ -6,17 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/SaveGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/SaveGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Serialized_obj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Serialized_obj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/coinchest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/coinchest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/load.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/load.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load10.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load5.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load6.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Hero.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641007330390</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="coinsdonej">
+      <created>1641008411969</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1641008411969</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class load implements Initializable {
+public class load {
 
     @FXML
     private AnchorPane loadmenu;
@@ -36,7 +36,10 @@ public class load implements Initializable {
 
     public void displayloadmenu(){
         loadvisible();
+        System.out.println("Test 1");
         menufunctions();
+        initializ();
+
 
     }
 
@@ -68,8 +71,8 @@ public class load implements Initializable {
     }
     private String toload;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    public void initializ() {
          listView = new ListView<>();
         ArrayList<String> temp = new LoadGame().getGames();
         String[] str = new String[temp.size()];
@@ -77,7 +80,7 @@ public class load implements Initializable {
         for (int i = 0; i < temp.size(); i++) {
             str[i] = temp.get(i);
         }
-        for (String k : temp) {
+        for (String k : str) {
             System.out.println(k);
         }
          listView.getItems().addAll(str);
