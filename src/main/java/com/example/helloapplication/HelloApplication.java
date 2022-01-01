@@ -1,6 +1,7 @@
 package com.example.helloapplication;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -28,7 +29,10 @@ public class HelloApplication extends Application {
     private Button load1;
 
     @FXML
+    private Button exit;
+    @FXML
     private ListView listView;
+
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -36,7 +40,9 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(root, 1200, 600);
         temp = (Button) scene.lookup("#temp");
 
-        load1 = (Button) scene.lookup("#load");
+        load1 = (Button) scene.lookup("#load1");
+        exit = (Button) scene.lookup("#exit");
+
 //        temp.setOnMouseClicked(new EventHandler<MouseEvent>() {
 //            @Override
 //            public void handle(MouseEvent mouseEvent) {
@@ -45,10 +51,11 @@ public class HelloApplication extends Application {
 //                game.start(stage);
 //            }
 //        });
-        load load = new load(scene);
 
-//        load1.setOnMouseClicked(e -> {
-//            load.loadvisible();
+        load1.setOnMouseClicked(e -> {
+            load load = new load(scene);
+            load.displayloadmenu();
+
 //            load.getLoad2().setOnMouseClicked(r ->{
 //                FileChooser fo = new FileChooser();
 //                fo.setInitialDirectory(new File("src/main/resources/load"));
@@ -61,9 +68,18 @@ public class HelloApplication extends Application {
 //
 //
 //            });
-//        });
-        load.getBack().setOnMouseClicked(e -> {
-            load.loadinvisible();
+        });
+        exit.setOnMouseClicked(e -> {
+            Platform.exit();
+//            menu.getFinalexit().setOnMouseClicked(new EventHandler<MouseEvent>() {
+//                @Override
+//                public void handle(MouseEvent mouseEvent) {
+//                    Platform.exit();
+//                }
+//            });
+//            menu.getQuitno().setOnMouseClicked(d -> {
+//                menu.quitpaneinvisible();
+//            });
         });
 
         stage.setScene(scene);

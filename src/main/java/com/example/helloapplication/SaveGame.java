@@ -1,12 +1,9 @@
 package com.example.helloapplication;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 
-public class SaveGame {
+public class SaveGame implements serializable {
 
     private final File [] file;
 
@@ -32,14 +29,6 @@ public class SaveGame {
 
 }
 
-class Serialized_obj{
-    private Hero hero;
-    private int coinc[];
-    private int dashc[];
-
-    public Serialized_obj(Hero hero, int[] coinc, int[] dashc) {
-        this.hero = hero;
-        this.coinc = coinc;
-        this.dashc = dashc;
-    }
-}
+//class Serialized_obj{
+//
+//}

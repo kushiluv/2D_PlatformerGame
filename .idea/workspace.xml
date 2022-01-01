@@ -4,8 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="coinsdonej">
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Serialized_obj.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/SaveGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/SaveGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/load.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/load.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/file2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +59,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="22b409hTrDutgtHLaITLvr6mquU" />
   <component name="ProjectLevelVcsManager">
@@ -234,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640956274728</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="coinsdonej">
+      <created>1640996373745</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1640996373746</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +314,22 @@
     <MESSAGE value="islandsadded" />
     <MESSAGE value="weaponchestsdone" />
     <MESSAGE value="sdvc" />
-    <option name="LAST_COMMIT_MESSAGE" value="sdvc" />
+    <MESSAGE value="coinsdonej" />
+    <option name="LAST_COMMIT_MESSAGE" value="coinsdonej" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang">
+            <option name="NOTIFY_UNCAUGHT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

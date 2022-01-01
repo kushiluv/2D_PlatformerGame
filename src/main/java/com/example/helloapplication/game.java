@@ -31,6 +31,10 @@ public class game  {
 
     @FXML
     private Label coinscounter;
+
+    @FXML
+    private Label saved_entry;
+
     @FXML
     private Group chests;
     @FXML
@@ -171,6 +175,36 @@ public class game  {
                     }
 
                 }
+                menu.getPause().setOnMouseClicked(e ->{
+                    menu.panevisible();
+                });
+                menu.getResume().setOnMouseClicked(e ->{
+                    menu.paneinvisible();
+                });
+                menu.getSave().setOnMouseClicked(e ->{
+                    menu.paneinvisible();
+                    Serialized_obj o = new Serialized_obj(hero, coinss, dashc);
+                    SaveGame save = new SaveGame(o);
+                    menu.panevisible();
+//                    saved_entry.setText("Game Saved!");
+
+                });
+                menu.getExit().setOnMouseClicked(e ->{
+                    menu.paneinvisible();
+                    gameoverwindow.quitpanevisible();
+                    gameoverwindow.getFinalexit().setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent mouseEvent) {
+                            Platform.exit();
+                        }
+                    });
+                    gameoverwindow.getQuitno().setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent mouseEvent) {
+                            gameoverwindow.quitpaneinvisible();
+                        }
+                    });
+                });
 
                 for (int i = 0; i < cislands.getALLislands().size(); i++) {
                     if (cislands.getIslands().get(i).getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
@@ -194,6 +228,7 @@ public class game  {
 
 
                 }
+
                 for(int i =0; i<chests.size();i++) {
                     if (hero.getHero().getBoundsInParent().intersects(chests.get(i).chestimg().getBoundsInParent())) {
                         System.out.println("chesting");
@@ -349,6 +384,10 @@ public class game  {
                             knife1.setEquippedfalse();
                             axe.setEquippedTrue();
                         }
+                        if(keyEvent.getCode()==KeyCode.K){
+                            Serialized_obj o = new Serialized_obj(hero, coinss, dashc);
+                            SaveGame save = new SaveGame(o);
+                        }
 
                     }
                 });
@@ -470,12 +509,16 @@ public class game  {
                         Platform.exit();
                     }
                 });
-
-
-
             }
         });
 
+        gameoverwindow.getQuitno().setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                gameoverwindow.quitpaneinvisible();
+                gameover();
+            }
+        });
 
     }
     public ArrayList<ImageView> GameElements(){
