@@ -46,7 +46,7 @@ public class HelloApplication extends Application {
 //            }
 //        });
         load load = new load(scene);
-
+        
 //        load1.setOnMouseClicked(e -> {
 //            load.loadvisible();
 //            load.getLoad2().setOnMouseClicked(r ->{

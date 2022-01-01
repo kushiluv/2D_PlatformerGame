@@ -83,6 +83,7 @@ public class game  {
         gameoverwindow = new gameoverwindow(scene);
 
 
+
         menu.paneinvisible();
         gameoverwindow.gameoverpaneinvisible();
         gameoverwindow.quitpaneinvisible();
