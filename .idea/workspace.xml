@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/file.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/file2.txt" afterDir="false" />
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="coinsdonej">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/SaveGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/SaveGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +65,6 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -72,7 +75,7 @@
       <recent name="C:\Users\kushi\Documents\APAssignm\APPROJECT_GROUP90\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
+  <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.helloapplication.HelloApplication" />
       <module name="HelloApplication" />
@@ -80,18 +83,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Scratch" />
-      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Java Scratch.Scratch" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -251,14 +242,7 @@
       <option name="project" value="LOCAL" />
       <updated>1640956274728</updated>
     </task>
-    <task id="LOCAL-00022" summary="sdvc">
-      <created>1640966824365</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1640966824365</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +269,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

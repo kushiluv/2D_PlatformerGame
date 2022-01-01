@@ -76,12 +76,12 @@
             <Image url="@../../../2%20%2338727.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="39.0" fitWidth="55.0" layoutX="109.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="39.0" fitWidth="55.0" layoutX="33.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Coin.png" />
          </image>
       </ImageView>
-      <Label fx:id="coinscounter" layoutX="56.0" layoutY="25.0" prefHeight="47.0" prefWidth="47.0" text="0">
+      <Label fx:id="coinscounter" layoutX="79.0" layoutY="25.0" prefHeight="50.0" prefWidth="92.0" text="0">
          <font>
             <Font size="32.0" />
          </font>
@@ -167,180 +167,11 @@
             <Image url="@../../../T_Islands_06.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="knifeicon" fitHeight="75.0" fitWidth="52.0" layoutX="32.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../../../knife.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="axe" fitHeight="50.0" fitWidth="34.0" layoutX="186.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../../../throwingaxe.png" />
-         </image>
-      </ImageView>
-      <Pane fx:id="quitpane" layoutX="363.0" layoutY="88.0" prefHeight="399.0" prefWidth="382.0" visible="false">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="385.0" layoutX="-35.0" layoutY="67.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
-            <Button fx:id="finalexit" layoutY="284.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="YES">
-               <font>
-                  <Font size="35.0" />
-               </font>
-               <effect>
-                  <DropShadow spread="0.67">
-                     <color>
-                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Button fx:id="quitno" layoutX="270.0" layoutY="284.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="NO">
-               <font>
-                  <Font size="35.0" />
-               </font>
-               <effect>
-                  <DropShadow spread="0.67">
-                     <color>
-                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Label layoutX="135.0" layoutY="115.0" prefHeight="55.0" prefWidth="202.0" text="QUIT GAME?">
-               <font>
-                  <Font size="34.0" />
-               </font>
-               <effect>
-                  <Glow level="0.98" />
-               </effect>
-            </Label>
-            <AmbientLight color="CHARTREUSE" lightOn="true" />
-         </children>
-         <effect>
-            <ColorAdjust />
-         </effect>
-      </Pane>
-      <Pane fx:id="pausepane" layoutX="290.0" layoutY="67.0" prefHeight="439.0" prefWidth="527.0" visible="false">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="364.0" layoutY="40.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
-            <Button fx:id="exit" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
-               <font>
-                  <Font size="35.0" />
-               </font>
-               <effect>
-                  <DropShadow spread="0.67">
-                     <color>
-                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Button fx:id="resume" layoutX="288.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Resume">
-               <font>
-                  <Font size="35.0" />
-               </font>
-               <effect>
-                  <DropShadow spread="0.67">
-                     <color>
-                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Button fx:id="restart" layoutX="288.0" layoutY="149.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
-               <font>
-                  <Font size="35.0" />
-               </font>
-               <effect>
-                  <DropShadow spread="0.67">
-                     <color>
-                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Button fx:id="save" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Save">
-               <font>
-                  <Font size="35.0" />
-               </font>
-               <effect>
-                  <DropShadow spread="0.67">
-                     <color>
-                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Label layoutX="208.0" layoutY="40.0" prefHeight="63.0" prefWidth="115.0" text="Menu" textFill="#e5ff00" underline="true">
-               <font>
-                  <Font size="44.0" />
-               </font>
-               <effect>
-                  <Glow level="0.98" />
-               </effect>
-            </Label>
-         </children>
-         <effect>
-            <ColorAdjust />
-         </effect>
-      </Pane>
       <AmbientLight layoutX="223.0" layoutY="61.0" lightOn="true">
          <color>
             <Color red="0.6447368264198303" green="0.48952242732048035" blue="0.48952242732048035" />
          </color>
       </AmbientLight>
-      <Pane fx:id="gameover" layoutX="351.0" layoutY="67.0" prefHeight="440.0" prefWidth="498.0" visible="false">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000030" height="440.0" layoutX="-1.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="499.0" />
-            <ImageView fitHeight="96.0" fitWidth="361.0" layoutX="68.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../174682-logo-game-over-free-hd-image.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="restart1" layoutX="25.0" layoutY="355.0" mnemonicParsing="false" opacity="0.82" prefHeight="55.0" prefWidth="162.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
-               <font>
-                  <Font size="29.0" />
-               </font>
-               <effect>
-                  <DropShadow spread="0.67">
-                     <color>
-                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Button fx:id="quitbutton" layoutX="302.0" layoutY="352.0" mnemonicParsing="false" opacity="0.82" prefHeight="61.0" prefWidth="162.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
-               <font>
-                  <Font size="29.0" />
-               </font>
-               <effect>
-                  <DropShadow spread="0.67">
-                     <color>
-                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Button>
-            <Label layoutX="174.0" layoutY="181.0" prefHeight="55.0" prefWidth="149.0" text="Save Me!" textFill="#f2f2f2">
-               <font>
-                  <Font name="SansSerif Bold" size="34.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="55.0" fitWidth="182.0" layoutX="163.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" style="fx-background-radius: 15px;">
-               <image>
-                  <Image url="@../../../Screenshot%202021-12-10%20at%204.33.29%20PM.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="213.0" layoutY="303.0" prefHeight="39.0" prefWidth="59.0" text="OR" textFill="#f5f5f5">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <ImageView fx:id="knife1" fitHeight="63.0" fitWidth="18.0" layoutX="231.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" visible="false">
-         <image>
-            <Image url="@../../../knife.png" />
-         </image>
-      </ImageView>
       <ImageView fx:id="rorc1" fitHeight="55.0" fitWidth="64.0" layoutX="1758.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../RedOrc1.png" />
@@ -579,6 +410,21 @@
             <Image url="@../../../knifeupgrade.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="knifeicon" fitHeight="75.0" fitWidth="52.0" layoutX="32.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../knife.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="axe" fitHeight="50.0" fitWidth="34.0" layoutX="186.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../throwingaxe.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="knife1" fitHeight="63.0" fitWidth="18.0" layoutX="231.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" visible="false">
+         <image>
+            <Image url="@../../../knife.png" />
+         </image>
+      </ImageView>
       <ImageView fx:id="island24" fitHeight="120.0" fitWidth="269.0" layoutX="8003.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../T_Islands_02.png" />
@@ -608,6 +454,160 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
+      <Pane fx:id="quitpane" layoutX="363.0" layoutY="88.0" prefHeight="399.0" prefWidth="382.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="385.0" layoutX="-35.0" layoutY="67.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
+            <Button fx:id="finalexit" layoutY="284.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="YES">
+               <font>
+                  <Font size="35.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="quitno" layoutX="270.0" layoutY="284.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="NO">
+               <font>
+                  <Font size="35.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Label layoutX="135.0" layoutY="115.0" prefHeight="55.0" prefWidth="202.0" text="QUIT GAME?">
+               <font>
+                  <Font size="34.0" />
+               </font>
+               <effect>
+                  <Glow level="0.98" />
+               </effect>
+            </Label>
+            <AmbientLight color="CHARTREUSE" lightOn="true" />
+         </children>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Pane>
+      <Pane fx:id="pausepane" layoutX="290.0" layoutY="67.0" prefHeight="439.0" prefWidth="527.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="364.0" layoutY="40.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
+            <Button fx:id="exit" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
+               <font>
+                  <Font size="35.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="resume" layoutX="288.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Resume">
+               <font>
+                  <Font size="35.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="restart" layoutX="288.0" layoutY="149.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
+               <font>
+                  <Font size="35.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="save" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Save">
+               <font>
+                  <Font size="35.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Label layoutX="208.0" layoutY="40.0" prefHeight="63.0" prefWidth="115.0" text="Menu" textFill="#e5ff00" underline="true">
+               <font>
+                  <Font size="44.0" />
+               </font>
+               <effect>
+                  <Glow level="0.98" />
+               </effect>
+            </Label>
+         </children>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Pane>
+      <Pane fx:id="gameover" layoutX="351.0" layoutY="67.0" prefHeight="440.0" prefWidth="498.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000030" height="440.0" layoutX="-1.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="499.0" />
+            <ImageView fitHeight="96.0" fitWidth="361.0" layoutX="68.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../174682-logo-game-over-free-hd-image.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="restart1" layoutX="25.0" layoutY="355.0" mnemonicParsing="false" opacity="0.82" prefHeight="55.0" prefWidth="162.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Restart">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="quitbutton" layoutX="302.0" layoutY="352.0" mnemonicParsing="false" opacity="0.82" prefHeight="61.0" prefWidth="162.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.67">
+                     <color>
+                        <Color red="0.9098039269447327" green="0.9098039269447327" blue="0.6901960968971252" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Label layoutX="174.0" layoutY="181.0" prefHeight="55.0" prefWidth="149.0" text="Save Me!" textFill="#f2f2f2">
+               <font>
+                  <Font name="SansSerif Bold" size="34.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="55.0" fitWidth="182.0" layoutX="163.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" style="fx-background-radius: 15px;">
+               <image>
+                  <Image url="@../../../Screenshot%202021-12-10%20at%204.33.29%20PM.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="213.0" layoutY="303.0" prefHeight="39.0" prefWidth="59.0" text="OR" textFill="#f5f5f5">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
       <Group fx:id="coinchests1" layoutX="6280.0" layoutY="100.0" />
       <Group fx:id="chestss1" layoutX="4966.0" layoutY="452.0" />
       <Group fx:id="chestss2" layoutX="3447.0" layoutY="335.0" />
