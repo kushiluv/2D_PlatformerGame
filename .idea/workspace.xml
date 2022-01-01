@@ -4,38 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load12.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load13.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load14.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load15.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load16.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load17.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load18.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load19.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load20.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load21.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load22.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load23.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load24.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load9.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Orcs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Orcs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/gamescene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/HelloApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/gamescene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" afterDir="false" />
-    </list>
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="bossorc?asd" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -301,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641023506255</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="bossorc?asd">
+      <created>1641028337456</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1641028337456</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +327,8 @@
     <MESSAGE value="weaponchestsdone" />
     <MESSAGE value="sdvc" />
     <MESSAGE value="coinsdonej" />
-    <option name="LAST_COMMIT_MESSAGE" value="coinsdonej" />
+    <MESSAGE value="bossorc?asd" />
+    <option name="LAST_COMMIT_MESSAGE" value="bossorc?asd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
