@@ -19,12 +19,14 @@ public abstract class Orcs extends GameObject {
     private int dead;
 
     private boolean dea;
+    private int health;
 
     public Orcs(Scene scene, String string){
         this.grorc = (ImageView) scene.lookup(string);
         this.death = (ImageView) scene.lookup("#death");
         dead = 0;
         dea = false;
+        health = -1;
     }
     public ImageView getHero() {
         return grorc;
@@ -67,4 +69,13 @@ public abstract class Orcs extends GameObject {
     public void setDea(boolean dea) {
         this.dea = dea;
     }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
 }
+

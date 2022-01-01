@@ -30,7 +30,7 @@ public class menu {
         resume = (Button) scene.lookup("#resume");
         restartt = (Button) scene.lookup("#restart");
 
-        save = (Button) scene.lookup("#save");
+        save = (Button) scene.lookup("#savee");
         exit = (Button) scene.lookup("#exit");
 
     }

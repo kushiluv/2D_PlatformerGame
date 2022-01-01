@@ -42,7 +42,7 @@ public class HelloApplication extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(root, 1200, 600);
         temp = (Button) scene.lookup("#temp");
-
+        listView = (ListView) scene.lookup("#listview");
         load1 = (Button) scene.lookup("#load1");
         exit = (Button) scene.lookup("#exit");
 
@@ -66,17 +66,17 @@ public class HelloApplication extends Application {
                 System.out.println(k);
             }
             listView.getItems().addAll(str);
-            listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-
-                @Override
-                public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-
-                    Object toload = listView.getSelectionModel().getSelectedItem();
-
-//                myLabel.setText(currentFood);
-
-                }
-            });
+//            listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+//
+//                @Override
+//                public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+//
+//                    Object toload = listView.getSelectionModel().getSelectedItem();
+//
+////                myLabel.setText(currentFood);
+//
+//                }
+//            });
         
         load1.setOnMouseClicked(e -> {
             load load = new load(scene);

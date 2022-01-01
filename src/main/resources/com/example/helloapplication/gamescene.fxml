@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Rectangle2D?>
-<?import javafx.scene.AmbientLight?>
-<?import javafx.scene.Group?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="10000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.helloapplication.game">
+<AnchorPane prefHeight="1000.0" prefWidth="10000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.helloapplication.game">
    <children>
       <ImageView fitHeight="660.0" fitWidth="2045.0" layoutX="1188.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -441,7 +432,7 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <ImageView fitHeight="242.0" fitWidth="248.0" layoutX="11352.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bossorc" fitHeight="242.0" fitWidth="248.0" layoutX="11352.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../4%20mini-boss.png" />
          </image>
@@ -495,7 +486,7 @@
             <ColorAdjust />
          </effect>
       </Pane>
-      <Pane fx:id="pausepane" layoutX="290.0" layoutY="67.0" prefHeight="439.0" prefWidth="527.0" visible="false">
+      <Pane fx:id="pausepane" layoutX="290.0" layoutY="67.0" prefHeight="439.0" prefWidth="527.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="364.0" layoutY="40.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
             <Button fx:id="exit" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
@@ -534,7 +525,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="save" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Save">
+            <Button fx:id="asd" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Save">
                <font>
                   <Font size="35.0" />
                </font>
@@ -554,6 +545,7 @@
                   <Glow level="0.98" />
                </effect>
             </Label>
+            <Button fx:id="savee" layoutX="85.0" layoutY="93.0" mnemonicParsing="false" text="Button" />
          </children>
          <effect>
             <ColorAdjust />
