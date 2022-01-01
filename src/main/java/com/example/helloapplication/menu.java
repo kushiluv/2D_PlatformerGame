@@ -27,7 +27,7 @@ public class menu {
         pausepane = (Pane) scene.lookup("#pausepane");
         resume = (Button) scene.lookup("#resume");
 
-        save = (Button) scene.lookup("#save");
+        save = (Button) scene.lookup("#savee");
         exit = (Button) scene.lookup("#exit");
 
     }
