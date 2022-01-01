@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_31-12-2021_21_37_[Changes]" date="1640966865151" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31-12-2021_21_37_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 31-12-2021 21:37 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/helloapplication/game.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/helloapplication/game.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31-12-2021_21_37_[Changes]/game.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/helloapplication/game$2.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/helloapplication/game$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31-12-2021_21_37_[Changes]/game$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/helloapplication/game$1.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/helloapplication/game$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31-12-2021_21_37_[Changes]/game$1.class" />
+  </binary>
+</changelist>
