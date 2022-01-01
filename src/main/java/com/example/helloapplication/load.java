@@ -38,7 +38,7 @@ public class load {
         loadvisible();
         System.out.println("Test 1");
         menufunctions();
-        initializ();
+//        initializ();
 
 
     }
@@ -72,28 +72,28 @@ public class load {
     private String toload;
 
 
-    public void initializ() {
-         listView = new ListView<>();
-        ArrayList<String> temp = new LoadGame().getGames();
-        String[] str = new String[temp.size()];
-        System.out.println("dkjfbs");
-        for (int i = 0; i < temp.size(); i++) {
-            str[i] = temp.get(i);
-        }
-        for (String k : str) {
-            System.out.println(k);
-        }
-         listView.getItems().addAll(str);
-         listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-
-            @Override
-            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-
-                toload = listView.getSelectionModel().getSelectedItem();
-
-//                myLabel.setText(currentFood);
-
-            }
-        });
-    }
+//    public void initializ() {
+//         listView = new ListView<>();
+//        ArrayList<String> temp = new LoadGame().getGames();
+//        String[] str = new String[temp.size()];
+//        System.out.println("dkjfbs");
+//        for (int i = 0; i < temp.size(); i++) {
+//            str[i] = temp.get(i);
+//        }
+//        for (String k : str) {
+//            System.out.println(k);
+//        }
+//         listView.getItems().addAll(str);
+//         listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+//
+//            @Override
+//            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+//
+//                toload = listView.getSelectionModel().getSelectedItem();
+//
+////                myLabel.setText(currentFood);
+//
+//            }
+//        });
+//    }
 }

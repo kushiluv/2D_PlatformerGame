@@ -2,6 +2,8 @@ package com.example.helloapplication;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -18,6 +20,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloApplication extends Application {
     @FXML
@@ -51,7 +54,30 @@ public class HelloApplication extends Application {
 //                game.start(stage);
 //            }
 //        });
+        
+            listView = new ListView<>();
+            ArrayList<String> temp = new LoadGame().getGames();
+            String[] str = new String[temp.size()];
+            System.out.println("dkjfbs");
+            for (int i = 0; i < temp.size(); i++) {
+                str[i] = temp.get(i);
+            }
+            for (String k : str) {
+                System.out.println(k);
+            }
+            listView.getItems().addAll(str);
+            listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 
+                @Override
+                public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+
+                    Object toload = listView.getSelectionModel().getSelectedItem();
+
+//                myLabel.setText(currentFood);
+
+                }
+            });
+        
         load1.setOnMouseClicked(e -> {
             load load = new load(scene);
             load.displayloadmenu();
