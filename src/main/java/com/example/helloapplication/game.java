@@ -179,13 +179,20 @@ public class game  {
                     menu.panevisible();
                 });
                 menu.getResume().setOnMouseClicked(e ->{
+//                    menu.paneinvisible();
                     menu.paneinvisible();
-                });
-                menu.getSave().setOnMouseClicked(e ->{
-                    menu.paneinvisible();
+                    System.out.println("Ja rha hai bc");
                     Serialized_obj o = new Serialized_obj(hero, coinss, dashc);
                     SaveGame save = new SaveGame(o);
                     menu.panevisible();
+//                    saved_entry.setText("Game Saved!");
+                });
+                menu.getSave().setOnMouseClicked(e ->{
+//                    menu.paneinvisible();
+//                    System.out.println("Ja rha hai bc");
+//                    Serialized_obj o = new Serialized_obj(hero, coinss, dashc);
+//                    SaveGame save = new SaveGame(o);
+//                    menu.panevisible();
 //                    saved_entry.setText("Game Saved!");
 
                 });
@@ -384,10 +391,10 @@ public class game  {
                             knife1.setEquippedfalse();
                             axe.setEquippedTrue();
                         }
-                        if(keyEvent.getCode()==KeyCode.K){
-                            Serialized_obj o = new Serialized_obj(hero, coinss, dashc);
-                            SaveGame save = new SaveGame(o);
-                        }
+//                        if(keyEvent.getCode()==KeyCode.K){
+//                            Serialized_obj o = new Serialized_obj(hero, coinss, dashc);
+//                            SaveGame save = new SaveGame(o);
+//                        }
 
                     }
                 });
