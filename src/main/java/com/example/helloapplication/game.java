@@ -206,13 +206,36 @@ public class game  {
             knife1.setUpgrade_level(L.getKnife1());
             axe.setUpgrade_level(L.getAxe());
             if(L.isA()){
+                knife.setEquippedTrue();
+            }
+            else{
                 knife.setEquippedfalse();
             }
+
             if(L.isS()){
-                knife.setEquippedfalse();
+                knife1.setEquippedTrue();
+            }
+            else{
+                knife1.setEquippedfalse();
             }
             if(L.isD()){
-                knife.setEquippedfalse();
+                axe.setEquippedTrue();
+            }
+            else{
+                axe.setEquippedfalse();
+            }
+            if(knife.getUpgrade_level()>=1){
+                knife.setKnifeicon();
+                if(knife.getUpgrade_level()>=2){
+                    knife.upgrade();
+                    knife1.upgrade();
+                }
+            }
+            if(axe.getUpgrade_level()>=1){
+                if(axe.getUpgrade_level()>=2){
+                    axe.upgrade();
+                }
+                axe.setAxeicon();
             }
             setnewcoordinates(L, gameelements, hero);
             System.out.println(hero.getHero().getX());
@@ -432,7 +455,7 @@ public class game  {
                                     public void handle(long l) {
                                         for (int i = 0; i < orcs.size(); i++) {
                                             if ((knife.getKnife().getBoundsInParent().intersects(orcs.get(i).getHero().getBoundsInParent()) || knife1.getKnife().getBoundsInParent().intersects(orcs.get(i).getHero().getBoundsInParent()))&&((knife1.getKnife().getBoundsInParent().getCenterY()<=orcs.get(i).getHero().getBoundsInParent().getMaxY()&&knife1.getKnife().getBoundsInParent().getCenterY()>=orcs.get(i).getHero().getBoundsInParent().getMinY())||(knife.getKnife().getBoundsInParent().getCenterY()<=orcs.get(i).getHero().getBoundsInParent().getMaxY()&&knife.getKnife().getBoundsInParent().getCenterY()>=orcs.get(i).getHero().getBoundsInParent().getMinY()))) {
-                                                if(wchest.getopen()&&knife.isEquipped()) {
+                                                if(knife.isEquipped()) {
                                                     if(orcs.get(i)==borc){
                                                         if(borc.getHealth()==10000){
                                                             System.out.println("nibba do be ded");
@@ -454,7 +477,7 @@ public class game  {
                                                 }
                                             }
                                             if ((axe.getKnife().getBoundsInParent().intersects(orcs.get(i).getHero().getBoundsInParent()) )&&((axe.getKnife().getBoundsInParent().getCenterY()<=orcs.get(i).getHero().getBoundsInParent().getMaxY()&&axe.getKnife().getBoundsInParent().getCenterY()>=orcs.get(i).getHero().getBoundsInParent().getMinY()))) {
-                                                if(wchest.getopen()&&axe.isEquipped()) {
+                                                if(axe.isEquipped()) {
                                                     orcs.get(i).setDead(1);
                                                     orcs.get(i).death(death);
                                                     death.play();
