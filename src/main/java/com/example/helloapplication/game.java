@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -170,7 +171,9 @@ public class game  {
         chests.add(wchest3);
         wtnt = new tnt(scene,"#tnts","#defaulttnt");
         wtnt1 = new tnt(scene,"#tnts1","#defaulttnt1");
-
+        GameObject temp = new islands(scene);
+        Bounds temm =temp.getLocation();
+        temp.if_collides(hero);
         ArrayList<ImageView> gameelements = GameElements();
 
         respawn.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -210,6 +213,9 @@ public class game  {
 
             @Override
             public void handle(long l) {
+                System.out.println(grorc.getHero().getLayoutX()+" "+grorc.getHero().getLayoutY());
+
+
                 int knives = 0;
                 for (int i = 0; i < orcs.size(); i++) {
                     if (orcs.get(i).isDead() == 1&&!orcs.get(i).isDea()) {
@@ -548,6 +554,7 @@ public class game  {
         };
         timer.start();
 
+
         gamestage.setScene(scene);
         gamestage.show();
 
@@ -556,24 +563,30 @@ public class game  {
 
     private void setnewcoordinates(Serialized_obj c, ArrayList<ImageView> gameelements, Hero hero) {
         for(int i = 0; i< gameelements.size(); i++){
-            gameelements.get(i).setLayoutX(c.getCoordinates().get(i).getLayoutx());
-            gameelements.get(i).setLayoutY(c.getCoordinates().get(i).getLayouty());
+
+            TranslateTransition backtonormal = new TranslateTransition();
+            backtonormal.setNode(gameelements.get(i));
+            backtonormal.setDuration(Duration.millis(1));
+            backtonormal.setToX(c.getCoordinates().get(0).getLayoutx()*(-100));
+            backtonormal.setCycleCount(1);
+            backtonormal.setAutoReverse(false);
+            backtonormal.play();
+
         }
-        hero.getHero().setLayoutX(c.getCoordinates().get(c.getCoordinates().size()-1).getLayoutx());
-        hero.getHero().setLayoutY(c.getCoordinates().get(c.getCoordinates().size()-1).getLayouty());
+//        hero.getHero().setLayoutX(0.889*c.getCoordinates().get(c.getCoordinates().size()-1).getLayoutx());
+//        hero.getHero().setLayoutY(0.889*c.getCoordinates().get(c.getCoordinates().size()-1).getLayouty());
 
     }
 
     void setcoordinates(ArrayList<ImageView> gameelements, ArrayList<Coordinate> c, Hero hero){
-        for(int i = 0; i< gameelements.size(); i++){
-            c.get(i).setLayoutx(gameelements.get(i).getLayoutX());
-            c.get(i).setLayouty(gameelements.get(i).getLayoutY());
-        }
 
-        Coordinate e = new Coordinate();
-        e.setLayoutx(hero.getHero().getLayoutX());
-        e.setLayouty(hero.getHero().getLayoutY());
-        c.add(e);
+            Coordinate temp = new Coordinate(Integer.parseInt(counter.getText()));
+            c.add(temp);
+
+
+//        Coordinate e = new Coordinate(hero.getHero().getBoundsInParent().getCenterX(),hero.getHero().getBoundsInParent().getCenterY());
+//
+//        c.add(e);
     }
     void restart(Stage gamestage, String s) throws IOException {
         cleanup();
@@ -591,12 +604,14 @@ public class game  {
             public void handle(ActionEvent event) {
                 gameover(hero);
                 timer.start();
-
-
             }
         });
     }
     void gameover(Hero hero){
+        if(borc.isDea()){
+            gameoverwindow.getGoimg().setVisible(false);
+            gameoverwindow.getGoimg1().setVisible(true);
+        }
         gameoverwindow.gameoverpanevisible();
         respawn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override

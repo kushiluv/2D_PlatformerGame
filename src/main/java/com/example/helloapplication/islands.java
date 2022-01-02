@@ -216,13 +216,13 @@ public class islands extends GameObject implements serializable{
     }
 
 
-
-    public void setLayout(ArrayList<Coordinate> b){
-        for (int i = 0; i < b.size(); i++) {
-            islands.get(i).setLayoutX(b.get(i).getLayoutx());
-            islands.get(i).setLayoutY(b.get(i).getLayouty());
-        }
-    }
+//
+//    public void setLayout(ArrayList<Coordinate> b){
+//        for (int i = 0; i < b.size(); i++) {
+//            islands.get(i).setLayoutX(b.get(i).getLayoutx());
+//            islands.get(i).setLayoutY(b.get(i).getLayouty());
+//        }
+//    }
 
     @Override
     void if_collides(Hero hero) {

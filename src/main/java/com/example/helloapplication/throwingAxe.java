@@ -64,12 +64,15 @@ public class throwingAxe extends GameObject implements serializable,Weapons {
 
 
     }
+    @Override
     public ImageView getKnife(){
         return axe;
     }
+    @Override
     public void setEquippedTrue(){
         equipped = true;
     }
+    @Override
     public void setEquippedfalse(){
         equipped = false;
     }
@@ -77,10 +80,11 @@ public class throwingAxe extends GameObject implements serializable,Weapons {
         axe.setImage(axeupgrade.getImage());
 
     }
+    @Override
     public boolean isEquipped() {
         return equipped;
     }
-
+    @Override
     public int getUpgrade_level() {
         return upgrade_level;
     }
