@@ -35,12 +35,15 @@ public class game  {
     @FXML
     private Label saved_entry;
 
+    static int k =0;
+
     @FXML
     private Group chests;
     @FXML
     private ImageView defaultchest;
 
-
+    @FXML
+    private ImageView her;
 
     @FXML
     private ImageView island1;
@@ -66,12 +69,27 @@ public class game  {
     private Orcs borc;
 
 
-    void startGame(Stage gamestage) throws IOException {
-        // initialisation from start method goes here
+    void startGame(Stage gamestage, String s) throws IOException {
+        // initialisation from start method goes herex
         Parent root = FXMLLoader.load(getClass().getResource("gamescene.fxml"));
-
+        Hero hero; final int[] dashc; final int[] coinss;
         Scene scene = new Scene(root, 1200, 650);
-        Hero hero = new Hero(scene);
+        her = (ImageView) scene.lookup("#hero");
+        if(s.equals("")){
+
+            hero = new Hero(her);
+            dashc = new int[]{0};
+            coinss = new int[]{0};
+        }else{
+            LoadGame L1 = new LoadGame();
+            Serialized_obj L = L1.Load(s);
+            hero = L.getHHero();
+            System.out.println(hero.getHero().getX());
+            dashc = L.getDashc();
+            coinss = L.getCoinc();
+        }
+
+
 
         grorc = new Green_Orc(scene,"#orc");
         grorc1 = new Green_Orc(scene,"#orc11");
@@ -130,7 +148,7 @@ public class game  {
 
         TranslateTransition death = new TranslateTransition();
 
-        final int[] dashc = {0};
+
         final int[] flag1 = {0};
         wchest = new weaponchest(scene,"#chests","#defaultchest");
         cchest = new coinchest(scene,"#coinchests","#defaultcoinchest");
@@ -160,11 +178,12 @@ public class game  {
         gameelements.addAll(wchest1.getChests_all());
         gameelements.addAll(wchest2.getChests_all());
         gameelements.addAll(wchest3.getChests_all());
-        final int[] coinss = {0};
+
         AnimationTimer timer = new AnimationTimer() {
 
             @Override
             public void handle(long l) {
+
                 int knives = 0;
                 for (int i = 0; i < orcs.size(); i++) {
                     if (orcs.get(i).isDead() == 1&&!orcs.get(i).isDea()) {
@@ -188,11 +207,17 @@ public class game  {
                 });
                 menu.getSave().setOnMouseClicked(e ->{
                     menu.paneinvisible();
-                    System.out.println("Ja rha hai bc");
                     Serialized_obj o = new Serialized_obj(hero, coinss, dashc);
                     SaveGame save = new SaveGame(o);
                     menu.panevisible();
 
+                });
+                menu.getRestartt().setOnMouseClicked(e -> {
+                    try {
+                        restart(gamestage, s);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 });
                 menu.getExit().setOnMouseClicked(e ->{
                     menu.paneinvisible();
@@ -210,7 +235,6 @@ public class game  {
                         }
                     });
                 });
-
                 for (int i = 0; i < cislands.getALLislands().size(); i++) {
                     if (cislands.getIslands().get(i).getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
                         fall.stop();
@@ -225,18 +249,23 @@ public class game  {
                     }
                 }
 
-                                if(hero.getHero().getBoundsInParent().getMinY()>=600&& flag1[0] ==0){
+                if(hero.getHero().getBoundsInParent().getMinY()>=600&& flag1[0] ==0){
                                    flag1[0] =1;
                                     gameover();
-
-
-
-
                 }
+
+                if(k == 0){
+                    for (Bounds i: cislands.getALLislands()
+                         ) {
+                        System.out.println(i);
+                    }
+                }
+                k++;
+
+
 
                 for(int i =0; i<chests.size();i++) {
                     if (hero.getHero().getBoundsInParent().intersects(chests.get(i).chestimg().getBoundsInParent())) {
-                        System.out.println("chesting");
                         if(chests.get(i).getClass()==wchest.getClass()&&!chests.get(i).getopen()){
                             Random weapo = new Random();
                             int weapon = weapo.nextInt(2);
@@ -297,7 +326,7 @@ public class game  {
                 if(hero.getHero().getBoundsInParent().intersects(wtnt.chestimg().getBoundsInParent())){
                     wtnt.setOpen();
                     int tntdead = wtnt.run(hero);
-                    System.out.println("tntdead"+tntdead);
+//                    System.out.println("tntdead"+tntdead);
                     if(tntdead == 1) {
                         this.stop();
                         died(hero);
@@ -310,7 +339,7 @@ public class game  {
 
                 gameoverwindow.getRestart1().setOnMouseClicked(e -> {
                     try {
-                        restart(gamestage);
+                        restart(gamestage, s);
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -358,13 +387,13 @@ public class game  {
                                                 if(wchest.getopen()&&knife.isEquipped()) {
                                                     if(orcs.get(i)==borc){
                                                         if(borc.getHealth()==1000){
-                                                            System.out.println("nibba do be ded");
+//                                                            System.out.println("nibba do be ded");
                                                             orcs.get(i).setDead(1);
                                                             orcs.get(i).death(death);
                                                             death.play();
                                                         }
                                                         else{
-                                                            System.out.println(borc.getHealth()+"<- health");
+//                                                            System.out.println(borc.getHealth()+"<- health");
                                                             borc.setHealth(borc.getHealth()+1);
                                                         }
                                                     }
@@ -494,9 +523,9 @@ public class game  {
 
     }
 
-    void restart(Stage gamestage) throws IOException {
+    void restart(Stage gamestage, String s) throws IOException {
         cleanup();
-        startGame(gamestage);
+        startGame(gamestage, s);
     }
     void died(Hero hero){
         TranslateTransition dead = new TranslateTransition();
@@ -560,7 +589,7 @@ public class game  {
 
 
 
-    public void start(Stage primaryStage) throws IOException {
-        startGame(primaryStage);
+    public void start(Stage primaryStage, String s) throws IOException {
+        startGame(primaryStage, s);
     }
 }

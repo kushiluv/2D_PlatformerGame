@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,29 +21,33 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class HelloApplication extends Application {
+public class HelloApplication extends Application implements Initializable {
     @FXML
     private Button temp;
 
 
-
+    @FXML
+    private ListView<String> listview;
     @FXML
     private Button load1;
 
     @FXML
     private Button exit;
-    @FXML
-    private ListView listView;
+//    @FXML
+//    private ListView listView;
 
+    private String Loadfile;
 
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(root, 1200, 600);
         temp = (Button) scene.lookup("#temp");
-        listView = (ListView) scene.lookup("#listview");
+//        listview = (ListView) scene.lookup("#listview");
         load1 = (Button) scene.lookup("#load1");
         exit = (Button) scene.lookup("#exit");
 
@@ -54,18 +59,19 @@ public class HelloApplication extends Application {
 //                game.start(stage);
 //            }
 //        });
-        
-            listView = new ListView<>();
-            ArrayList<String> temp = new LoadGame().getGames();
-            String[] str = new String[temp.size()];
-            System.out.println("dkjfbs");
-            for (int i = 0; i < temp.size(); i++) {
-                str[i] = temp.get(i);
-            }
-            for (String k : str) {
-                System.out.println(k);
-            }
-            listView.getItems().addAll(str);
+
+
+//            ArrayList<String> temp = new LoadGame().getGames();
+//            String[] str = new String[temp.size()];
+//            System.out.println("dkjfbs");
+//            for (int i = 0; i < temp.size(); i++) {
+//                str[i] = temp.get(i);
+//            }
+//            for (String k : str) {
+//                System.out.println(k);
+//            }
+//
+//            listview.getItems().addAll(str);
 //            listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 //
 //                @Override
@@ -119,11 +125,47 @@ public class HelloApplication extends Application {
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         game game  = new game();
-        game.start(stage);
+        game.start(stage, "");
+
+    }
+    public void scene3(ActionEvent event) throws IOException{
+
+//        Parent root = FXMLLoader.load(getClass().getResource("gamescene.fxml"));
+
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        game game  = new game();
+        game.start(stage, Loadfile);
 
     }
 
     public static void main(String[] args) {
         launch();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ArrayList<String> temp = new LoadGame().getGames();
+        String[] str = new String[temp.size()];
+        System.out.println("dkjfbs");
+        for (int i = 0; i < temp.size(); i++) {
+            str[i] = temp.get(i);
+        }
+        for (String k : str) {
+            System.out.println(k);
+        }
+
+        listview.getItems().addAll(str);
+        listview.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+
+            @Override
+            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+
+                Loadfile = listview.getSelectionModel().getSelectedItem();
+                System.out.println(Loadfile);
+
+//                myLabel.setText(currentFood);
+
+            }
+        });
     }
 }

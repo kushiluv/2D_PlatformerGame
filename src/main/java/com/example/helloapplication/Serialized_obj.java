@@ -14,4 +14,16 @@ public class Serialized_obj implements Serializable {
         this.coinc = coinc;
         this.dashc = dashc;
     }
+
+    public Hero getHHero() {
+        return hero;
+    }
+
+    public int[] getCoinc() {
+        return coinc;
+    }
+
+    public int[] getDashc() {
+        return dashc;
+    }
 }

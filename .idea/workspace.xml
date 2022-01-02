@@ -4,7 +4,87 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="bossorc?asd" />
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Coordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/LoadGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/LoadGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Serialized_obj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/Serialized_obj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/islands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/islands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load21.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load22.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load23.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load24.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoadGames/Load9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/helloapplication/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LoadGames/Load1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LoadGames/Load2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load21.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load22.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load23.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load24.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LoadGames/Load3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LoadGames/Load9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Hero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/LoadGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/LoadGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Serialized_obj.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Serialized_obj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$4$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$5$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$5$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$5$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$4$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/islands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/menu.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -277,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641028337456</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="bossorc?asd">
+      <created>1641028752036</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1641028752036</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +391,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

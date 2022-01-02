@@ -1,9 +1,10 @@
 package com.example.helloapplication;
-
+//25
 import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+
 
 import java.util.ArrayList;
 
@@ -212,6 +213,15 @@ public class islands extends GameObject implements serializable{
         islands_bounds.add(boundsisland28);
 
         return islands_bounds;
+    }
+
+
+
+    public void setLayout(ArrayList<Coordinate> b){
+        for (int i = 0; i < b.size(); i++) {
+            islands.get(i).setLayoutX(b.get(i).getLayoutx());
+            islands.get(i).setLayoutY(b.get(i).getLayouty());
+        }
     }
 
     @Override

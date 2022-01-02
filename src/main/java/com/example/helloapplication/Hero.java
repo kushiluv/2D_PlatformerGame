@@ -22,10 +22,11 @@ public class Hero extends GameObject implements Serializable {
     private boolean IsAlive;
     private int gravity;
     @FXML
-    private transient ImageView hero;
+    private ImageView hero;
 
-    public Hero(Scene scene){
-        this.hero = (ImageView) scene.lookup("#hero");
+    public Hero(ImageView hero){
+        this.hero = hero;
+
 
     }
 
