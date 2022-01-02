@@ -505,7 +505,7 @@
             <ColorAdjust />
          </effect>
       </Pane>
-      <Pane fx:id="pausepane" layoutX="290.0" layoutY="67.0" prefHeight="439.0" prefWidth="527.0" visible="false">
+      <Pane fx:id="pausepane" layoutX="290.0" layoutY="67.0" prefHeight="439.0" prefWidth="527.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="364.0" layoutY="40.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
             <Button fx:id="exit" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
@@ -544,7 +544,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button fx:id="asd" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Save">
+            <Button fx:id="savee" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Save">
                <font>
                   <Font size="35.0" />
                </font>
@@ -564,13 +564,12 @@
                   <Glow level="0.98" />
                </effect>
             </Label>
-            <Button fx:id="savee" layoutX="85.0" layoutY="93.0" mnemonicParsing="false" text="Button" />
          </children>
          <effect>
             <ColorAdjust />
          </effect>
       </Pane>
-      <Pane fx:id="gameover" layoutX="351.0" layoutY="67.0" prefHeight="440.0" prefWidth="498.0">
+      <Pane fx:id="gameover" layoutX="351.0" layoutY="67.0" prefHeight="440.0" prefWidth="498.0" visible="false">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000030" height="440.0" layoutX="-1.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="499.0" />
             <ImageView fx:id="goimg" fitHeight="96.0" fitWidth="361.0" layoutX="68.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">

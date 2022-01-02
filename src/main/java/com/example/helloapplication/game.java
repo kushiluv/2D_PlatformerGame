@@ -238,7 +238,7 @@ public class game  {
                 axe.setAxeicon();
             }
             setnewcoordinates(L, gameelements, hero);
-            System.out.println(hero.getHero().getX());
+
             dashc = L.getDashc();
             coinss = L.getCoinc();
             coinscounter.setText(Integer.toString(L.getCoinc()[0]));
@@ -250,7 +250,7 @@ public class game  {
 
             @Override
             public void handle(long l) {
-                System.out.println(grorc.getHero().getLayoutX()+" "+grorc.getHero().getLayoutY());
+
 
 
                 int knives = 0;
@@ -276,7 +276,7 @@ public class game  {
                 });
                 menu.getSave().setOnMouseClicked(e ->{
                     menu.paneinvisible();
-                    System.out.println("Ja rha hai bc");
+
 
                     ArrayList<Coordinate> c = new ArrayList<Coordinate>();
                     setcoordinates(gameelements, c, finalHero);
@@ -329,7 +329,7 @@ public class game  {
 
                 for(int i =0; i<chests.size();i++) {
                     if (finalHero.getHero().getBoundsInParent().intersects(chests.get(i).chestimg().getBoundsInParent())) {
-                        System.out.println("chesting");
+
                         if(chests.get(i).getClass()==wchest.getClass()&&!chests.get(i).getopen()){
                             Random weapo = new Random();
                             int weapon = weapo.nextInt(2);
@@ -390,7 +390,7 @@ public class game  {
                 if(finalHero.getHero().getBoundsInParent().intersects(wtnt.chestimg().getBoundsInParent())){
                     wtnt.setOpen();
                     int tntdead = wtnt.run(finalHero);
-                    System.out.println("tntdead"+tntdead);
+
                     if(tntdead == 1) {
                         this.stop();
                         died(finalHero,this);
@@ -399,7 +399,7 @@ public class game  {
                 if(finalHero.getHero().getBoundsInParent().intersects(wtnt1.chestimg().getBoundsInParent())){
                     wtnt1.setOpen();
                     int tntdead = wtnt1.run(finalHero);
-                    System.out.println("tntdead"+tntdead);
+
                     if(tntdead == 1) {
                         this.stop();
                         died(finalHero,this);
@@ -460,7 +460,7 @@ public class game  {
                                                 if(knife.isEquipped()) {
                                                     if(orcs.get(i)==borc){
                                                         if(borc.getHealth()==10000){
-                                                            System.out.println("nibba do be ded");
+
                                                             orcs.get(i).setDead(1);
                                                             orcs.get(i).death(death);
                                                             death.play();
@@ -471,7 +471,7 @@ public class game  {
                                                         }
                                                     }
                                                     else {
-                                                        System.out.println("nibba do be ded");
+
                                                         orcs.get(i).setDead(1);
                                                         orcs.get(i).death(death);
                                                         death.play();
@@ -522,10 +522,7 @@ public class game  {
                         double hbot = finalHero.getHero().getBoundsInParent().getMinY();
                         double htop = finalHero.getHero().getBoundsInParent().getMaxY();
                         if ((!((htop-gbot>100) &&  ((htop<=gtop && hbot>=gbot) || (htop>=gtop&& hbot>=gbot)))||orcs.get(i).getClass()==borc.getClass())) {
-                            System.out.println(htop);
-                            System.out.println(hbot);
-                            System.out.println(gtop);
-                            System.out.println(gbot);
+
                             TranslateTransition orcsidecollision = new TranslateTransition();
                             orcsidecollision.setNode(orcs.get(i).getHero());
                             orcsidecollision.setByX(50);
@@ -548,7 +545,7 @@ public class game  {
                                     orcfall.setOnFinished(new EventHandler<ActionEvent>() {
                                         @Override
                                         public void handle(ActionEvent event) {
-                                            System.out.println("1111111111");
+
                                             orcs.get(finalI).getHero().setVisible(false);
                                             orcs.get(finalI).setDead(1);
                                         }
