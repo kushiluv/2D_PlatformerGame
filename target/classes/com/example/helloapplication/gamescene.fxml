@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Rectangle2D?>
-<?import javafx.scene.AmbientLight?>
-<?import javafx.scene.Group?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="10000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.helloapplication.game">
+<AnchorPane prefHeight="1000.0" prefWidth="10000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.helloapplication.game">
    <children>
       <ImageView fitHeight="660.0" fitWidth="2045.0" layoutX="1188.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -569,7 +560,7 @@
             <ColorAdjust />
          </effect>
       </Pane>
-      <Pane fx:id="gameover" layoutX="351.0" layoutY="67.0" prefHeight="440.0" prefWidth="498.0" visible="false">
+      <Pane fx:id="gameover" layoutX="351.0" layoutY="67.0" prefHeight="440.0" prefWidth="498.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000030" height="440.0" layoutX="-1.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="499.0" />
             <ImageView fx:id="goimg" fitHeight="96.0" fitWidth="361.0" layoutX="68.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -616,7 +607,7 @@
                   <Font size="23.0" />
                </font>
             </Label>
-            <ImageView fx:id="goimg1" fitHeight="249.0" fitWidth="338.0" layoutX="91.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView fx:id="goimg1" fitHeight="249.0" fitWidth="338.0" layoutX="91.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../you-win-lettering-pop-art-text-banner_185004-60.jpg" />
                </image>
@@ -638,5 +629,20 @@
             <Image url="@../../../RedOrc1.png" />
          </image>
       </ImageView>
+      <Label fx:id="time" layoutX="962.0" layoutY="595.0" prefHeight="50.0" prefWidth="196.0" text="Label">
+         <font>
+            <Font name="System Bold Italic" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="current" layoutX="329.0" layoutY="546.0" prefHeight="55.0" prefWidth="301.0" text="Label">
+         <font>
+            <Font name="System Bold Italic" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="high" layoutX="633.0" layoutY="538.0" prefHeight="65.0" prefWidth="361.0" text="Current : NA">
+         <font>
+            <Font name="System Bold Italic" size="40.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

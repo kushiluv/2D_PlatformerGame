@@ -35,6 +35,13 @@ public class game  {
     private Label saved_entry;
 
     @FXML
+    private Label time;
+    @FXML
+    private Label current;
+    @FXML
+    private Label high;
+
+    @FXML
     private Group chests;
     @FXML
     private ImageView defaultchest;
@@ -55,7 +62,7 @@ public class game  {
     void cleanup() {
         // stop animations reset model ect.
     }
-
+    private int testing = 0;
     private Orcs grorc;
     private Orcs grorc1;
     private Orcs grorc2;
@@ -75,6 +82,8 @@ public class game  {
     private tnt wtnt;private tnt wtnt1;
     private Orcs borc;
     private boolean rez;
+    private long beg;
+    private long highscoree=-1;
 
 
     void startGame(Stage gamestage, String s) throws IOException {
@@ -116,6 +125,9 @@ public class game  {
         coinscounter  = (Label) scene.lookup("#coinscounter");
         defaultchest = (ImageView) scene.lookup("#defaultchest");
         island1 = (ImageView) scene.lookup("#island1");
+        time = (Label) scene.lookup("#time");
+        current = (Label) scene.lookup("#current");
+        high = (Label) scene.lookup("#high");
         grorc.getHero().setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -199,6 +211,7 @@ public class game  {
             hero = new Hero(her);
             dashc = new int[]{0};
             coinss = new int[]{0};
+            beg = System.nanoTime()/1000000000;
         }else{
             LoadGame L1 = new LoadGame();
             Serialized_obj L = L1.Load(s);
@@ -238,20 +251,26 @@ public class game  {
                 axe.setAxeicon();
             }
             setnewcoordinates(L, gameelements, hero);
-
+            beg = System.nanoTime()/1000000000 - L.getTime();
             dashc = L.getDashc();
             coinss = L.getCoinc();
             coinscounter.setText(Integer.toString(L.getCoinc()[0]));
 
+
         }
         counter.setText(Integer.toString(dashc[0]/113));
         Hero finalHero = hero;
+
+        time.setText(Long.toString(beg));
+        current.setVisible(false);
+        high.setVisible(false);
+
         AnimationTimer timer = new AnimationTimer() {
 
             @Override
             public void handle(long l) {
 
-
+                time.setText("00 : "+Long.toString((System.nanoTime()/1000000000)-beg));
 
                 int knives = 0;
                 for (int i = 0; i < orcs.size(); i++) {
@@ -281,7 +300,7 @@ public class game  {
                     ArrayList<Coordinate> c = new ArrayList<Coordinate>();
                     setcoordinates(gameelements, c, finalHero);
 
-                    Serialized_obj o = new Serialized_obj(coinss, dashc, c, knife.getUpgrade_level(), knife1.getUpgrade_level(), axe.getUpgrade_level(), knife.isEquipped(), knife1.isEquipped(), axe.isEquipped());
+                    Serialized_obj o = new Serialized_obj(coinss, dashc, c, knife.getUpgrade_level(), knife1.getUpgrade_level(), axe.getUpgrade_level(), knife.isEquipped(), knife1.isEquipped(), axe.isEquipped(),(System.nanoTime()/1000000000)-beg);
                     SaveGame save = new SaveGame(o);
                     menu.panevisible();
 
@@ -644,8 +663,28 @@ public class game  {
     }
     void gameover(Hero hero){
         if(borc.isDea()){
+            if(highscoree==-1){
+                highscoree = ((System.nanoTime()/1000000000)-beg);
+            }
+            else if(((System.nanoTime()/1000000000)-beg)<highscoree){
+                highscoree = ((System.nanoTime()/1000000000)-beg);
+            }
             gameoverwindow.getGoimg().setVisible(false);
             gameoverwindow.getGoimg1().setVisible(true);
+            current.setText("current: "+time.getText());
+            high.setText("Highscore: "+ highscoree);
+            current.setVisible(true);
+            high.setVisible(true);
+            time.setVisible(false);
+
+        }
+        else{
+            time.setVisible(true);
+            current.setVisible(false);
+            high.setVisible(false);
+            gameoverwindow.getGoimg().setVisible(true);
+            gameoverwindow.getGoimg1().setVisible(false);
+
         }
         gameoverwindow.gameoverpanevisible();
         respawn.setOnMouseClicked(new EventHandler<MouseEvent>() {

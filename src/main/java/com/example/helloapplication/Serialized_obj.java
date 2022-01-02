@@ -15,9 +15,10 @@ public class Serialized_obj implements Serializable {
     private boolean a;
     private boolean s;
     private boolean d;
+    private long time;
 
 
-    public Serialized_obj( int[] coinc, int[] dashc, ArrayList<Coordinate> c, int k, int k1, int ax, boolean a, boolean s, boolean d) {
+    public Serialized_obj( int[] coinc, int[] dashc, ArrayList<Coordinate> c, int k, int k1, int ax, boolean a, boolean s, boolean d,long time) {
 
         this.coinc = coinc;
         this.dashc = dashc;
@@ -28,12 +29,14 @@ public class Serialized_obj implements Serializable {
         this.a = a;
         this.s = s;
         this.d = d;
+        this.time = time;
 
     }
 
     public ArrayList<Coordinate> getCoordinates() {
         return coordinates;
     }
+    public long getTime(){return time;}
 
     public int[] getCoinc() {
         return coinc;
