@@ -57,25 +57,31 @@ public class throwingknives extends GameObject implements serializable,Weapons {
         knife.setImage(knifeupgrade.getImage());
         range = 400;
     }
+    @Override
     public ImageView getKnife(){
         return knife;
     }
+    @Override
     public void setEquippedTrue(){
         equipped = true;
     }
+    @Override
     public void setEquippedfalse(){
         equipped = false;
     }
-
+    @Override
     public boolean isEquipped() {
         return equipped;
     }
+    @Override
     public int getUpgrade_level() {
         return upgrade_level;
     }
+    @Override
     public void setUpgrade_level(int i){
         upgrade_level=i;
     }
+
     public void setKnifeicon(){
         knifeicon.setVisible(true);
     }

@@ -3,6 +3,7 @@ package com.example.helloapplication;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 public class gameoverwindow {
@@ -27,6 +28,12 @@ public class gameoverwindow {
     @FXML
     private Button load;
 
+    @FXML
+    private ImageView goimg;
+
+    @FXML
+    private ImageView goimg1;
+
     public gameoverwindow(Scene scene){
         gameover = (Pane) scene.lookup("#gameover");
         quitpane = (Pane) scene.lookup("#quitpane");
@@ -35,10 +42,18 @@ public class gameoverwindow {
         quitno = (Button) scene.lookup("#quitno");
         finalexit = (Button) scene.lookup("#finalexit");
         load = (Button) scene.lookup("#load");
+        goimg = (ImageView) scene.lookup("#goimg");
+        goimg1 = (ImageView) scene.lookup("#goimg1");
     }
 
     public Pane getGameover() {
         return gameover;
+    }
+    public ImageView getGoimg(){
+        return goimg;
+    }
+    public ImageView getGoimg1(){
+        return goimg1;
     }
 
     public Button getQuitbutton() {

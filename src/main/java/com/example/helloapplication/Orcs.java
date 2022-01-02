@@ -11,7 +11,7 @@ import javafx.util.Duration;
 
 public abstract class Orcs extends GameObject {
     @FXML
-    private ImageView grorc;
+    transient private ImageView grorc;
 
     @FXML
     private ImageView death;
