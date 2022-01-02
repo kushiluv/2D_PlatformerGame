@@ -6,6 +6,7 @@ public class Coordinate implements Serializable {
     private double layoutx;
     private double layouty;
 
+
     public void setLayoutx(double layoutx) {
         this.layoutx = layoutx;
     }

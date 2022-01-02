@@ -655,6 +655,7 @@ public class game  {
         });
 
     }
+
     public ArrayList<ImageView> GameElements(){
         ArrayList<ImageView> gameelements = new ArrayList<>();
         gameelements.addAll(cislands.getIslands());
