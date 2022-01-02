@@ -293,6 +293,13 @@ public class game  {
 
 //                    saved_entry.setText("Game Saved!");
                 });
+                menu.getRestartt().setOnMouseClicked(e->{
+                    try {
+                        restart(gamestage, "");
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                });
                 menu.getSave().setOnMouseClicked(e ->{
                     menu.paneinvisible();
 
