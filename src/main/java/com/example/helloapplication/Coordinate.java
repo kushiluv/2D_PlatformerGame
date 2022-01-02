@@ -3,22 +3,22 @@ package com.example.helloapplication;
 import java.io.Serializable;
 
 public class Coordinate implements Serializable {
-    private int layoutx;
-    private int layouty;
+    private double layoutx;
+    private double layouty;
 
-    public void setLayoutx(int layoutx) {
+    public void setLayoutx(double layoutx) {
         this.layoutx = layoutx;
     }
 
-    public void setLayouty(int layouty) {
+    public void setLayouty(double layouty) {
         this.layouty = layouty;
     }
 
-    public int getLayoutx() {
+    public double getLayoutx() {
         return layoutx;
     }
 
-    public int getLayouty() {
+    public double getLayouty() {
         return layouty;
     }
 }

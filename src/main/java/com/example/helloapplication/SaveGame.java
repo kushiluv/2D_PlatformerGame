@@ -18,7 +18,7 @@ public class SaveGame implements Serializable {
         save(name, object);
     }
 
-    public void save(String name, Serialized_obj o){
+    public void save(String name, Object o){
         ObjectOutputStream ob;
         try {
             System.out.println(name);

@@ -7,9 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Bounds;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -17,7 +15,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -74,13 +71,12 @@ public class game  {
     private chests wchest2;
     private chests wchest3;
     private chests cchest1;
-    private final int[] coinss={0};
     private tnt wtnt;private tnt wtnt1;
     private Orcs borc;
     private boolean rez;
 
 
-    void startGame(Stage gamestage) throws IOException {
+    void startGame(Stage gamestage, String s) throws IOException {
 
         // initialisation from start method goes here
         Parent root = FXMLLoader.load(getClass().getResource("gamescene.fxml"));
@@ -154,7 +150,9 @@ public class game  {
 
         TranslateTransition death = new TranslateTransition();
         respawn = (ImageView) scene.lookup("#respawn");
-        final int[] dashc = {0};
+        final int[] dashc;
+        final int[] coinss;
+
         final int[] flag1 = {0};
         wchest = new weaponchest(scene,"#chests","#defaultchest");
         cchest = new coinchest(scene,"#coinchests","#defaultcoinchest");
@@ -193,7 +191,21 @@ public class game  {
         gameelements.addAll(wchest2.getChests_all());
         gameelements.addAll(wchest3.getChests_all());
 
+        if(s.equals("")){
 
+            hero = new Hero(her);
+            dashc = new int[]{0};
+            coinss = new int[]{0};
+        }else{
+            LoadGame L1 = new LoadGame();
+            Serialized_obj L = L1.Load(s);
+            setnewcoordinates(L, gameelements, hero);
+            System.out.println(hero.getHero().getX());
+            dashc = L.getDashc();
+            coinss = L.getCoinc();
+        }
+
+        Hero finalHero = hero;
         AnimationTimer timer = new AnimationTimer() {
 
             @Override
@@ -222,7 +234,10 @@ public class game  {
                 menu.getSave().setOnMouseClicked(e ->{
                     menu.paneinvisible();
                     System.out.println("Ja rha hai bc");
-                    Serialized_obj o = new Serialized_obj(hero, coinss, dashc);
+
+                    ArrayList<Coordinate> c = new ArrayList<Coordinate>();
+                    setcoordinates(gameelements, c, finalHero);
+                    Serialized_obj o = new Serialized_obj(coinss, dashc, c);
                     SaveGame save = new SaveGame(o);
                     menu.panevisible();
 
@@ -245,7 +260,7 @@ public class game  {
                 });
 
                 for (int i = 0; i < cislands.getALLislands().size(); i++) {
-                    if (cislands.getIslands().get(i).getBoundsInParent().intersects(hero.getHero().getBoundsInParent())) {
+                    if (cislands.getIslands().get(i).getBoundsInParent().intersects(finalHero.getHero().getBoundsInParent())) {
                         fall.stop();
                         jump.play();
                         jump.setOnFinished(new EventHandler<ActionEvent>() {
@@ -258,9 +273,9 @@ public class game  {
                     }
                 }
 
-                                if(hero.getHero().getBoundsInParent().getMinY()>=600&&hero.isAlive()){
-                                  hero.setAlive(false);
-                                    gameover(hero);
+                                if(finalHero.getHero().getBoundsInParent().getMinY()>=600&& finalHero.isAlive()){
+                                  finalHero.setAlive(false);
+                                    gameover(finalHero);
 
 
 
@@ -269,7 +284,7 @@ public class game  {
                 }
 
                 for(int i =0; i<chests.size();i++) {
-                    if (hero.getHero().getBoundsInParent().intersects(chests.get(i).chestimg().getBoundsInParent())) {
+                    if (finalHero.getHero().getBoundsInParent().intersects(chests.get(i).chestimg().getBoundsInParent())) {
                         System.out.println("chesting");
                         if(chests.get(i).getClass()==wchest.getClass()&&!chests.get(i).getopen()){
                             Random weapo = new Random();
@@ -328,22 +343,22 @@ public class game  {
                         break;
                     }
                 }
-                if(hero.getHero().getBoundsInParent().intersects(wtnt.chestimg().getBoundsInParent())){
+                if(finalHero.getHero().getBoundsInParent().intersects(wtnt.chestimg().getBoundsInParent())){
                     wtnt.setOpen();
-                    int tntdead = wtnt.run(hero);
+                    int tntdead = wtnt.run(finalHero);
                     System.out.println("tntdead"+tntdead);
                     if(tntdead == 1) {
                         this.stop();
-                        died(hero,this);
+                        died(finalHero,this);
                     }
                 }
-                if(hero.getHero().getBoundsInParent().intersects(wtnt1.chestimg().getBoundsInParent())){
+                if(finalHero.getHero().getBoundsInParent().intersects(wtnt1.chestimg().getBoundsInParent())){
                     wtnt1.setOpen();
-                    int tntdead = wtnt1.run(hero);
+                    int tntdead = wtnt1.run(finalHero);
                     System.out.println("tntdead"+tntdead);
                     if(tntdead == 1) {
                         this.stop();
-                        died(hero,this);
+                        died(finalHero,this);
                     }
                 }
 
@@ -353,7 +368,7 @@ public class game  {
 
                 gameoverwindow.getRestart1().setOnMouseClicked(e -> {
                     try {
-                        restart(gamestage);
+                        restart(gamestage,s);
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -379,17 +394,17 @@ public class game  {
 
                                 if (knifeanimation.getStatus() == Animation.Status.STOPPED&& wchest.getopen()&&knife.isEquipped()&&knife.getUpgrade_level()>=1) {
 
-                                    knife.run(knifeanimation, hero.getHero().getBoundsInParent());
+                                    knife.run(knifeanimation, finalHero.getHero().getBoundsInParent());
                                     knifeanimation.play();
                                 } else {
                                     if(knife.isEquipped()&&knife.getUpgrade_level()>=1){
-                                        knife1.run(knifeanimation1, hero.getHero().getBoundsInParent());
+                                        knife1.run(knifeanimation1, finalHero.getHero().getBoundsInParent());
                                         knifeanimation1.play();}
 
                                 }
                             if (axeanimation.getStatus() == Animation.Status.STOPPED&& axe.getUpgrade_level()>=1&&axe.isEquipped()) {
                                 System.out.println("status : "+axeanimation.getStatus());
-                                axe.run(rotate,axe_bac,axe_for,axe_back,axe_forward,axeanimation, hero.getHero().getBoundsInParent());
+                                axe.run(rotate,axe_bac,axe_for,axe_back,axe_forward,axeanimation, finalHero.getHero().getBoundsInParent());
                                 axeanimation.play();
                             }
 
@@ -457,11 +472,11 @@ public class game  {
 
                 for (int i = 0; i < orcs.size(); i++) {
 
-                    if ((orcs.get(i).getHero().getBoundsInParent().intersects(hero.getHero().getBoundsInParent()))&&!orcs.get(i).isDea()) {
+                    if ((orcs.get(i).getHero().getBoundsInParent().intersects(finalHero.getHero().getBoundsInParent()))&&!orcs.get(i).isDea()) {
                         double gbot = orcs.get(i).getHero().getBoundsInParent().getMinY();
                         double gtop = orcs.get(i).getHero().getBoundsInParent().getMaxY();
-                        double hbot = hero.getHero().getBoundsInParent().getMinY();
-                        double htop = hero.getHero().getBoundsInParent().getMaxY();
+                        double hbot = finalHero.getHero().getBoundsInParent().getMinY();
+                        double htop = finalHero.getHero().getBoundsInParent().getMaxY();
                         if ((!((htop-gbot>100) &&  ((htop<=gtop && hbot>=gbot) || (htop>=gtop&& hbot>=gbot)))||orcs.get(i).getClass()==borc.getClass())) {
                             System.out.println(htop);
                             System.out.println(hbot);
@@ -522,7 +537,7 @@ public class game  {
                             System.out.println(gtop);
                             System.out.println(gbot);
                             this.stop();
-                            died(hero,this);
+                            died(finalHero,this);
 
 
                         }
@@ -539,11 +554,30 @@ public class game  {
 
     }
 
+    private void setnewcoordinates(Serialized_obj c, ArrayList<ImageView> gameelements, Hero hero) {
+        for(int i = 0; i< gameelements.size(); i++){
+            gameelements.get(i).setLayoutX(c.getCoordinates().get(i).getLayoutx());
+            gameelements.get(i).setLayoutY(c.getCoordinates().get(i).getLayouty());
+        }
+        hero.getHero().setLayoutX(c.getCoordinates().get(c.getCoordinates().size()-1).getLayoutx());
+        hero.getHero().setLayoutY(c.getCoordinates().get(c.getCoordinates().size()-1).getLayouty());
 
-    void restart(Stage gamestage) throws IOException {
-        coinss[0]=0;
+    }
+
+    void setcoordinates(ArrayList<ImageView> gameelements, ArrayList<Coordinate> c, Hero hero){
+        for(int i = 0; i< gameelements.size(); i++){
+            c.get(i).setLayoutx(gameelements.get(i).getLayoutX());
+            c.get(i).setLayouty(gameelements.get(i).getLayoutY());
+        }
+
+        Coordinate e = new Coordinate();
+        e.setLayoutx(hero.getHero().getLayoutX());
+        e.setLayouty(hero.getHero().getLayoutY());
+        c.add(e);
+    }
+    void restart(Stage gamestage, String s) throws IOException {
         cleanup();
-        startGame(gamestage);
+        startGame(gamestage, "");
     }
     void died(Hero hero,AnimationTimer timer){
         TranslateTransition dead = new TranslateTransition();
@@ -647,7 +681,7 @@ public class game  {
 
 
 
-    public void start(Stage primaryStage) throws IOException {
-        startGame(primaryStage);
+    public void start(Stage primaryStage, String s) throws IOException {
+        startGame(primaryStage, s);
     }
 }
