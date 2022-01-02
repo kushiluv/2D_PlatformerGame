@@ -13,7 +13,7 @@ import javafx.util.Duration;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class coinchest implements chests, Serializable {
+public class coinchest extends GameObject implements chests, Serializable {
     private static final long serialVersionUID = 42L;
     @FXML
     private Group chests;
@@ -171,4 +171,13 @@ public class coinchest implements chests, Serializable {
     }
 
 
+    @Override
+    Bounds getLocation() {
+        return defaultchest.getBoundsInParent();
+    }
+
+    @Override
+    void if_collides(Hero hero) {
+
+    }
 }

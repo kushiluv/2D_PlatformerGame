@@ -14,7 +14,7 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 
-public class weaponchest implements chests, serializable{
+public class weaponchest extends GameObject implements chests, serializable{
     private static final long serialVersionUID = 50L;
 
     @FXML
@@ -114,4 +114,13 @@ public class weaponchest implements chests, serializable{
     }
 
 
+    @Override
+    Bounds getLocation() {
+        return defaultchest.getBoundsInParent();
+    }
+
+    @Override
+    void if_collides(Hero hero) {
+
+    }
 }
