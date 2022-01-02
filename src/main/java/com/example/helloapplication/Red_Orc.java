@@ -29,7 +29,7 @@ public class Red_Orc extends Orcs implements serializable{
 
     @Override
     Bounds getLocation() {
-        return null;
+        return super.getHero().getBoundsInParent();
     }
 
     @Override
