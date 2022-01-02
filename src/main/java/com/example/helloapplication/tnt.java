@@ -12,7 +12,7 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 
-public class tnt implements serializable {
+public class tnt extends GameObject implements serializable {
     private static final long serialVersionUID = 33L;
 
     @FXML
@@ -266,5 +266,14 @@ public class tnt implements serializable {
     }
 
 
+    @Override
+    Bounds getLocation() {
+        return defaultchest.getBoundsInParent();
+    }
+
+    @Override
+    void if_collides(Hero hero) {
+
+    }
 }
 

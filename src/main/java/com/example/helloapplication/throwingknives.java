@@ -10,7 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-public class throwingknives implements serializable {
+public class throwingknives extends GameObject implements serializable,Weapons {
     private static final long serialVersionUID = 47L;
 
     @FXML
@@ -78,5 +78,15 @@ public class throwingknives implements serializable {
     }
     public void setKnifeicon(){
         knifeicon.setVisible(true);
+    }
+
+    @Override
+    Bounds getLocation() {
+        return knife.getBoundsInParent();
+    }
+
+    @Override
+    void if_collides(Hero hero) {
+
     }
 }
