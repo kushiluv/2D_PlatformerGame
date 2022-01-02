@@ -241,8 +241,10 @@ public class game  {
             System.out.println(hero.getHero().getX());
             dashc = L.getDashc();
             coinss = L.getCoinc();
-        }
+            coinscounter.setText(Integer.toString(L.getCoinc()[0]));
 
+        }
+        counter.setText(Integer.toString(dashc[0]/113));
         Hero finalHero = hero;
         AnimationTimer timer = new AnimationTimer() {
 

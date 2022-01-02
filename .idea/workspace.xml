@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="serializabledone">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load12.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load13.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load14.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load15.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load16.txt" afterDir="false" />
+    <list default="true" id="b53ac1b2-f072-4ff2-bb70-89af6a7397fe" name="Changes" comment="serializabledonewithweapons">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load20.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load21.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load22.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load23.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load24.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load25.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load26.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load27.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load28.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load29.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/LoadGames/Load30.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/helloapplication/game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Serialized_obj.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/Serialized_obj.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/helloapplication/game$5.class" afterDir="false" />
@@ -313,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641131925108</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="serializabledonewithweapons">
+      <created>1641136293512</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1641136293512</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +377,8 @@
     <MESSAGE value="bossorc?asdsadsa" />
     <MESSAGE value="bossorc?asdsadsasd" />
     <MESSAGE value="serializabledone" />
-    <option name="LAST_COMMIT_MESSAGE" value="serializabledone" />
+    <MESSAGE value="serializabledonewithweapons" />
+    <option name="LAST_COMMIT_MESSAGE" value="serializabledonewithweapons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
