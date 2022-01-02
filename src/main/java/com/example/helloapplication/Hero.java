@@ -18,14 +18,15 @@ import java.io.Serializable;
 public class Hero extends GameObject implements Serializable {
     private static final long serialVersionUID = 45L;
 
-    //    private Helmet helmet;
+
     private boolean IsAlive;
     private int gravity;
     @FXML
     private transient ImageView hero;
 
-    public Hero(Scene scene){
-        this.hero = (ImageView) scene.lookup("#hero");
+    public Hero(ImageView hero){
+        this.hero = hero;
+        IsAlive = true;
 
     }
 
@@ -35,8 +36,8 @@ public class Hero extends GameObject implements Serializable {
         jump.setNode(hero);
     }
     public void set_hero_fall(TranslateTransition fall){
-        fall.setDuration(Duration.millis(1800));
-        fall.setByY(600);
+        fall.setDuration(Duration.millis(2700));
+        fall.setByY(900);
         fall.setCycleCount(1);
         fall.setAutoReverse(false);
         fall.setNode(hero);
@@ -74,5 +75,13 @@ public class Hero extends GameObject implements Serializable {
         big.setDuration(Duration.seconds(2));
 
 
+    }
+
+    public boolean isAlive() {
+        return IsAlive;
+    }
+
+    public void setAlive(boolean alive) {
+        IsAlive = alive;
     }
 }

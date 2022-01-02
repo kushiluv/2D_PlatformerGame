@@ -269,7 +269,7 @@
             <Image url="@../../../Bush1_4.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="4169.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="defaulttnt1" fitHeight="61.0" fitWidth="63.0" layoutX="4590.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../TNT.png" />
          </image>
@@ -401,6 +401,11 @@
             <Image url="@../../../knifeupgrade.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="orc4" fitHeight="55.0" fitWidth="64.0" layoutX="5561.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../2%20%2338727.png" />
+         </image>
+      </ImageView>
       <ImageView fx:id="knifeicon" fitHeight="75.0" fitWidth="52.0" layoutX="32.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../../../knife.png" />
@@ -409,6 +414,11 @@
       <ImageView fx:id="axe" fitHeight="50.0" fitWidth="34.0" layoutX="186.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../../../throwingaxe.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rorc4" fitHeight="55.0" fitWidth="64.0" layoutX="8985.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../RedOrc1.png" />
          </image>
       </ImageView>
       <ImageView fx:id="knife1" fitHeight="63.0" fitWidth="18.0" layoutX="231.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" visible="false">
@@ -486,7 +496,7 @@
             <ColorAdjust />
          </effect>
       </Pane>
-      <Pane fx:id="pausepane" layoutX="290.0" layoutY="67.0" prefHeight="439.0" prefWidth="527.0">
+      <Pane fx:id="pausepane" layoutX="290.0" layoutY="67.0" prefHeight="439.0" prefWidth="527.0" visible="false">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3a8c94" height="364.0" layoutY="40.0" opacity="0.45" stroke="#ededed31" strokeType="INSIDE" style="-fx-background-radius: 9px;" width="527.0" />
             <Button fx:id="exit" layoutX="32.0" layoutY="259.0" mnemonicParsing="false" opacity="0.82" prefHeight="64.0" prefWidth="196.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15px; -fx-text-fill: #ffffff;" text="Quit">
@@ -588,7 +598,7 @@
                   <Font name="SansSerif Bold" size="34.0" />
                </font>
             </Label>
-            <ImageView fitHeight="55.0" fitWidth="182.0" layoutX="163.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" style="fx-background-radius: 15px;">
+            <ImageView fx:id="respawn" fitHeight="55.0" fitWidth="182.0" layoutX="163.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" style="fx-background-radius: 15px;">
                <image>
                   <Image url="@../../../Screenshot%202021-12-10%20at%204.33.29%20PM.png" />
                </image>
@@ -604,5 +614,16 @@
       <Group fx:id="chestss1" layoutX="4966.0" layoutY="452.0" />
       <Group fx:id="chestss2" layoutX="3447.0" layoutY="335.0" />
       <Group fx:id="chestss3" layoutX="8022.0" layoutY="202.0" />
+      <Group fx:id="tnts1" layoutX="4400.0" layoutY="150.0" />
+      <ImageView fx:id="orc5" fitHeight="55.0" fitWidth="64.0" layoutX="6879.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../2%20%2338727.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rorc3" fitHeight="55.0" fitWidth="64.0" layoutX="5984.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../RedOrc1.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
