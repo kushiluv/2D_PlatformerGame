@@ -202,6 +202,18 @@ public class game  {
         }else{
             LoadGame L1 = new LoadGame();
             Serialized_obj L = L1.Load(s);
+            knife.setUpgrade_level(L.getKnife());
+            knife1.setUpgrade_level(L.getKnife1());
+            axe.setUpgrade_level(L.getAxe());
+            if(L.isA()){
+                knife.setEquippedfalse();
+            }
+            if(L.isS()){
+                knife.setEquippedfalse();
+            }
+            if(L.isD()){
+                knife.setEquippedfalse();
+            }
             setnewcoordinates(L, gameelements, hero);
             System.out.println(hero.getHero().getX());
             dashc = L.getDashc();
@@ -243,7 +255,8 @@ public class game  {
 
                     ArrayList<Coordinate> c = new ArrayList<Coordinate>();
                     setcoordinates(gameelements, c, finalHero);
-                    Serialized_obj o = new Serialized_obj(coinss, dashc, c);
+
+                    Serialized_obj o = new Serialized_obj(coinss, dashc, c, knife.getUpgrade_level(), knife1.getUpgrade_level(), axe.getUpgrade_level(), knife.isEquipped(), knife1.isEquipped(), axe.isEquipped());
                     SaveGame save = new SaveGame(o);
                     menu.panevisible();
 
