@@ -1,4 +1,5 @@
-# APPROJECT_GROUP90
+# WILL HERO
+
 A 2d interactive platformer game made using JavaFX and Scene Builder implemented using OOPs concepts.[GUI intensive, interactive game capable of saving and loading the progress, leaderboards, weapons, obstacles, etc.]
 
 Preview:
